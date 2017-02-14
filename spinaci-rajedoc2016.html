@@ -1,13 +1,13 @@
-<!DOCTYPE>
-<html xmlns="http://www.w3.org/1999/xhtml" prefix="schema: http://schema.org/ prism: http://prismstandard.org/namespaces/basic/2.0/">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>window.$ = window.jQuery = require('./js/jquery.min.js');</script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/rash.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/rash-inline.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/rash.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/rash-inline.css" />
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -19,125 +19,201 @@
     <script src="js/libs/rangy-selectionsaverestore.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <title>RAJE: RAsh Javascript Editor -- Thesis - 14th March 2017</title>
-    <meta about="mailto:gianmarco.spinaci@studio.unibo.it" typeof="schema:Person" property="schema:name" name="dc.creator" content="Gianmarco Spinaci">
-    <meta about="mailto:gianmarco.spinaci@studio.unibo.it" property="schema:email" content="gianmarco.spinaci@studio.unibo.it">
-    <link about="mailto:gianmarco.spinaci@studio.unibo.it" property="schema:affiliation" href="#unibo">
-    <meta about="#unibo" typeof="schema:Organization" property="schema:name" content="Computer Science and management, University of Bologna, Bologna, Italy">
-    <meta property="prism:keyword" content="​Academic publishing">
-    <meta name="dcterms.subject" content="HTML">
+    <meta about="mailto:gianmarco.spinaci@studio.unibo.it" typeof="schema:Person" property="schema:name" name="dc.creator" content="Gianmarco Spinaci" />
+    <meta about="mailto:gianmarco.spinaci@studio.unibo.it" property="schema:email" content="gianmarco.spinaci@studio.unibo.it" />
+    <link about="mailto:gianmarco.spinaci@studio.unibo.it" property="schema:affiliation" href="#unibo" />
+    <meta about="#unibo" typeof="schema:Organization" property="schema:name" content="Computer Science and management, University of Bologna, Bologna, Italy" />
+    <meta property="prism:keyword" content="​Academic publishing" />
+    <meta name="dcterms.subject" content="HTML" />
 </head>
 <body>
+    <section role="doc-abstract">
+      <h1>Abstract</h1>
+      <p>Introduzione, riassunto chiaro della tesi a tutti i livelli</p>
+      <p><br /></p>
+    </section>
     <section id="section1">
-      <h1>Academic publishing </h1>
-      <section class="" id="section4">
-        <h1>Guide tour inside community</h1>
-        <p>Qui mi metto a descrivere a <strong>grandi linee</strong> il dominio in cui ho operato, gli attori della comunità scientifica, editor WYSIWYG (msWord ecc), formati (latex,html), formati di pubblicazione(?) (pdf, springer LNCS) e <em>workflow di pubblicazione<span style="font-size: 12pt;">​</span></em><span style="color: inherit; font-family: inherit; font-size: 12pt;">​</span><span style="color: inherit; font-family: inherit; font-size: 12pt;">​</span></p>
+      <h1>Literature review</h1>
+      <section id="section4">
+        <p>Qui mi metto a descrivere a <strong>grandi linee</strong> il dominio in cui ho operato, gli attori della comunità scientifica, editor WYSIWYG(msWord ecc), formati (latex,html), formati di pubblicazione(?) (pdf, springer LNCS)</p>
       </section>
-      <section class="" id="section39">
-        <h1>Publication workflow</h1>
-        <section class="" id="section40">
-          <h1>Editor</h1>
+      <section id="section52">
+        <h1>Submission workflow<br /></h1>
+        <p>Descrizione di come funziona il workflow per la pubblicazione e delle due macrofasi : sottomissione ad un comitato e sottomissione ad un editore<br /></p>
+        <section id="section53">
+          <h1>Submission to evaluation</h1>
+          <p><span style="font-size: 12pt;">Gli utenti usano un editor, ed ognuno ha il suo formato : LaTeX, DOC(X), ODT, DocBook, TEI e HTML ma successivamente serve </span><strong>convertire l'articolo in PDF</strong><span style="font-size: 12pt;">, in alcuni casi anche EPUB</span></p>
         </section>
-        <section class="" id="section41">
-          <h1>Formats (latex, HTML)</h1>
+        <section id="section54">
+          <h1>Submission to publication</h1>
+          <p>Invio dell'articolo all'editore in entrambi i formati (pdf e sorgente), creando un nuovo PDF.</p>
         </section>
-        <section class="" id="section42">
-          <h1>publication formats</h1>
+        <section id="section62">
+          <h1>HTML and publication</h1>
+          <p>​Una descrizione approfondita dello html publishing, grosso escursus sulle novità lanciate da questa modalità di pubblicazione in particolare formato RASH. Pros and cons, brief story, estensione e grandezze.<br /></p>
+          <p><strong>Problema principale è che non è utilizzato per via degli standard de facto</strong></p>
         </section>
       </section>
-      <section class="" id="section5">
-        <h1>Academic publishing in HTML-based format</h1>
-        <p>​Una descrizione approfondita dello <strong>html publishing</strong>, grosso escursus sulle novità lanciate da questa modalità di pubblicazione in particolare formato RASH. Pros and cons, brief story, estensione e grandezza</p>
+      <section id="section57">
+        <h1>Editors and formats</h1>
+        <p>Teoria sugli editor, descrizione dei più comuni e, se è possibile, aggiungere informazioni sulle percentuali di utilizzo rapportate alla popolazione scientifica.</p>
+        <p>Distinzione delle varie tipologie di editor e in particolare dei loro formati.</p>
+        <section id="section66">
+          <h1>PDF: standard de facto</h1>
+          <p>Descrizione del formato pdf, in particolare tutti i contro : accessibilità limitata, non compatibile con github, lenta renderizzazione, online issues<a href="#bib1"> </a>​.</p>
+        </section>
+        <section id="section68">
+          <h1>EPUB format</h1>
+          <p>Attenzione particolare a questo formato, informazioni</p>
+        </section>
+        <section id="section59">
+          <h1>WYSIWYG</h1>
+          <p>Particolare focus sugli editor di tipo What You See Is What You Get, fondamenti teorici e teoremi.</p>
+        </section>
+        <section id="section60">
+          <h1>HTML-oriented editors</h1>
+          <p>​lista dei competitors: (Dokieli format, Fidus writer format, HTML books, ecc.) e degli editor WYSIYG (dokie.li, fiduswriter, authorea, tinyMCE) descrizione, pros and cons, accennare l'utilizzo di github nella differenza tra centralizzati e decentralizzati.<br /></p>
+        </section>
       </section>
-      <section class="" id="section16">
-        <h1>HTML-based publication formats</h1>
-        <p>​lista dei competitors: (Dokieli format, Fidus writer format, HTML books, ecc.) e degli editor WYSIYG (dokie.li, fidus writer, authorea, tinyMCE) descrizione, pros and cons, accennare l'utilizzo di github nella differenza tra centralizzati e decentralizzati </p>
+      <section id="section61">
+        <h1>RASH framework</h1>
+        <p>​​Descrizione di RASH​​ e framework, motivi utilizzo, estensione, soggetti e oggetti, pros and cons. Sotto insieme di html5</p>
+        <section id="section65">
+          <h1>Visualization</h1>
+          <p>Scrivere riguardo alla visualizzazione di documenti rash, jquery e css</p>
+        </section>
+        <section id="section64">
+          <h1>ROCS</h1>
+          <p>Descrizione di rocs e del suo utilizzo per convertire i documenti, parlare della tesi di Giacomo.</p>
+        </section>
+        <section id="section63">
+          <h1>Accessibility</h1>
+          <p>Punti di forza sull'accessibilità del documento, in particolare le formule. Riprendere dalla tesi di Vincenzo.</p>
+        </section>
       </section>
-      <section class="" id="section17">
-        <h1>RASH and Framework</h1>
-        <p>​​descrizione di RASH​​ e framework, motivi utilizzo, estensione, soggetti e oggetti, pros and cons</p>
-      </section>
-      <section class="" id="section18">
-        <h1>WYSIWYG editors</h1>
-        <p>​Descrizione di questa tipologia di editor, di cui farà parte anche raje</p>
-        <p><br></p>
+      <section id="section5">
+        <p><br /></p>
       </section>
     </section>
     <section id="section15">
       <h1>RAJE: RAsh Javascript Editor</h1>
       <p>Descrizione di cosa è raje</p>
-      <section class="" id="section21">
+      <section id="section21">
         <h1>Functionalities</h1>
         <p>Cos'è possibile fare con questo editor, </p>
       </section>
-      <section class="" id="section20">
+      <section id="section20">
         <h1>Compatibility with RASH</h1>
         <p>descrizione della compatibilità che ha con rash</p>
-        <section class="" id="section35">
+        <section id="section35">
           <h1>Main issues with RASH</h1>
-          <p>Descrizione dei problemi principali che si sono creati durante la creazione di un editor WYSIWYG con un sotto insieme di elementi HTML </p>
+          <p>Descrizione dei problemi principali che si sono creati durante la creazione di un editor WYSIWYG con un sotto insieme di elementi HTML<span style="font-size: 12pt;">​</span></p>
         </section>
       </section>
-      <section class="" id="section32">
+      <section id="section32">
         <h1>Crucial facts</h1>
         <p>Editor di formule in mathjax e collegamento github</p>
-        <section class="" id="section33">
+        <section id="section33">
           <h1>Mathjax and Mathml</h1>
           <p>Descrizione di cosa sono, come funzionano e come si integrano con il progetto e rash</p>
         </section>
-        <section class="" id="section34">
+        <section id="section34">
           <h1>Marriage with Github</h1>
           <p>Cos'è Github, come funziona e come si integra con il progetto</p>
-          <p><br></p>
+          <p><br /></p>
         </section>
       </section>
     </section>
     <section id="section22">
       <h1>Raje in deep</h1>
       <p>Descrizione tecnica di raje, requisiti, tecnologie su cui è basato</p>
-      <section class="" id="section23">
+      <section id="section23">
         <h1>How electron works</h1>
-        <p>Descrizione del comportamento che ha raje come software, delle librerie usate e come è stato possibile comunicare tra renderer e main process</p>
-        <section class="" id="section27">
+        <p>Descrizione del comportamento che ha raje come software, delle librerie usate e come è stato possibile comunicare trarendereremainprocess</p>
+        <section id="section27">
           <h1>FS api</h1>
           <p>Come sono state gestite queste api per creare le directory e i file</p>
         </section>
-        <section class="" id="section28">
+        <section id="section28">
           <h1>Github api</h1>
           <p>​Come sono state gestite queste api (octonode library)</p>
         </section>
-        <section class="" id="section31">
+        <section id="section31">
           <h1>Comunicazione tra processi</h1>
           <p>Descrivere la comunicazione tra i processi di rendering e main</p>
         </section>
       </section>
-      <section class="" id="section24">
+      <section id="section24">
         <h1>Web-based techs</h1>
-        <p>Descrizione della parte html based</p>
-        <section class="" id="section25">
+        <p>Descrizione della parte html based, il software è generato partendo da tecnologia web based quindi js css e html.</p>
+        <section id="section25">
           <h1>Raje.js: the core script</h1>
           <p>Descrizione dello script che gestisce l'editor vero e proprio come toolbar, derash functions.</p>
         </section>
-        <section class="" id="section29">
+        <section id="section29">
           <h1>Contenteditable and issues with different browsers</h1>
-          <p>descrizione della tecnologia utilizzata, <strong>contenteditable</strong> e degli errori che sono saltati fuori, soprattutto perchè prima si voleva fare un sistema diverso e non software, quindi ci sarebbero stati problemi di compatibilità (soprattutto firefox e chrome)</p>
-          <p>Da scrivere anche il problema del non rompere la funzionalità di <strong>undo/redo</strong> di default, quindi di "tradurre" alcuni elementi per farli <em>fittare</em> con rash</p>
-          <p>Problema del caret</p>
+          <p>descrizione della tecnologia utilizzata, <code>contenteditable</code> e degli errori che sono saltati fuori,soprattutto perchè prima si voleva fare un sistema diverso e non software, quindi ci sarebbero stati problemi dicompatibilità (soprattutto firefox e chrome)</p>
+          <p>Da scrivere anche il problema del non rompere la funzionalità di <strong>undo/redo</strong> di default, quindi di"tradurre"alcunielementiper farli <em>fittare</em> con rash</p>
+          <p>Problema del caret e dell'utilizzo di caratteri speciali zero_space per gestire l'inserimento di html.</p>
         </section>
       </section>
-      <section class="" id="section36">
+      <section id="section36">
         <h1>Modules</h1>
-        <section class="" id="section37">
+        <section id="section37">
           <h1>Rangy</h1>
         </section>
-        <p>usata per astrarre la definizione di range, accedere al caret e selezioni, sub-modulo saveselection.js​​ ​​</p>
-        <section class="" id="section38">
+        <p>usata per astrarre la definizione di range, accedere al caret e selezioni, sub-modulo saveselection.js​​ ​​<span id="selectionBoundary_1487006698454_9324951738454963" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
+        <section id="section38">
           <h1>Mousetrap and shortcuts</h1>
           <p>Descrizione di questa libreria e quali shortcuts sono state usate</p>
         </section>
       </section>
-
-​​​​    </section>
+      <section id="section67">
+        <h1>Deploy</h1>
+        <p>Descrizione di come viene effettuato il deploy, in particolare la compatibilità e le issues (per esempio linux richiede che ci sia anche la mail dell'authore).</p>
+        <p>La libreria <code>electron-builder</code>​ trovata direttamente da <a href="http://electron.rocks/electron-builder-explained/">Electron ROCKS</a>.</p>
+        <p><br /></p>
+      </section>
+    </section>
+    <section id="section43">
+      <h1>Evaluation</h1>
+      <p>Descrizione del tipo di test di cui andò a parlare (task based), e dell'obiettivo che è cogliere l'usabilità</p>
+      <section id="section45">
+        <h1>Tests</h1>
+        <p>Descrizione di come sono stati formati i test, 3 blocchi, quali erano i task </p>
+      </section>
+      <section id="section46">
+        <h1>Profiling</h1>
+        <p>Ogni tipo di informazione raccolta riguardo agli utenti che hanno effettuato il test (sia quelli che scrivono sia quelli che posso acquisire come informazioni sulle macchine utilizzate)</p>
+      </section>
+      <section id="section47">
+        <h1>Results</h1>
+        <p>Discussione dei risultati che sono stato ottenuti, sus (system usability scale) rapportato ad altri risultati</p>
+        <section id="section48">
+          <h1>Suggestions</h1>
+          <p>Sotto sezione basata sulle risposte ricevute dall'ultimo blocco del test, in particolare per quanto riguarda le informazioni che possono servire per redigere i test successivi su larga scala</p>
+        </section>
+      </section>
+      <section id="section69">
+        <h1>Personal beta testing</h1>
+        <p>In questa sezione scrivo riguardo alle issues che ho trovato e ho modificato durante la stesura della tesi, poichè ho scritto il tutto con questo editor.</p>
+        <p><br /></p>
+      </section>
+    </section>
+    <section id="section44">
+      <h1>Conclusion and future developments</h1>
+      <p>Conclusioni, aggiungere lo sviluppo dell'articolo scientifico successivamente</p>
+      <p>Descrizioni sugli sviluppi futuri: Annotazioni, visualizzazione del TOC, possibilità di gestire peer review e conferenze<br /></p>
+      <p><br /></p>
+    </section>
+    <section role="doc-bibliography" id="bibreflist">
+      <h1>References</h1>
+      <ol>
+        <li id="bib1" role="doc-biblioentry">
+          <p>Using PDF files. (2009) <a href="http://www.siamcomm.com/website-design/using-pdf-files-pros-and-cons/">http://www.siamcomm.com/website-design/using-pdf-files-pros-and-cons/</a><br /></p>
+        </li>
+      </ol>
+    </section>
 
 </body>
 </html>
