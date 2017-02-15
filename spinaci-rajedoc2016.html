@@ -34,6 +34,7 @@
     </section>
     <section id="section71">
       <h1>Introduction</h1>
+      <p>Introduzione, riassunto chiaro della tesi a tutti i livelli<br /></p>
       <p><br /></p>
     </section>
     <section id="section1">
@@ -105,17 +106,17 @@
       <p>In questa sezione spiegherò cos'è RAJE e le funzionalità concesse all'utente, successivamente descriverò il grado di compatibilità (ad ora versione 0.0.1) che ha con il formato RASH, esaltando i suoi punti di forza che sono inoltre il motivo per cui è stato creato.</p>
       <section id="section21">
         <h1>Funzionalità</h1>
-        <p>Tra le principali funzionalità che RAJE mette a disposizione, ne troviamo alcune ovvie e necessarie in un editor (vedi toolbar).</p>
+        <p>Tra le principali funzionalità che RAJE mette a disposizione ne troviamo alcune ovvie e universali, necessarie in un editor come la toolbar e il menù software; Altre, invece, sono specifiche per il formato su cui è basata (per esempio il passaggio tra <strong>modalità preview</strong> e <strong>modalità editor</strong>). Parlerò anche riguardo alla gestione ed editabilità dell'header che merita di avere una sezione tutta dedicata, poiché è diversa da quella del body. Per ultimo parlerò delle <strong>shortcuts</strong> segrete che ho implementato per velocizzare la scrittura.</p>
         <section id="section70">
-          <h1>Toolbar</h1>
-          <p>Come anticipato RAJE è un editor HTML-based di tipo WYSIWYG, perciò esattamente come altri editor di questo tipo possiede una toolbar. Per quanto riguarda questo importante componente, nella fase iniziale dello sviluppo, ho optato per uno stile minimale, riprendendo le guidelines grafiche di Bootstrap. Successivamente sarà mio compito rendere la toolbar molto più simile agli editor più famosi e commerciali.</p>
+          <h1>Toolbar ed elementi</h1>
+          <p>Come anticipato RAJE è un editor HTML-based di tipo WYSIWYG, perciò esattamente come altri editor di questo tipo è dotato di una toolbar che racchiude una buona parte di azioni permesse sull'articolo, se non tutte almeno quelle più importanti. Per quanto riguarda questo importante componente, nella fase iniziale dello sviluppo, ho optato per uno stile minimale, riprendendo le guidelines grafiche di Bootstrap. Successivamente sarà mio compito rendere la toolbar molto più simile agli editor più famosi e commerciali.</p>
           <p><span style="font-size: 12pt;">In questa sezione il mio scopo è di dare una descrizione della toolbar con annessi screenshots.</span></p>
           <p><span style="font-size: 12pt;">Questa </span><span style="font-size: 12pt;">toolbar è composta da un insieme di bottoni raggruppati e divisi per categoria, seguendo le <a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">specifiche RASH</a> è possibile notare la differenza tra le diverse categorie di elemento o azione che verrebbero applicate al documento, una volta che l'utente preme il corrispondente bottone. E' inoltre possibile evocare un tooltip che mostra il nome comune per riconoscere il bottone come visto in </span><a href="#figure_1"> </a>​.</p>
           <figure id="figure_1">
             <p><img src="img/tooltip.png" alt="tooltip.png" /></p>
             <figcaption>​Caption of the <code>figure</code>.</figcaption>
           </figure>
-          <p><span style="font-size: 12pt;">In rifermento alla </span><a href="#figure_2"> </a><span style="font-size: 12pt;"> e partendo da sinistra verso destra troviamo i primi due bottoni: rispettivamente </span><code>undo</code><span style="font-size: 12pt;"> e </span><code>redo</code><span style="font-size: 12pt;">​. ​Il comportamento nascosto dietro questi speciali pulsanti è uno dei più importanti per quanto riguarda la stesura di un documento. Non avendo essi a disposizione sarebbe molto più complesso redigere l'articolo, quindi la scelta di introdurre queste preziose funzionalità è stata quasi obbligata.</span></p>
+          <p><span style="font-size: 12pt;">In rifermento alla </span><a href="#figure_2"> </a><span style="font-size: 12pt;"> e partendo da sinistra verso destra troviamo i primi due bottoni: rispettivamente </span><code>undo</code><span style="font-size: 12pt;"> e </span><code>redo</code><span style="font-size: 12pt;">​. ​Il comportamento nascosto dietro questi speciali pulsanti è strettamente necessario per quanto riguarda la stesura di un documento. Non avendo essi a disposizione sarebbe molto più complesso e macchinoso redigere l'articolo, inoltre il tempo di correzzione di eventuali errori lieviterebbe. Quindi l'introduzione di queste preziose funzionalità è stata una scelta obbligata.</span></p>
           <p>Il terzo e il quarto pulsante sono un altro grande classico dgli editor, cioè <strong>bold</strong> e <em>italic</em>. Possono rendere un testo selezionato in grassetto e in corsivo.<br /></p>
           <p>Dal quarto pulsante in poi troviamo invece dei comportamenti speciali che riguardano esclusivamente RASH, ma sempre nella categoria "<strong>inline</strong>", che sono: <code>code</code>, <code>link</code>, <code>cross ref</code>​, <code>quote</code>, <code>subscript</code> e <code>superscript</code>​ <a href="#bib2"> </a><span style="font-size: 12pt;">. Tra i vari, degno di nota è quello relativo alle cross reference (raffigurato con l'icona dell'ancora) che mostra una finestra modale con cui poter scegliere esattamente a quale elemento referenziarsi, ed è inoltre possibile creare una nuova reference o footnote.</span></p>
           <p>Il funzionamento particolare di alcuni di questi pulsanti permette il loro utilizzo solo se è presente una selezione estesa del testo, cioè almeno un carattere selezionato trascinando il cursore del mouse e tenendo premuto il tasto sinistro. Per esempio selezionando del testo.</p>
@@ -134,6 +135,25 @@
             <p><img src="img/figure_modal.png" alt="figure_modal.png" /></p>
             <figcaption>​Caption of the <code>figure</code>.</figcaption>
           </figure>
+          <p>Uno dei bottoni più importanti è sicuramente quello per aggiungere una formula nella posizione selezionata. Questa azione avviene con l'invocazione di un semplice editor <a href="http://asciimath.org/">asciiMath</a>, che a tutti gli effetti crea un ambiente in cui impostare e selezionare la formula che si vuole inserire. Ne parlerò in modo più approfondito nella <strong>Section 3.3.1.</strong> .<span style="font-size: 12pt;">​</span></p>
+          <p>Ho programmato il dropdown "<strong>section</strong>" in modo che sia possibile aggiungere delle nuove sezioni come quelle speciali di <strong>abstract</strong> e <strong>acknowledgement</strong> oppure delle comuni sezioni. Le uniche sezioni speciali che possono essere aggiunte in questo modo sono quelle sopra citate. Se sono già state inserite all'interno del documento, la schermata si posizionerà esattamente all'inizio della sezione visualizzandone il contenuto. Altrimenti verrà eseguito l'inserimento vero e proprio nell'ordine concepito da RASH.</p>
+          <p>Ogni qual volta la posizione del <strong>caret</strong> cambia viene aggiornato il contenuto della lista nel dropdown in base alle possibili sezioni aggiungibili. Se per caso l'utente si trova all'interno di una sezione di primo livello, sarà possibile aggiungere sia un'altra sezione di primo livello, oppure una sottosezione come mostrato nel codice.</p>
+          <pre><code>&lt;section&gt;&lt;h1&gt;Sezione di primo livello&lt;/h1&gt;[caret]
+&lt;/section&gt;</code>​</pre>
+          <p> E' molto importante ricordare che questo non è l'unico modo a disposizione dell'utente per aggiungere delle sezioni, ma è l'unica strada per aggiungere quelle di <strong>astract</strong> e <strong>acknowledgement</strong> (maggiori informazioni sulle shortcuts nella <strong>section 3.1.4</strong>)</p>
+        </section>
+        <section id="section72">
+          <h1>Menu software</h1>
+          <p>RAJE è un software quindi, come tale, è servito con un menù la cui implementazione è stata scelta a mia più totale discrezione. E' molto importante aggiungere che in base al sistema operativo dell'utente la visualizzazione può cambiare in modo considerevole, particolarmente passando da sistemi <strong>Unix</strong> al sistema operativo <strong>Windows</strong>. Per quanto riguarda questa sezione non mi metterò a spiegare passo passo ogni singolo pulsante che è possibile trovare all'interno dei dropdown dei menu, perchè tutt'ora il progetto, ed in particolare questo modulo, sta subendo un numero importante di modifiche. Il mio obiettivo è spiegare, correlando degli esempi, come più ho pensato di dividere e raggruppare i multipli attori del menù.</p>
+          <p>Sinceramente non sono partito da una progettazione senza fondamenti, ma bensì ho ripreso alcune linee guida e consigli trovati tramite internet.</p>
+        </section>
+        <section id="section73">
+          <h1>Header</h1>
+          <p>l'header non è editabile ed è necessario eseguire delle azioni per renderlo tale</p>
+        </section>
+        <section id="section74">
+          <h1>Shortcuts</h1>
+          <p>descrizione di quelle dell'editor e del software</p>
         </section>
       </section>
       <section id="section20">
@@ -219,7 +239,7 @@
       </section>
       <section id="section46">
         <h1>Profiling</h1>
-        <p>Ogni tipo di informazione raccolta riguardo agli utenti che hanno effettuato il test (sia quelli che scrivono sia quelli che posso acquisire come informazioni sulle macchine utilizzate)</p>
+        <p>Ogni tipo di informazione raccolta riguardo agli utenti che hanno effettuato il test (sia quelli che scrivono sia quelli che posso acquisire come informazioni sulle macchine utilizzate) importantissimo sistema operativo!</p>
       </section>
       <section id="section47">
         <h1>Results</h1>
@@ -249,6 +269,9 @@
         </li>
         <li id="bib2" role="doc-biblioentry">
           <p>Peroni, S. (2017). RASH: Research Articles in Simplified HTML<span id="selectionBoundary_1487102222373_5759282897640037" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">https://rawgit.com/essepuntato/rash/master/documentation/index.html</a><span id="selectionBoundary_1487102222373_9397117972909679" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
+        </li>
+        <li id="bib3" role="doc-biblioentry">
+          <p><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span>Garrish M., Siegman T., Gylling M., McCarron S. (2016). Digital Publishing WAI-ARIA Module 1.0. W3C Working Draft, 17 March 2016. World Wide Web Consortium. <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a><br /></p>
         </li>
       </ol>
     </section>
