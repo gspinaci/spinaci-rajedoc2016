@@ -32,6 +32,10 @@
       <p>Introduzione, riassunto chiaro della tesi a tutti i livelli</p>
       <p><br /></p>
     </section>
+    <section id="section71">
+      <h1>Introduction</h1>
+      <p><br /></p>
+    </section>
     <section id="section1">
       <h1>Literature review</h1>
       <section id="section4">
@@ -97,10 +101,40 @@
     </section>
     <section id="section15">
       <h1>RAJE: RAsh Javascript Editor</h1>
-      <p>Descrizione di cosa è raje</p>
+      <p>Gran parte di questa tesi è centrata sullo sviluppo di un editor HTML-based chiamato RAJE (RAsh Javascript Editor), che non è altri che un editor WYSIWYG (di questo tipo di editor si è discusso ampiamente nella <a href="#section1"> </a>​). Il formato su cui è basato è sì, HTML ma per la precisione utilizza un sotto insieme di elementi HTML, conosciuti con il nome di RASH (<a href="#section61"> </a>​).</p>
+      <p>In questa sezione spiegherò cos'è RAJE e le funzionalità concesse all'utente, successivamente descriverò il grado di compatibilità (ad ora versione 0.0.1) che ha con il formato RASH, esaltando i suoi punti di forza che sono inoltre il motivo per cui è stato creato.</p>
       <section id="section21">
-        <h1>Functionalities</h1>
-        <p>Cos'è possibile fare con questo editor, </p>
+        <h1>Funzionalità</h1>
+        <p>Tra le principali funzionalità che RAJE mette a disposizione, ne troviamo alcune ovvie e necessarie in un editor (vedi toolbar).</p>
+        <section id="section70">
+          <h1>Toolbar</h1>
+          <p>Come anticipato RAJE è un editor HTML-based di tipo WYSIWYG, perciò esattamente come altri editor di questo tipo possiede una toolbar. Per quanto riguarda questo importante componente, nella fase iniziale dello sviluppo, ho optato per uno stile minimale, riprendendo le guidelines grafiche di Bootstrap. Successivamente sarà mio compito rendere la toolbar molto più simile agli editor più famosi e commerciali.</p>
+          <p><span style="font-size: 12pt;">In questa sezione il mio scopo è di dare una descrizione della toolbar con annessi screenshots.</span></p>
+          <p><span style="font-size: 12pt;">Questa </span><span style="font-size: 12pt;">toolbar è composta da un insieme di bottoni raggruppati e divisi per categoria, seguendo le <a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">specifiche RASH</a> è possibile notare la differenza tra le diverse categorie di elemento o azione che verrebbero applicate al documento, una volta che l'utente preme il corrispondente bottone. E' inoltre possibile evocare un tooltip che mostra il nome comune per riconoscere il bottone come visto in </span><a href="#figure_1"> </a>​.</p>
+          <figure id="figure_1">
+            <p><img src="img/tooltip.png" alt="tooltip.png" /></p>
+            <figcaption>​Caption of the <code>figure</code>.</figcaption>
+          </figure>
+          <p><span style="font-size: 12pt;">In rifermento alla </span><a href="#figure_2"> </a><span style="font-size: 12pt;"> e partendo da sinistra verso destra troviamo i primi due bottoni: rispettivamente </span><code>undo</code><span style="font-size: 12pt;"> e </span><code>redo</code><span style="font-size: 12pt;">​. ​Il comportamento nascosto dietro questi speciali pulsanti è uno dei più importanti per quanto riguarda la stesura di un documento. Non avendo essi a disposizione sarebbe molto più complesso redigere l'articolo, quindi la scelta di introdurre queste preziose funzionalità è stata quasi obbligata.</span></p>
+          <p>Il terzo e il quarto pulsante sono un altro grande classico dgli editor, cioè <strong>bold</strong> e <em>italic</em>. Possono rendere un testo selezionato in grassetto e in corsivo.<br /></p>
+          <p>Dal quarto pulsante in poi troviamo invece dei comportamenti speciali che riguardano esclusivamente RASH, ma sempre nella categoria "<strong>inline</strong>", che sono: <code>code</code>, <code>link</code>, <code>cross ref</code>​, <code>quote</code>, <code>subscript</code> e <code>superscript</code>​ <a href="#bib2"> </a><span style="font-size: 12pt;">. Tra i vari, degno di nota è quello relativo alle cross reference (raffigurato con l'icona dell'ancora) che mostra una finestra modale con cui poter scegliere esattamente a quale elemento referenziarsi, ed è inoltre possibile creare una nuova reference o footnote.</span></p>
+          <p>Il funzionamento particolare di alcuni di questi pulsanti permette il loro utilizzo solo se è presente una selezione estesa del testo, cioè almeno un carattere selezionato trascinando il cursore del mouse e tenendo premuto il tasto sinistro. Per esempio selezionando del testo.</p>
+          <figure id="figure_2">
+            <p><img src="img/toolbar.png" alt="toolbar.png" /></p>
+            <figcaption>​Caption of the <code>figure</code>.</figcaption>
+          </figure>
+          <p>Il secondo gruppo comprende i "<strong>blocks</strong>" che nella documentazione ufficiale di RASH sono <code>codeblock</code>, <code>blockquote</code>, <code>ordered list</code> e <code>unordered list​</code>. <br /></p>
+          <p>L'elemento <code>codeblock</code>​ è molto importante per quanto riguarda semplici <strong>snippet di codice</strong>, è possibile dunque scrivere diverse righe di codice (anche in formato HTML) senza che esse vengano interpretate e mostrate come se fosse una pagina web, in altre parole tutto ciò che si trova compreso tra l'apertura e la chiusura del tag <code>code</code>​ è codice solo graficamente, ma è testo a tutti gli effetti. ​​​<span style="font-size: 12pt;">​​</span></p>
+          <p><span style="font-size: 12pt;">Per quanto riguarda le citazioni, ci viene in aiuto il pulsante relativo all'elemento </span><code>blockquote</code>​. E' possibile aggiungere una citazione che, diversamente al normale <code>quote</code>​ (che crea una citazione <strong>inline</strong>), si estende completamente per una riga. Citazioni di questo tipo sono molto importanti, anche per dare maggiore enfasi rispetto alle semplici citazioni inserite nel testo.</p>
+          <p>E' accettabile e quasi scontato decidere di voler inserire delle liste all'interno dell'articolo che si sta scrivendo, a questo proposito all'utente vengono in aiuto i pulsati delle liste. Quelle più utilizzate e popolari sono naturalmente quelle ordinate e non ordinate e possono essere utilizzati in contesti diversi, è necessario dare la possibilità ad ogni utente di poter inserire la lista che più è in linea con le sue volontà.</p>
+          <p>Tra i bottoni del blocco denominato "<strong>figure</strong>" troviamo <code>table</code>, <code>figure</code> e <code>formule</code>​. Sempre seguendo le indicazioni scritte nella <span id="selectionBoundary_1487168895885_017088877954352766" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">documentazione ufficiale di RASH</a> si nota l'importanza dell'utilizzo di questi tra blocchi (considerati tra i principali per la scrittura di un articolo di ricerca).<span id="selectionBoundary_1487168895884_43822155409909813" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
+          <p>Le <strong>tabelle</strong> vengono inserite insieme ad un piccolo bottone di configurazione, posizionato alla loro sinistra. E' modificare la tabella grazie a questo pulsante e, tra le opzioni permesse troviamo la possibilità di ridimensionarla e di cambiare l'organizzazione della testata. Un'altra funzionalità molto importante, permessa da <strong>RASH</strong> ma non ancora implementata con <strong>RAJE</strong> (dei motivi ne parlerò maggiormente nella <strong>section 3.2.</strong>), è l'espansione delle celle o dell'intera colonna. Sarà una delle prime funzionalità che verranno implementate nelle release successive dell'editor.</p>
+          <p>L'inserimento, tramite il corrispondente bottone, delle immagini è affidato al secondo bottone del blocco: <code>figure</code>​. Alla pressione sarà immediatamente visibile una finestra modale (<a href="#figure_3"> </a><span style="font-size: 12pt;">) che permette di scegliere tra due modalità distinte di inserimento: da selezione di un file di immagine o dall'inserimento di un URL. Entrambi importano fisicamente l'immagine all'interno della cartella del progetto.</span></p>
+          <figure id="figure_3">
+            <p><img src="img/figure_modal.png" alt="figure_modal.png" /></p>
+            <figcaption>​Caption of the <code>figure</code>.</figcaption>
+          </figure>
+        </section>
       </section>
       <section id="section20">
         <h1>Compatibility with RASH</h1>
@@ -152,7 +186,7 @@
         </section>
         <section id="section29">
           <h1>Contenteditable and issues with different browsers</h1>
-          <p>descrizione della tecnologia utilizzata, <code>contenteditable</code> e degli errori che sono saltati fuori,soprattutto perchè prima si voleva fare un sistema diverso e non software, quindi ci sarebbero stati problemi dicompatibilità (soprattutto firefox e chrome)</p>
+          <p>descrizione della tecnologia utilizzata, <code>contenteditable</code> e degli errori che sono saltati fuori,soprattutto perchè prima si voleva fare un sistema diverso e non software, quindi ci sarebbero stati problemi dicompatibilità (soprattutto firefox e chrome)</p>
           <p>Da scrivere anche il problema del non rompere la funzionalità di <strong>undo/redo</strong> di default, quindi di"tradurre"alcunielementiper farli <em>fittare</em> con rash</p>
           <p>Problema del caret e dell'utilizzo di caratteri speciali zero_space per gestire l'inserimento di html.</p>
         </section>
@@ -171,7 +205,8 @@
       <section id="section67">
         <h1>Deploy</h1>
         <p>Descrizione di come viene effettuato il deploy, in particolare la compatibilità e le issues (per esempio linux richiede che ci sia anche la mail dell'authore).</p>
-        <p>La libreria <code>electron-builder</code>​ trovata direttamente da <a href="http://electron.rocks/electron-builder-explained/">Electron ROCKS</a>.</p>
+        <p>La libreria <code>electron-builder</code>​ trovata direttamente da <a href="http://electron.rocks/electron-builder-explained/">Electron ROCKS</a>.</p>
+        <p>Per fare il deploy del software per sistemi windows, utilizzando un mac ho dovuto installare wine e le librerie mono</p>
         <p><br /></p>
       </section>
     </section>
@@ -211,6 +246,9 @@
       <ol>
         <li id="bib1" role="doc-biblioentry">
           <p>Using PDF files. (2009) <a href="http://www.siamcomm.com/website-design/using-pdf-files-pros-and-cons/">http://www.siamcomm.com/website-design/using-pdf-files-pros-and-cons/</a><br /></p>
+        </li>
+        <li id="bib2" role="doc-biblioentry">
+          <p>Peroni, S. (2017). RASH: Research Articles in Simplified HTML<span id="selectionBoundary_1487102222373_5759282897640037" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">https://rawgit.com/essepuntato/rash/master/documentation/index.html</a><span id="selectionBoundary_1487102222373_9397117972909679" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
         </li>
       </ol>
     </section>
