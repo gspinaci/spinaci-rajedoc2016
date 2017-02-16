@@ -30,7 +30,6 @@
     <section role="doc-abstract">
       <h1>Abstract</h1>
       <p>Introduzione, riassunto chiaro della tesi a tutti i livelli</p>
-      <p><strong>sto provando a pushare il file da windows</strong></p>
       <p><br /></p>
     </section>
     <section id="section71">
@@ -104,7 +103,7 @@
     <section id="section15">
       <h1>RAJE: RAsh Javascript Editor</h1>
       <p>Gran parte di questa tesi è centrata sullo sviluppo di un editor HTML-based chiamato RAJE (RAsh Javascript Editor), che non è altri che un editor WYSIWYG (di questo tipo di editor si è discusso ampiamente nella <a href="#section1"> </a>​). Il formato su cui è basato è sì, HTML ma per la precisione utilizza un sotto insieme di elementi HTML, conosciuti con il nome di RASH (<a href="#section61"> </a>​).</p>
-      <p>In questa sezione spiegherò cos'è RAJE e le funzionalità concesse all'utente, successivamente descriverò il grado di compatibilità (ad ora versione 0.1.17) che ha con il formato RASH, esaltando i suoi punti di forza che sono inoltre il motivo per cui è stato creato. </p>
+      <p>In questo capitolo spiegherò cos'è RAJE e le funzionalità concesse all'utente, successivamente descriverò il grado di compatibilità (ad ora versione 0.1.17) che ha con il formato RASH, esaltando i suoi punti di forza che sono inoltre il motivo per cui è stato creato. </p>
       <section id="section21">
         <h1>Funzionalità</h1>
         <p>Tra le principali funzionalità che RAJE mette a disposizione ne troviamo alcune ovvie e universali, necessarie in un editor come la toolbar e il menù del software; Altre, invece, sono specifiche per il formato su cui è basata (per esempio il passaggio tra <strong>modalità preview</strong> e <strong>modalità editor</strong>). Parlerò anche riguardo all'editabilità dell'header che merita di avere una sezione tutta dedicata, poiché la gestione è diversa da quella del corpo dell'articolo. Per ultimo parlerò delle <strong>shortcuts</strong> segrete che ho implementato per velocizzare la scrittura.</p>
@@ -115,7 +114,7 @@
             <p><img src="img/Android_studio_welcome_screen_one_proj2.png" alt="http:,,www.techotopia.com,images,9,97,Android_studio_welcome_screen_one_proj2.png" /></p>
             <figcaption>​Welcome window di <strong>Android Studio</strong>.</figcaption>
           </figure>
-          <p>La splash window di RAJE in <a href="#figure_6"> </a><span style="font-size: 12pt;"> è stata sviluppata seguendo uno schema molto simile alla </span><a href="#figure_5"> <br /></a><span style="font-size: 12pt;">​. Naturalmente sono presenti una lista di articoli precedentementi aperti: i famosi "articoli recenti", disposti in ordine dal più recente al meno recente. Per ogni elemento della lista sono state salvate informazioni importanti necessarie per visualizzare correttamente l'articolo. E' inoltre possibile eliminarlo dalla lista, magari se stiamo parlando di articoli obsoleti o rimossi dalla macchina. I progetti recenti non sono aggiornabili, se ho aperto l'articolo X e successivamente cambio la sua posizione in un'altra cartella, non sarò più in grado di utilizzare il suo "articolo recente" per aprirlo, e sarà obbligatorio cercare manualmente la sua cartella.</span></p>
+          <p>La splash window di RAJE in <a href="#figure_6"> </a><span style="font-size: 12pt;"> è stata sviluppata seguendo uno schema molto simile alla </span><a href="#figure_5"> <br /></a><span style="font-size: 12pt;">​. Naturalmente sono presenti una lista di articoli precedentementi aperti: i famosi "articoli recenti", disposti in ordine dal più recente al meno recente. Per ogni elemento della lista sono state salvate informazioni importanti necessarie per visualizzare correttamente l'articolo. E' inoltre possibile eliminarlo dalla lista, magari se stiamo parlando di articoli obsoleti o rimossi dalla macchina. I progetti recenti non sono aggiornabili, se ho aperto l'articolo X e successivamente cambio la sua posizione in un'altra cartella, non sarò più in grado di utilizzare il suo "articolo recente" per aprirlo, e sarà obbligatorio cercare manualmente la sua cartella.</span></p>
           <p><span style="font-size: 12pt;">Nella splash sono presente 3 pulsanti (<span id="selectionBoundary_1487237041654_2868125909771484" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></span><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;"><a href="#figure_6">Figure 2</a>). Il primo serve per creare un nuovo articolo scegliendo la cartella di destinazione e il nome con cui verrà conosciuto (non è possibile cambiarlo successivamente). L'apertura di un articolo creato precedentemente (o inviato da un altro utente) è correlata alla pressione del secondo bottone "Open RASH article". In questo caso è necessario avere fisicamente la cartella sulla propria macchina. </span></p>
           <p><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;">Infine il terzo bottone è qualcosa di molto più particolare, partendo da un URL di github di questo tipo <code>https://github.com/{author}/{repository}</code>​ contenente un articolo RASH, è possibile scaricarlo sulla propria macchina ed editarlo direttamente con RAJE. Descrivere questa modalità sarà l'obiettivo della <strong>section 3.3.2.</strong> </span></p>
           <figure id="figure_6">
@@ -167,7 +166,7 @@
             <figcaption>​Menubar di OpenOffice.</figcaption>
           </figure>
           <p>L'organizzazione che ho seguito è molto in linea con questo schema. Tralasciando il bottone con il nome del software, che è una delle caratteristiche visibile solo nei sistemi Unix, File e Modifica sono stati introdotti anche in RAJE.<span style="font-size: 12pt;">​</span></p>
-          <p><span style="font-size: 12pt;">TODO</span></p>
+          <p><span style="font-size: 12pt;">File è necessario per lavorare con molteplici documenti, dona la possibilità di aprire una nuova finestra riguardo ad un altro articolo. Modifica invece racchiude un gran numero di azioni proprie di un editor: undo, redo, cut, paste e copy. Inoltre ritroviamo il pulsante del salvataggio del file e quelli delle modifiche dell'header.</span></p>
         </section>
         <section id="section73">
           <h1>Header</h1>
@@ -184,31 +183,22 @@
           <p>Tutte le successive scorciatoie con il carattere <code>mod</code>​ equivale a scrivere <code>ctrl</code> per <strong>windows</strong> e <code>cmd</code> per <strong>osx</strong>​​.</p>
           <ol>
             <li>
-
 ​<code>mod+s</code> è il salvataggio in locale del file. Tutte le modifiche che vengono apportate al documento sono visualizzabili nel documento HTML sorgente.            </li>
             <li>
-
 <code>mod+shift+s</code>​ è la push alla repository Github. Mostra una finestra modale per inserire il commento con cui verrà etichettata la modifica.<br />            </li>
             <li>
-
 ​<code>mod+c</code>​, <code>mod+v</code>​ e <code>mod+x</code> rispettivamente copia, incolla e taglia.            </li>
             <li>
-
 ​<code>mod+z</code> e <code>mod+shift+z</code>​ sono le scorciatoie per le azioni di <strong>undo</strong> e <strong>redo</strong>.            </li>
             <li>
-
 <code># enter</code>​ permette di creare una nuova sezione. in base al numero di caratteri <code>#</code> si può scegliere la profondità della sezione            </li>
             <li>
-
 <code>* enter​</code>​ aggiunge una lista non ordinata.<br />            </li>
             <li>
-
 ​<code>1. enter</code> aggiunge una lista ordinata.            </li>
             <li>
-
 ​<code>| enter</code> inserisce l'elemento blockquote.            </li>
             <li>
-
 ​<code>` enter</code> inserisce l'elemento codeblock.            </li>
           </ol>
         </section>
@@ -216,14 +206,30 @@
       <section id="section32">
         <h1>Punti di forza</h1>
         <p>RAJE è stato creato per ovviare al problema di avere un editor WYSIWYG di articoli scientifici di ricerca strutturati in formato RASH, oltre che avere un luogo centralizzato accessibile a tutti dove salvare i documenti. Durante la presentazione di questa sezione sarà mi compito descrivere i punti di forza del progetto da me sviluppato. <span id="selectionBoundary_1487249086358_9270292361330679" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
-        <p>Durante il periodo di sviluppo, insieme al mio Co-relatore di tesi abbiamo definito la </p>
+        <p>Durante il periodo di sviluppo, insieme al mio Co-relatore di tesi abbiamo definito un ulteriore necessità, correlata all'accessibilità dei documenti (problema ampiamente dettagliato all'interno della <span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;"><a href="#section1">Section 2</a>), cioè un editor di formule matematiche con caratteri <strong>asciiMath</strong> che genera formule grazie al processore di <strong>MathJax</strong>.</span></p>
+        <p><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;">Il secondo punto di forza che andrò a presentare è l'integrazione con Github, in particolare parlerò di come ho pensato di gestire l'interconnessione tra più autori dei documenti.</span></p>
         <section id="section33">
           <h1>Mathjax and Mathml</h1>
-          <p>Descrizione di cosa sono, come funzionano e come si integrano con il progetto e rash</p>
-        </section>
+          <p>A partire dalla <a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">release 0.6 di RASH</a>, grazie al lavoro svolto dal mio collega <strong>Vincenzo Rubano</strong> (<a href="https://github.com/falcon03">@falcon03</a>), è possibile renderizzare formule con input <a href="http://asciimath.org/">asciiMath</a> in un elemento renderizzato grazie alle librerie di MathJax.</p>
+          <p>Una sfida significativa di questo lavoro è stata introdurre un editor pensato per essere di facile utilizzo, con tutti gli strumenti a disposizione, così anche chi non è a conoscenza delle sequenze di tasti può comunque pensare di costruire una formula matematica. L'editor (<a href="#figure_7"> </a>​) è anch'esso una finestra modale. Presenta una <code>textbox</code>​ per i caratteri <strong>ascii</strong> di input​, e una schermata predisposta alla sua visualizzazione in tempo reale. Infatti un'altra sfida che mi sono preposto è stata la velocità di aggiornamento della formula, che avviene ad ogni carattere o set di caratteri inseriti.</p>
+          <p>Per chi non è a conoscenza della sintassi necessaria per inserire particolari simboli o funzioni, è sempre possibile avvalersi dei bottoni che ho pensato di aggiungere immediatamente sotto della <code>textbox</code> di input. La disposizione deglli elementi è stata pensata incrociando i dati presenti dalla sintassi di <strong>asciiMath</strong> e l'impostazione dell'editor di <strong>OpenOffice</strong>. </p>
+          <figure id="figure_7">
+            <p><img src="img/formulaeditor.png" alt="formulaeditor.png" /></p>
+            <figcaption>​Presentazione dell'editor di formule.</figcaption>
+          </figure>
+​        </section>
         <section id="section34">
-          <h1>Marriage with Github</h1>
-          <p>Cos'è Github, come funziona e come si integra con il progetto</p>
+          <h1>Matrimonio con Github</h1>
+          <p>Come già accennato più volte in precedenza, RAJE è strettamente collegato ad un sistema <strong>simil-cloud</strong> in modo tale da semplificare la comunicazione e la condivisione degli articoli tra i vari Stakeholders dell'articolo (che, oltre agli autori, possono essere anche i reviewer incaricati di revisionare un articolo inviato per una conferenza). </p>
+          <p>Github è il più popolare network per progetti prevalentemente di stampo <strong>Open Source</strong>, conosciuto ed utilizzato da milioni di sviluppatori in tutto il mondo. Il cuore pulsante di Github è Git, il sistema di controllo di versione distribuito creato da Linus Torvald durante lo sviluppo del sistema operativo ad oggi conosciuto con il nome di <strong>Linux</strong>. Nei tempi moderni è diventato un must per gli "Open Source Developer" avere un profilo su Github. Non solo per per motivi di curriculum, ma anche per ricevere apprezzamenti o miglioramenti dei propri lavori. Ad ogni utente è permesso quindi di lavorare insieme a persone di tutto il mondo per costruire progetti sempre più completi e complessi con, come unico vincolo, conoscenza della lingua inglese. Tutti i testi sono interamente in lingua inglese.</p>
+          <p><em>Ma come mai un sistema potente come questo non è popolare anche per la condivisione per materiale testuale?</em> Per rispondere a questa domanda è necessario sapere che Git è stato creato con l'obiettivo di condividere codice, e questo semplifica moltissimo le cose. Il codice deve essere interpretato da una macchina, quindi è necessario definire in modo corretto dove inizia e dove finisce ogni istruzione, questo perchè ogni macchina legge, comprende ed elabora una <strong>riga</strong> alla volta.</p>
+          <p>Se RASH fosse del semplicissimo testo, forse altre modalità di controllo di versione sarebbero state molto più adatte. Ma un documento RASH non è semplice testo, questi documenti sono in formato HTML; Grazie a questa piccola differenza possiamo dire che Github e RASH si sposano perfettamente l'uno alla causa dell'altro.</p>
+          <p>Dopo questa premessa posso iniziare a descrivere l'integrazione vera e propria tra l'editor e il network.</p>
+          <p>In questa sezione, dopo aver dato delle informazioni basiche su cosa sia Github, posso estendere il discorso iniziato nella <strong>section 3.1.1.</strong> descrivendo il comportamento dell'ultimo bottone della toolbar. Cliccandolo è possibile creare una nuova cartella nel percorso scelto, che sarà immediatamente riempita con il codice e gli assets dell'articolo corrispondente all'URL inserito dall'utente. E' a tutti gli effetti la stessa cosa di aprire un documento precedentemente creato, con la differenza che questa volta stiamo parlando della repository <code>https://github.com/{author}/{repository}</code>​.</p>
+          <p>Per quello che riguarda la scrittura di un articolo, arriva il momento in cui un utente ha intenzione di salvare il contenuto online. Per fare ciò è necessario autenticarsi con il proprio profilo di Github. Questo tipo di richieste sono impossibili senza un'autenticazione che certifica l'identità dell'utente.</p>
+          <p><span style="font-size: 12pt;">Tralasciando la modalità di autenticazione, o meglio lo sviluppo del modulo predisposto per l'autenticazione, l'utente ha la possibilità di salvare il documento online, sui server di Github. L'azione può essre eseguita con la scorciatoia </span><code>mod+shift+s</code>​ oppure tramite l'apposito pulsante nel menù del software. Verrà visualizzata una semplice modale che permette all'utente di etichettare l'insieme di modifiche sotto un unico commento. Ad upload avvenuto sarà visualizzato un messaggio di successo ,in modo non invasivo, sullo schermo. La cosiddetta <code>push</code> è stata eseuguita con successo!</p>
+          <p>La gestione di documenti condivisi richiede che tutti gli autori della repository siano costantemente aggiornati sull'ultima versione dell'articolo, per non cadere in conflitti di merging. Nella corrente versione di RASH questa funzionalità non è ancora stata introdotta, ma è un punto cruciale della gestione di sistemi distribuiti, sarà implementata a breve.</p>
+          <p>Quelle sopra elencate sono le motivazioni del perfetto connubio tra Github e RAJE, che per l'appunto è uno dei motivi per cui è nato quest'ultimo.</p>
           <p><br /></p>
         </section>
       </section>
@@ -321,7 +327,7 @@
           <p>Peroni, S. (2017). RASH: Research Articles in Simplified HTML <span id="selectionBoundary_1487102222373_5759282897640037" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">https://rawgit.com/essepuntato/rash/master/documentation/index.html</a><span id="selectionBoundary_1487102222373_9397117972909679" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
         </li>
         <li id="bib3" role="doc-biblioentry">
-          <p><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span>Garrish M., Siegman T., Gylling M., McCarron S. (2016). Digital Publishing WAI-ARIA Module 1.0. W3C Working Draft, 17 March 2016. World Wide Web Consortium. <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a><br /></p>
+          <p><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span>Garrish M., Siegman T., Gylling M., McCarron S. (2016). Digital Publishing WAI-ARIA Module 1.0. W3C Working Draft, 17 March 2016. World Wide Web Consortium. <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a><br /></p>
         </li>
       </ol>
     </section>
