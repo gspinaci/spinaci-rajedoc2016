@@ -18,7 +18,7 @@
     <script src="js/libs/rangy-textrange.js"></script>
     <script src="js/libs/rangy-selectionsaverestore.js"></script>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <title>RAJE: RAsh Javascript Editor -- Thesis - 14th March 2017</title>
+    <title>RAJE: RAsh Javascript Editor -- Thesis - Version 0.1.17. 14th March 2017</title>
     <meta about="mailto:gianmarco.spinaci@studio.unibo.it" typeof="schema:Person" property="schema:name" name="dc.creator" content="Gianmarco Spinaci" />
     <meta about="mailto:gianmarco.spinaci@studio.unibo.it" property="schema:email" content="gianmarco.spinaci@studio.unibo.it" />
     <link about="mailto:gianmarco.spinaci@studio.unibo.it" property="schema:affiliation" href="#unibo" />
@@ -103,10 +103,25 @@
     <section id="section15">
       <h1>RAJE: RAsh Javascript Editor</h1>
       <p>Gran parte di questa tesi è centrata sullo sviluppo di un editor HTML-based chiamato RAJE (RAsh Javascript Editor), che non è altri che un editor WYSIWYG (di questo tipo di editor si è discusso ampiamente nella <a href="#section1"> </a>​). Il formato su cui è basato è sì, HTML ma per la precisione utilizza un sotto insieme di elementi HTML, conosciuti con il nome di RASH (<a href="#section61"> </a>​).</p>
-      <p>In questa sezione spiegherò cos'è RAJE e le funzionalità concesse all'utente, successivamente descriverò il grado di compatibilità (ad ora versione 0.0.1) che ha con il formato RASH, esaltando i suoi punti di forza che sono inoltre il motivo per cui è stato creato.</p>
+      <p>In questa sezione spiegherò cos'è RAJE e le funzionalità concesse all'utente, successivamente descriverò il grado di compatibilità (ad ora versione 0.1.17) che ha con il formato RASH, esaltando i suoi punti di forza che sono inoltre il motivo per cui è stato creato. </p>
       <section id="section21">
         <h1>Funzionalità</h1>
-        <p>Tra le principali funzionalità che RAJE mette a disposizione ne troviamo alcune ovvie e universali, necessarie in un editor come la toolbar e il menù software; Altre, invece, sono specifiche per il formato su cui è basata (per esempio il passaggio tra <strong>modalità preview</strong> e <strong>modalità editor</strong>). Parlerò anche riguardo alla gestione ed editabilità dell'header che merita di avere una sezione tutta dedicata, poiché è diversa da quella del body. Per ultimo parlerò delle <strong>shortcuts</strong> segrete che ho implementato per velocizzare la scrittura.</p>
+        <p>Tra le principali funzionalità che RAJE mette a disposizione ne troviamo alcune ovvie e universali, necessarie in un editor come la toolbar e il menù del software; Altre, invece, sono specifiche per il formato su cui è basata (per esempio il passaggio tra <strong>modalità preview</strong> e <strong>modalità editor</strong>). Parlerò anche riguardo all'editabilità dell'header che merita di avere una sezione tutta dedicata, poiché la gestione è diversa da quella del corpo dell'articolo. Per ultimo parlerò delle <strong>shortcuts</strong> segrete che ho implementato per velocizzare la scrittura.</p>
+        <section id="section75">
+          <h1>Splash window</h1>
+          <p>Un buon numero di editor, non unicamente <strong>text editor</strong> (come per esempio <a href="https://developer.android.com/studio/index.html">Android Studio</a> e la sua welcome window mostrata in <a href="#figure_5"> </a><span style="font-size: 12pt;">), integrano come schermata iniziale una finestra comunemente conosciuta con il nome di </span><strong style="font-size: 12pt;">splash window</strong><span style="font-size: 12pt;"> o </span><strong style="font-size: 12pt;">welcome window</strong><span style="font-size: 12pt;">. Durante lo sviluppo dell'editor ho notato quanto sia effettivamente necessaria una splash window, come schermata inizale per software che richiedono di modificare diversi progetti. RAJE, infatti, permette di modificare e creare articoli, un articolo effettivamente è una cartella con un file HTML e gli assets richiesti normalmente da ogni documento RASH. </span><span style="font-size: 12pt;">Naturalmente è ammissible pensare che ogni utente possa voler creare più di un articolo, infatti l'ideale su cui ho pensato di costruire RAJE permette di gestirne molteplici, semplicemente conoscendo il percorso assoluto della sua cartella.</span></p>
+          <figure id="figure_5">
+            <p><img src="img/Android_studio_welcome_screen_one_proj2.png" alt="http:,,www.techotopia.com,images,9,97,Android_studio_welcome_screen_one_proj2.png" /></p>
+            <figcaption>​Welcome window di <strong>Android Studio</strong>.</figcaption>
+          </figure>
+          <p>La splash window di RAJE in <a href="#figure_6"> </a><span style="font-size: 12pt;"> è stata sviluppata seguendo uno schema molto simile alla </span><a href="#figure_5"> <br /></a><span style="font-size: 12pt;">​. Naturalmente sono presenti una lista di articoli precedentementi aperti: i famosi "articoli recenti", disposti in ordine dal più recente al meno recente. Per ogni elemento della lista sono state salvate informazioni importanti necessarie per visualizzare correttamente l'articolo. E' inoltre possibile eliminarlo dalla lista, magari se stiamo parlando di articoli obsoleti o rimossi dalla macchina. I progetti recenti non sono aggiornabili, se ho aperto l'articolo X e successivamente cambio la sua posizione in un'altra cartella, non sarò più in grado di utilizzare il suo "articolo recente" per aprirlo, e sarà obbligatorio cercare manualmente la sua cartella.</span></p>
+          <p><span style="font-size: 12pt;">Nella splash sono presente 3 pulsanti (<span id="selectionBoundary_1487237041654_2868125909771484" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></span><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;"><a href="#figure_6">Figure 2</a>). Il primo serve per creare un nuovo articolo scegliendo la cartella di destinazione e il nome con cui verrà conosciuto (non è possibile cambiarlo successivamente). L'apertura di un articolo creato precedentemente (o inviato da un altro utente) è correlata alla pressione del secondo bottone "Open RASH article". In questo caso è necessario avere fisicamente la cartella sulla propria macchina. </span></p>
+          <p><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;">Infine il terzo bottone è qualcosa di molto più particolare, partendo da un URL di github di questo tipo <code>https://github.com/{author}/{repository}</code>​ contenente un articolo RASH, è possibile scaricarlo sulla propria macchina ed editarlo direttamente con RAJE. Descrivere questa modalità sarà l'obiettivo della <strong>section 3.3.2.</strong> </span></p>
+          <figure id="figure_6">
+            <p><img src="img/splash.png" alt="splash.png" /></p>
+            <figcaption>​Splash window di RAJE.</figcaption>
+          </figure>
+        </section>
         <section id="section70">
           <h1>Toolbar ed elementi</h1>
           <p>Come anticipato RAJE è un editor HTML-based di tipo WYSIWYG, perciò esattamente come altri editor di questo tipo è dotato di una toolbar che racchiude una buona parte di azioni permesse sull'articolo, se non tutte almeno quelle più importanti. Per quanto riguarda questo importante componente, nella fase iniziale dello sviluppo, ho optato per uno stile minimale, riprendendo le guidelines grafiche di Bootstrap. Successivamente sarà mio compito rendere la toolbar molto più simile agli editor più famosi e commerciali.</p>
@@ -116,9 +131,9 @@
             <p><img src="img/tooltip.png" alt="tooltip.png" /></p>
             <figcaption>​Caption of the <code>figure</code>.</figcaption>
           </figure>
-          <p><span style="font-size: 12pt;">In rifermento alla </span><a href="#figure_2"> </a><span style="font-size: 12pt;"> e partendo da sinistra verso destra troviamo i primi due bottoni: rispettivamente </span><code>undo</code><span style="font-size: 12pt;"> e </span><code>redo</code><span style="font-size: 12pt;">​. ​Il comportamento nascosto dietro questi speciali pulsanti è strettamente necessario per quanto riguarda la stesura di un documento. Non avendo essi a disposizione sarebbe molto più complesso e macchinoso redigere l'articolo, inoltre il tempo di correzzione di eventuali errori lieviterebbe. Quindi l'introduzione di queste preziose funzionalità è stata una scelta obbligata.</span></p>
-          <p>Il terzo e il quarto pulsante sono un altro grande classico dgli editor, cioè <strong>bold</strong> e <em>italic</em>. Possono rendere un testo selezionato in grassetto e in corsivo.<br /></p>
-          <p>Dal quarto pulsante in poi troviamo invece dei comportamenti speciali che riguardano esclusivamente RASH, ma sempre nella categoria "<strong>inline</strong>", che sono: <code>code</code>, <code>link</code>, <code>cross ref</code>​, <code>quote</code>, <code>subscript</code> e <code>superscript</code>​ <a href="#bib2"> </a><span style="font-size: 12pt;">. Tra i vari, degno di nota è quello relativo alle cross reference (raffigurato con l'icona dell'ancora) che mostra una finestra modale con cui poter scegliere esattamente a quale elemento referenziarsi, ed è inoltre possibile creare una nuova reference o footnote.</span></p>
+          <p><span style="font-size: 12pt;">In rifermento alla </span><a href="#figure_2"> </a><span style="font-size: 12pt;"> e partendo da sinistra verso destra troviamo i primi due bottoni: rispettivamente </span><code>undo</code><span style="font-size: 12pt;"> e </span><code>redo</code><span style="font-size: 12pt;">​. ​Il comportamento nascosto dietro questi speciali pulsanti è strettamente necessario per quanto riguarda la stesura di un documento. Non avendo essi a disposizione sarebbe molto più complesso e macchinoso redigere l'articolo, inoltre il tempo di correzzione di eventuali errori lieviterebbe. Quindi l'introduzione di queste preziose funzionalità è stata una scelta obbligata.</span></p>
+          <p>Il terzo e il quarto pulsante sono un altro grande classico dgli editor, cioè <strong>bold</strong> e <em>italic</em>. Possono rendere un testo selezionato in grassetto o in corsivo.<br /></p>
+          <p>Dal quarto pulsante in poi troviamo invece dei comportamenti speciali che riguardano esclusivamente RASH, sempre nella categoria "<strong>inline</strong>" (comportamenti che vengono applicati solo a del testo), che sono: <code>code</code>, <code>link</code>, <code>cross ref</code>​, <code>quote</code>, <code>subscript</code> e <code>superscript</code>​ <a href="#bib2"> </a><span style="font-size: 12pt;">. Tra i vari, degno di nota è quello relativo alle cross reference (raffigurato con l'icona dell'ancora) che mostra una finestra modale con cui poter scegliere esattamente a quale elemento referenziarsi, ed è inoltre possibile creare una nuova reference o footnote.</span></p>
           <p>Il funzionamento particolare di alcuni di questi pulsanti permette il loro utilizzo solo se è presente una selezione estesa del testo, cioè almeno un carattere selezionato trascinando il cursore del mouse e tenendo premuto il tasto sinistro. Per esempio selezionando del testo.</p>
           <figure id="figure_2">
             <p><img src="img/toolbar.png" alt="toolbar.png" /></p>
@@ -128,40 +143,64 @@
           <p>L'elemento <code>codeblock</code>​ è molto importante per quanto riguarda semplici <strong>snippet di codice</strong>, è possibile dunque scrivere diverse righe di codice (anche in formato HTML) senza che esse vengano interpretate e mostrate come se fosse una pagina web, in altre parole tutto ciò che si trova compreso tra l'apertura e la chiusura del tag <code>code</code>​ è codice solo graficamente, ma è testo a tutti gli effetti. ​​​<span style="font-size: 12pt;">​​</span></p>
           <p><span style="font-size: 12pt;">Per quanto riguarda le citazioni, ci viene in aiuto il pulsante relativo all'elemento </span><code>blockquote</code>​. E' possibile aggiungere una citazione che, diversamente al normale <code>quote</code>​ (che crea una citazione <strong>inline</strong>), si estende completamente per una riga. Citazioni di questo tipo sono molto importanti, anche per dare maggiore enfasi rispetto alle semplici citazioni inserite nel testo.</p>
           <p>E' accettabile e quasi scontato decidere di voler inserire delle liste all'interno dell'articolo che si sta scrivendo, a questo proposito all'utente vengono in aiuto i pulsati delle liste. Quelle più utilizzate e popolari sono naturalmente quelle ordinate e non ordinate e possono essere utilizzati in contesti diversi, è necessario dare la possibilità ad ogni utente di poter inserire la lista che più è in linea con le sue volontà.</p>
-          <p>Tra i bottoni del blocco denominato "<strong>figure</strong>" troviamo <code>table</code>, <code>figure</code> e <code>formule</code>​. Sempre seguendo le indicazioni scritte nella <span id="selectionBoundary_1487168895885_017088877954352766" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">documentazione ufficiale di RASH</a> si nota l'importanza dell'utilizzo di questi tra blocchi (considerati tra i principali per la scrittura di un articolo di ricerca).<span id="selectionBoundary_1487168895884_43822155409909813" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
-          <p>Le <strong>tabelle</strong> vengono inserite insieme ad un piccolo bottone di configurazione, posizionato alla loro sinistra. E' modificare la tabella grazie a questo pulsante e, tra le opzioni permesse troviamo la possibilità di ridimensionarla e di cambiare l'organizzazione della testata. Un'altra funzionalità molto importante, permessa da <strong>RASH</strong> ma non ancora implementata con <strong>RAJE</strong> (dei motivi ne parlerò maggiormente nella <strong>section 3.2.</strong>), è l'espansione delle celle o dell'intera colonna. Sarà una delle prime funzionalità che verranno implementate nelle release successive dell'editor.</p>
+          <p>Tra i bottoni del blocco denominato "<strong>figure</strong>" troviamo <code>table</code>, <code>figure</code> e <code>formula</code>​. Sempre seguendo le indicazioni scritte nella <span id="selectionBoundary_1487168895885_017088877954352766" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">documentazione ufficiale di RASH</a> si nota l'importanza dell'utilizzo di questi tre blocchi (considerati tra i principali per la scrittura di un articolo di ricerca).<span id="selectionBoundary_1487168895884_43822155409909813" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
+          <p>Le <strong>tabelle</strong> vengono inserite insieme ad un piccolo bottone di configurazione, posizionato alla loro sinistra. E' possibile modificare la tabella grazie a questo pulsante e, tra le opzioni permesse troviamo la possibilità di ridimensionarla e di cambiare l'organizzazione della testata. Un'altra funzionalità molto importante, permessa da <strong>RASH</strong> ma non ancora implementata con <strong>RAJE</strong> (dei motivi ne parlerò maggiormente nella <strong>section 3.2.</strong>), è l'espansione delle celle o dell'intera colonna. Sarà una delle prime funzionalità che verranno implementate nelle release successive dell'editor.</p>
           <p>L'inserimento, tramite il corrispondente bottone, delle immagini è affidato al secondo bottone del blocco: <code>figure</code>​. Alla pressione sarà immediatamente visibile una finestra modale (<a href="#figure_3"> </a><span style="font-size: 12pt;">) che permette di scegliere tra due modalità distinte di inserimento: da selezione di un file di immagine o dall'inserimento di un URL. Entrambi importano fisicamente l'immagine all'interno della cartella del progetto.</span></p>
           <figure id="figure_3">
             <p><img src="img/figure_modal.png" alt="figure_modal.png" /></p>
-            <figcaption>​Caption of the <code>figure</code>.</figcaption>
+            <figcaption>​Modale per l'inserimento delle immagini.</figcaption>
           </figure>
           <p>Uno dei bottoni più importanti è sicuramente quello per aggiungere una formula nella posizione selezionata. Questa azione avviene con l'invocazione di un semplice editor <a href="http://asciimath.org/">asciiMath</a>, che a tutti gli effetti crea un ambiente in cui impostare e selezionare la formula che si vuole inserire. Ne parlerò in modo più approfondito nella <strong>Section 3.3.1.</strong> .<span style="font-size: 12pt;">​</span></p>
           <p>Ho programmato il dropdown "<strong>section</strong>" in modo che sia possibile aggiungere delle nuove sezioni come quelle speciali di <strong>abstract</strong> e <strong>acknowledgement</strong> oppure delle comuni sezioni. Le uniche sezioni speciali che possono essere aggiunte in questo modo sono quelle sopra citate. Se sono già state inserite all'interno del documento, la schermata si posizionerà esattamente all'inizio della sezione visualizzandone il contenuto. Altrimenti verrà eseguito l'inserimento vero e proprio nell'ordine concepito da RASH.</p>
           <p>Ogni qual volta la posizione del <strong>caret</strong> cambia viene aggiornato il contenuto della lista nel dropdown in base alle possibili sezioni aggiungibili. Se per caso l'utente si trova all'interno di una sezione di primo livello, sarà possibile aggiungere sia un'altra sezione di primo livello, oppure una sottosezione come mostrato nel codice.</p>
           <pre><code>&lt;section&gt;&lt;h1&gt;Sezione di primo livello&lt;/h1&gt;[caret]
-&lt;/section&gt;</code>​</pre>
-          <p> E' molto importante ricordare che questo non è l'unico modo a disposizione dell'utente per aggiungere delle sezioni, ma è l'unica strada per aggiungere quelle di <strong>astract</strong> e <strong>acknowledgement</strong> (maggiori informazioni sulle shortcuts nella <strong>section 3.1.4</strong>)</p>
+&lt;/section&gt;</code>​ ​</pre>
+          <p>E' molto importante ricordare che questo non è l'unico modo a disposizione dell'utente per aggiungere delle sezioni, ma è l'unica strada per aggiungere quelle di <strong>astract</strong> e <strong>acknowledgement</strong> (maggiori informazioni sulle shortcuts nella <strong>section 3.1.4</strong>)</p>
         </section>
         <section id="section72">
           <h1>Menu software</h1>
-          <p>RAJE è un software quindi, come tale, è servito con un menù la cui implementazione è stata scelta a mia più totale discrezione. E' molto importante aggiungere che in base al sistema operativo dell'utente la visualizzazione può cambiare in modo considerevole, particolarmente passando da sistemi <strong>Unix</strong> al sistema operativo <strong>Windows</strong>. Per quanto riguarda questa sezione non mi metterò a spiegare passo passo ogni singolo pulsante che è possibile trovare all'interno dei dropdown dei menu, perchè tutt'ora il progetto, ed in particolare questo modulo, sta subendo un numero importante di modifiche. Il mio obiettivo è spiegare, correlando degli esempi, come più ho pensato di dividere e raggruppare i multipli attori del menù.</p>
-          <p>Sinceramente non sono partito da una progettazione senza fondamenti, ma bensì ho ripreso alcune linee guida e consigli trovati tramite internet.</p>
+          <p>RAJE è un software quindi, come tale, è servito con un menù la cui implementazione è stata scelta a mia più totale discrezione. E' molto importante aggiungere che in base al sistema operativo dell'utente la visualizzazione può cambiare in modo considerevole, particolarmente passando da sistemi <strong>Unix</strong> al sistema operativo <strong>Windows</strong>. Per quanto riguarda questa sezione non mi metterò a spiegare passo passo ogni singolo pulsante che è possibile trovare all'interno dei dropdown dei menu, perchè tutt'ora il progetto, ed in particolare questo modulo, sta subendo un numero importante di modifiche. Il mio obiettivo è spiegare, correlando degli esempi, come più ho pensato di dividere e raggruppare i molteplici attori del menù.</p>
+          <p>Sinceramente non sono partito da una progettazione senza fondamenti, ma bensì ho ripreso alcune linee guida e consigli trovati tramite internet. In particolar modo ho preso molto spunto dalla composizione dei menù di alcuni software di editing, tra i cui <strong>Visual Studio Code</strong>, <strong>Atom text editor</strong> (che ho utilizzato durante lo sviluppo di questo progetto) e Open Office come mostrato in <a href="#figure_4"> </a>​.</p>
+          <figure id="figure_4">
+            <p><img src="img/menubar.png" alt="menubar.png" /></p>
+            <figcaption>​Menubar di OpenOffice.</figcaption>
+          </figure>
+          <p>L'organizzazione che ho seguito è molto in linea con questo schema. Tralasciando il bottone con il nome del software, che è una delle caratteristiche visibile solo nei sistemi Unix, File e Modifica sono stati introdotti anche in RAJE.<span style="font-size: 12pt;">​</span></p>
+          <p><span style="font-size: 12pt;">TODO</span></p>
         </section>
         <section id="section73">
           <h1>Header</h1>
-          <p>l'header non è editabile ed è necessario eseguire delle azioni per renderlo tale</p>
+          <p>L'intestazione di un file RASH è composta di più elementi necessari a contestualizzare l'articolo per intero. <strong>Titolo</strong> e lista di <strong>autori</strong> sono naturalmente molto importanti per quanto riguarda documenti di stampo scientifico, ma in questo caso anche <strong>keywords</strong> e <strong>ACM subject categories</strong>.</p>
+          <p>Grazie a RASH è permesso avere articoli scritti da molteplici autori, per questo motivo ho programmato RAJE in modo da permettere l'inserimento, modifica e rimozione di autori. Tra le altre cose è ragionevole anche voler modificare l'ordine degli autori, azionando l'azione corrispondente dal menù software è possibile spostarli semplicemente grazie ad una tecnologia di <code>Drag &amp; Drop</code>. Anche per quanto riguarda l'eliminazione di autori è necessario azionare il relativo comportamento dal menù.</p>
+          <p>Così come gli altri elementi che conpongono l'intestazione del documento, sono facilmente editabili grazie ad un <strong>doppio click</strong> del mouse sul relativo elemento. Ho scelto di restringere i permessi di modifica di questa parte cruciale perchè è strutturata in un modo abbastanza complesso rispetto al resto del documento, quindi anche solo una piccola modifica strutturale avrebbe precluso la possibilità di salvare (e successivamente renderizzare) il documento RASH correttamente. Inoltre il doppio click è un'azione molto banale ed è anche l'azione principale per esprimere la volontà di interagire con un elemento grafico oppure la modifica di un testo (vedi rinomina di file su Windows).</p>
+          <p>Categories e keyword di possono rendere modificabili sempre dopo l'evento di <strong>doppio click</strong>, l'unica differenza è che il comportamento è identico agli elementi di <code>code</code>​ inline: il tasto spazio inserisce uno <code>space</code> all'interno dell'elemento, mentre il tasto <code>enter</code> inserisce uno spazio dopo l'elemento (serve per indicare la fine della scrittura)​.</p>
+          <p>Il titolo solitamente è accompagnato da un sottotitolo. Se durante la scrittura del titolo si vuole inserire il sottotitolo, è semplicemente necessario premere il tasto <code>enter</code>.</p>
+          <p>Quindi per quanto riguarda l'header di un documento scientifico in formato RASH è possibile modificarlo con la più assoluta compatibilità. L'unico punto esclamativo da aggiungere è la diversa modalità di modifica rispetto al corpo dell'articolo, che gode di un grado di restrizione minore.</p>
         </section>
         <section id="section74">
           <h1>Shortcuts</h1>
-          <p>descrizione di quelle dell'editor e del software</p>
-        </section>
-      </section>
-      <section id="section20">
-        <h1>Compatibility with RASH</h1>
-        <p>descrizione della compatibilità che ha con rash</p>
-        <section id="section35">
-          <h1>Main issues with RASH</h1>
-          <p>Descrizione dei problemi principali che si sono creati durante la creazione di un editor WYSIWYG con un sotto insieme di elementi HTML<span style="font-size: 12pt;">​</span></p>
+          <p>In questa sotto sezione mi trovo a descrivere ed a creare la lista delle <strong>scorciatoie da tastiera</strong> che ho pensato di implementare. Le modalità di implementazione verranno spiegate in modo approfondito nella <strong>section 4.3.2.</strong> .</p>
+          <p>Tutte le successive scorciatoie con il carattere <code>mod</code>​ equivale a scrivere <code>ctrl</code> per <strong>windows</strong> e <code>cmd</code> per <strong>osx</strong>​​.</p>
+          <ol>
+            <li>
+​<code>mod+s</code> è il salvataggio in locale del file. Tutte le modifiche che vengono apportate al documento sono visualizzabili nel documento HTML sorgente.            </li>
+            <li>
+<code>mod+shift+s</code>​ è la push alla repository Github. Mostra una finestra modale per inserire il commento con cui verrà etichettata la modifica.<br />            </li>
+            <li>
+​<code>mod+c</code>​, <code>mod+v</code>​ e <code>mod+x</code> rispettivamente copia, incolla e taglia.            </li>
+            <li>
+​<code>mod+z</code> e <code>mod+shift+z</code>​ sono le scorciatoie per le azioni di <strong>undo</strong> e <strong>redo</strong>.            </li>
+            <li>
+<code># enter</code>​ permette di creare una nuova sezione. in base al numero di caratteri <code>#</code> si può scegliere la profondità della sezione            </li>
+            <li>
+<code>* enter​</code>​ aggiunge una lista non ordinata.<br />            </li>
+            <li>
+​<code>1. enter</code> aggiunge una lista ordinata.            </li>
+            <li>
+​<code>| enter</code> inserisce l'elemento blockquote.            </li>
+            <li>
+​<code>` enter</code> inserisce l'elemento codeblock.            </li>
+          </ol>
         </section>
       </section>
       <section id="section32">
@@ -268,10 +307,10 @@
           <p>Using PDF files. (2009) <a href="http://www.siamcomm.com/website-design/using-pdf-files-pros-and-cons/">http://www.siamcomm.com/website-design/using-pdf-files-pros-and-cons/</a><br /></p>
         </li>
         <li id="bib2" role="doc-biblioentry">
-          <p>Peroni, S. (2017). RASH: Research Articles in Simplified HTML<span id="selectionBoundary_1487102222373_5759282897640037" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">https://rawgit.com/essepuntato/rash/master/documentation/index.html</a><span id="selectionBoundary_1487102222373_9397117972909679" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
+          <p>Peroni, S. (2017). RASH: Research Articles in Simplified HTML <span id="selectionBoundary_1487102222373_5759282897640037" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">https://rawgit.com/essepuntato/rash/master/documentation/index.html</a><span id="selectionBoundary_1487102222373_9397117972909679" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
         </li>
         <li id="bib3" role="doc-biblioentry">
-          <p><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span>Garrish M., Siegman T., Gylling M., McCarron S. (2016). Digital Publishing WAI-ARIA Module 1.0. W3C Working Draft, 17 March 2016. World Wide Web Consortium. <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a><br /></p>
+          <p>Garrish M., Siegman T., Gylling M., McCarron S. (2016). Digital Publishing WAI-ARIA Module 1.0. W3C Working Draft, 17 March 2016. World Wide Web Consortium. <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a><br /></p>
         </li>
       </ol>
     </section>
