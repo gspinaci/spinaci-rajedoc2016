@@ -40,11 +40,11 @@
     <section id="section1">
       <h1>Literature review</h1>
       <section id="section4">
-        <p>Qui mi metto a descrivere a <strong>grandi linee</strong> il dominio in cui ho operato, gli attori della comunità scientifica, editor WYSIWYG(msWord ecc), formati (latex,html), formati di pubblicazione(?) (pdf, springer LNCS)</p>
+        <p>Qui mi metto a descrivere a <strong>grandi linee</strong> il dominio in cui ho operato, gli attori della comunità scientifica,editor WYSIWYG(msWord ecc), formati (latex,html), formati di pubblicazione(?) (pdf, springer LNCS)</p>
       </section>
       <section id="section52">
         <h1>Submission workflow<br /></h1>
-        <p>Descrizione di come funziona il workflow per la pubblicazione e delle due macrofasi : sottomissione ad un comitato e sottomissione ad un editore<br /></p>
+        <p>Descrizione di come funziona il workflow per la pubblicazione e delle due macrofasi : sottomissione ad un comitatoe sottomissione ad un editore<br /></p>
         <section id="section53">
           <h1>Submission to evaluation</h1>
           <p><span style="font-size: 12pt;">Gli utenti usano un editor, ed ognuno ha il suo formato : LaTeX, DOC(X), ODT, DocBook, TEI e HTML ma successivamente serve </span><strong>convertire l'articolo in PDF</strong><span style="font-size: 12pt;">, in alcuni casi anche EPUB</span></p>
@@ -55,17 +55,17 @@
         </section>
         <section id="section62">
           <h1>HTML and publication</h1>
-          <p>​Una descrizione approfondita dello html publishing, grosso escursus sulle novità lanciate da questa modalità di pubblicazione in particolare formato RASH. Pros and cons, brief story, estensione e grandezze.<br /></p>
+          <p>​Una descrizione approfondita dello html publishing, grosso escursus sulle novità lanciate da questa modalità dipubblicazione in particolare formato RASH. Pros and cons, brief story, estensione e grandezze.<br /></p>
           <p><strong>Problema principale è che non è utilizzato per via degli standard de facto</strong></p>
         </section>
       </section>
       <section id="section57">
         <h1>Editors and formats</h1>
-        <p>Teoria sugli editor, descrizione dei più comuni e, se è possibile, aggiungere informazioni sulle percentuali di utilizzo rapportate alla popolazione scientifica.</p>
+        <p>Teoria sugli editor, descrizione dei più comuni e, se è possibile, aggiungere informazioni sulle percentuali di utilizzorapportate alla popolazione scientifica.</p>
         <p>Distinzione delle varie tipologie di editor e in particolare dei loro formati.</p>
         <section id="section66">
           <h1>PDF: standard de facto</h1>
-          <p>Descrizione del formato pdf, in particolare tutti i contro : accessibilità limitata, non compatibile con github, lenta renderizzazione, online issues<a href="#bib1"> </a>​.</p>
+          <p>Descrizione del formato pdf, in particolare tutti i contro : accessibilità limitata, non compatibile con github,lenta renderizzazione, online issues<a href="#bib1"> </a>​.</p>
         </section>
         <section id="section68">
           <h1>EPUB format</h1>
@@ -77,12 +77,12 @@
         </section>
         <section id="section60">
           <h1>HTML-oriented editors</h1>
-          <p>​lista dei competitors: (Dokieli format, Fidus writer format, HTML books, ecc.) e degli editor WYSIYG (dokie.li, fiduswriter, authorea, tinyMCE) descrizione, pros and cons, accennare l'utilizzo di github nella differenza tra centralizzati e decentralizzati.<br /></p>
+          <p>​lista dei competitors: (Dokieli format, Fidus writer format, HTML books, ecc.) e degli editor WYSIYG (dokie.li,fiduswriter, authorea, tinyMCE) descrizione, pros and cons, accennare l'utilizzo di github nella differenza tracentralizzati e decentralizzati.<br /></p>
         </section>
       </section>
       <section id="section61">
         <h1>RASH framework</h1>
-        <p>​​Descrizione di RASH​​ e framework, motivi utilizzo, estensione, soggetti e oggetti, pros and cons. Sotto insieme di html5</p>
+        <p>​​Descrizione di RASH​​ e framework, motivi utilizzo, estensione, soggetti e oggetti, pros and cons. Sotto insiemedi html5</p>
         <section id="section65">
           <h1>Visualization</h1>
           <p>Scrivere riguardo alla visualizzazione di documenti rash, jquery e css</p>
@@ -93,7 +93,7 @@
         </section>
         <section id="section63">
           <h1>Accessibility</h1>
-          <p>Punti di forza sull'accessibilità del documento, in particolare le formule. Riprendere dalla tesi di Vincenzo.</p>
+          <p>Punti di forza sull'accessibilità del documento, in particolare le formule. Riprendere dalla tesi di Vincenzo <a href="#bib3"> </a>​. </p>
         </section>
       </section>
       <section id="section5">
@@ -102,185 +102,336 @@
     </section>
     <section id="section15">
       <h1>RAJE: RAsh Javascript Editor</h1>
-      <p>Gran parte di questa tesi è centrata sullo sviluppo di un editor HTML-based chiamato RAJE (RAsh Javascript Editor), che non è altri che un editor WYSIWYG (di questo tipo di editor si è discusso ampiamente nella <a href="#section1"> </a>​). Il formato su cui è basato è sì, HTML ma per la precisione utilizza un sotto insieme di elementi HTML, conosciuti con il nome di RASH (<a href="#section61"> </a>​).</p>
-      <p>In questo capitolo spiegherò cos'è RAJE e le funzionalità concesse all'utente, successivamente descriverò il grado di compatibilità (ad ora versione 0.1.17) che ha con il formato RASH, esaltando i suoi punti di forza che sono inoltre il motivo per cui è stato creato. </p>
+      <p>Most of this thesis is centered on the development of a HTML-based editor named RAJE (RAsh Javascript Editor), whichis no more than a WYSIWYG editor (these kinds are largely discussed in <a href="#section59"></a>​). Is based on HTML, but for more precision it uses a subset, called RASH (<a href="#section61"></a>).</p>
+      <p>Inside this chapter i will explain what RAJE is and all the functionalities grant to users (like splash window, toolbars and others) and than I will describe the strenghts, extolling the reasons for which it was created.</p>
       <section id="section21">
-        <h1>Funzionalità</h1>
-        <p>Tra le principali funzionalità che RAJE mette a disposizione ne troviamo alcune ovvie e universali, necessarie in un editor come la toolbar e il menù del software; Altre, invece, sono specifiche per il formato su cui è basata (per esempio il passaggio tra <strong>modalità preview</strong> e <strong>modalità editor</strong>). Parlerò anche riguardo all'editabilità dell'header che merita di avere una sezione tutta dedicata, poiché la gestione è diversa da quella del corpo dell'articolo. Per ultimo parlerò delle <strong>shortcuts</strong> segrete che ho implementato per velocizzare la scrittura.</p>
+        <h1>Functionalities</h1>
+        <p>Among the main functions that RAJE provides we can find out some obvious and universal needed in a editor such as toolbar and software menu; Other, instead, are specific to the format which the editor is based on (e.g. swap beetwen preview and editor modes). I will also talk about header editability, that deserves to have a dedicated section because the managment is different from the one of the entire body of the article. In the end I will talk of the secret shortcuts that I have implemented to speed up the writing.</p>
         <section id="section75">
           <h1>Splash window</h1>
-          <p>Un buon numero di editor, non unicamente <strong>text editor</strong> (come per esempio <a href="https://developer.android.com/studio/index.html">Android Studio</a> e la sua welcome window mostrata in <a href="#figure_5"> </a><span style="font-size: 12pt;">), integrano come schermata iniziale una finestra comunemente conosciuta con il nome di </span><strong style="font-size: 12pt;">splash window</strong><span style="font-size: 12pt;"> o </span><strong style="font-size: 12pt;">welcome window</strong><span style="font-size: 12pt;">. Durante lo sviluppo dell'editor ho notato quanto sia effettivamente necessaria una splash window, come schermata inizale per software che richiedono di modificare diversi progetti. RAJE, infatti, permette di modificare e creare articoli, un articolo effettivamente è una cartella con un file HTML e gli assets richiesti normalmente da ogni documento RASH. </span><span style="font-size: 12pt;">Naturalmente è ammissible pensare che ogni utente possa voler creare più di un articolo, infatti l'ideale su cui ho pensato di costruire RAJE permette di gestirne molteplici, semplicemente conoscendo il percorso assoluto della sua cartella.</span></p>
+          <p>An high number of editors, not only the text ones (e.g. <em>Android studio</em> and his welcome window shown in <a href="#figure_5"> </a>​), integrate as first screen a window commonly named <strong>splash window</strong> or <strong>welcome window</strong>. During the editor development I found out how is necessary a splash window, as first screen of a software that require to modify multiple projects. RAJE, in fact, allows you to edit and create articles, where an article is actually a folder containing all assets normally required by every RASH document. Of course is permissible to think that every users wants to create more than one article, in fact the idea in which I created RAJE allows to manage multiple files, simply knowing the absolute path of its folder.</p>
           <figure id="figure_5">
             <p><img src="img/Android_studio_welcome_screen_one_proj2.png" alt="http:,,www.techotopia.com,images,9,97,Android_studio_welcome_screen_one_proj2.png" /></p>
-            <figcaption>​Welcome window di <strong>Android Studio</strong>.</figcaption>
+            <figcaption>​Welcome window of <em>Android Studio</em>.</figcaption>
           </figure>
-          <p>La splash window di RAJE in <a href="#figure_6"> </a><span style="font-size: 12pt;"> è stata sviluppata seguendo uno schema molto simile alla </span><a href="#figure_5"> <br /></a><span style="font-size: 12pt;">​. Naturalmente sono presenti una lista di articoli precedentementi aperti: i famosi "articoli recenti", disposti in ordine dal più recente al meno recente. Per ogni elemento della lista sono state salvate informazioni importanti necessarie per visualizzare correttamente l'articolo. E' inoltre possibile eliminarlo dalla lista, magari se stiamo parlando di articoli obsoleti o rimossi dalla macchina. I progetti recenti non sono aggiornabili, se ho aperto l'articolo X e successivamente cambio la sua posizione in un'altra cartella, non sarò più in grado di utilizzare il suo "articolo recente" per aprirlo, e sarà obbligatorio cercare manualmente la sua cartella.</span></p>
-          <p><span style="font-size: 12pt;">Nella splash sono presente 3 pulsanti (<span id="selectionBoundary_1487237041654_2868125909771484" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></span><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;"><a href="#figure_6">Figure 2</a>). Il primo serve per creare un nuovo articolo scegliendo la cartella di destinazione e il nome con cui verrà conosciuto (non è possibile cambiarlo successivamente). L'apertura di un articolo creato precedentemente (o inviato da un altro utente) è correlata alla pressione del secondo bottone "Open RASH article". In questo caso è necessario avere fisicamente la cartella sulla propria macchina. </span></p>
-          <p><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;">Infine il terzo bottone è qualcosa di molto più particolare, partendo da un URL di github di questo tipo <code>https://github.com/{author}/{repository}</code>​ contenente un articolo RASH, è possibile scaricarlo sulla propria macchina ed editarlo direttamente con RAJE. Descrivere questa modalità sarà l'obiettivo della <strong>section 3.3.2.</strong> </span></p>
+          <p>The RAJE splash window in <a href="#figure_6"> <br /></a><span style="font-size: 12pt;">​ has been developed following a similar scheme of </span><a href="#figure_5"> </a>​. Is naturally presents a list of recent articles, disposed in order from the more recent to the less one. For every element of this list, important informations to correctly visualize the article are saved. It is also possible delete elements from the list, especially if we are talking about obsolete articles, or not present in the machine anymore. Recent projects are not updatable, is I opened the article X and then I change its position in another folder, I will not be able anymore to use its "recent article" to open it, and will be obligatory to find manually the new folder position.</p>
+          <p>There are 3 buttons in the splash. The first one needs to create a new article choosing the destination folder and the name, with the created article will be called (can not be edited next). The opening of an already created article (e.g. one sent by a colleague) is related to the pressure of the second button <em>Open RASH article</em>. In this case is necessary to have physically the folder on the machine.</p>
+          <p>Finally the third button is something more particular, starting from a URL like this this one: <code>https://github.com/{author}/{repository}</code>​ containing a RASH repository, is possible download into the personal machine and edit directly with RAJE. Descrive this modality will be my task in the <a href="#section34"></a>​. </p>
           <figure id="figure_6">
             <p><img src="img/splash.png" alt="splash.png" /></p>
-            <figcaption>​Splash window di RAJE.</figcaption>
+            <figcaption>​RAJE splash window.</figcaption>
           </figure>
         </section>
         <section id="section70">
-          <h1>Toolbar ed elementi</h1>
-          <p>Come anticipato RAJE è un editor HTML-based di tipo WYSIWYG, perciò esattamente come altri editor di questo tipo è dotato di una toolbar che racchiude una buona parte di azioni permesse sull'articolo, se non tutte almeno quelle più importanti. Per quanto riguarda questo importante componente, nella fase iniziale dello sviluppo, ho optato per uno stile minimale, riprendendo le guidelines grafiche di Bootstrap. Successivamente sarà mio compito rendere la toolbar molto più simile agli editor più famosi e commerciali.</p>
-          <p><span style="font-size: 12pt;">In questa sezione il mio scopo è di dare una descrizione della toolbar con annessi screenshots.</span></p>
-          <p><span style="font-size: 12pt;">Questa </span><span style="font-size: 12pt;">toolbar è composta da un insieme di bottoni raggruppati e divisi per categoria, seguendo le <a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">specifiche RASH</a> è possibile notare la differenza tra le diverse categorie di elemento o azione che verrebbero applicate al documento, una volta che l'utente preme il corrispondente bottone. E' inoltre possibile evocare un tooltip che mostra il nome comune per riconoscere il bottone come visto in </span><a href="#figure_1"> </a>​.</p>
+          <h1>Toolbar and elements</h1>
+          <p>As anticipated before, RAJE is a WYSIWYG HTML-based editor, for this reason exaclty as the others RAJE has a toolbar that wrap a large amount of actions allowed on the article, if not all of them, at least the mosr importants. As of this important component in the initial phase of the development, I adopted a minimalistic style, recovering what are the graphic guidelines of Bootstrap. Then will be my task to transform this toolbar more similar to the most famous and commercial editors.</p>
+          <p>In this section, my purpose is to give a description of the toolbar with screenshots.</p>
+          <p>This toolbar is made up with a set of buttons grouped and divided by category, following the RASH specs is possible to notice the difference beetwen the categories of element or action that should be applied to the document, when the user press the corrispondent button. Is also possible invoke a tooltip that shows up the common name to recognize the button (<a href="#figure_1"> </a><span style="font-size: 12pt;">).</span></p>
           <figure id="figure_1">
             <p><img src="img/tooltip.png" alt="tooltip.png" /></p>
-            <figcaption>​Caption of the <code>figure</code>.</figcaption>
+            <figcaption>​Tooltip shown on button hover.</figcaption>
           </figure>
-          <p><span style="font-size: 12pt;">In rifermento alla </span><a href="#figure_2"> </a><span style="font-size: 12pt;"> e partendo da sinistra verso destra troviamo i primi due bottoni: rispettivamente </span><code>undo</code><span style="font-size: 12pt;"> e </span><code>redo</code><span style="font-size: 12pt;">​. ​Il comportamento nascosto dietro questi speciali pulsanti è strettamente necessario per quanto riguarda la stesura di un documento. Non avendo essi a disposizione sarebbe molto più complesso e macchinoso redigere l'articolo, inoltre il tempo di correzzione di eventuali errori lieviterebbe. Quindi l'introduzione di queste preziose funzionalità è stata una scelta obbligata.</span></p>
-          <p>Il terzo e il quarto pulsante sono un altro grande classico dgli editor, cioè <strong>bold</strong> e <em>italic</em>. Possono rendere un testo selezionato in grassetto o in corsivo.<br /></p>
-          <p>Dal quarto pulsante in poi troviamo invece dei comportamenti speciali che riguardano esclusivamente RASH, sempre nella categoria "<strong>inline</strong>" (comportamenti che vengono applicati solo a del testo), che sono: <code>code</code>, <code>link</code>, <code>cross ref</code>​, <code>quote</code>, <code>subscript</code> e <code>superscript</code>​ <a href="#bib2"> </a><span style="font-size: 12pt;">. Tra i vari, degno di nota è quello relativo alle cross reference (raffigurato con l'icona dell'ancora) che mostra una finestra modale con cui poter scegliere esattamente a quale elemento referenziarsi, ed è inoltre possibile creare una nuova reference o footnote.</span></p>
-          <p>Il funzionamento particolare di alcuni di questi pulsanti permette il loro utilizzo solo se è presente una selezione estesa del testo, cioè almeno un carattere selezionato trascinando il cursore del mouse e tenendo premuto il tasto sinistro. Per esempio selezionando del testo.</p>
+          <p>Refersto the <a href="#figure_2"> </a><span style="font-size: 12pt;">​ starting from left to right we find the first two buttons: respectively <em>undo</em> and <em>redo</em>. The behaviour hide behind these special button is strictly necessary for what concern drafting of the document. Without its presence, drawing the article would be more complex and difficult, furthermore the revision time would soar. Thus the introduction of these functions was a bound choice.</span></p>
+          <p><span style="font-size: 12pt;">The third and fourth button are another great classic of the editors, i.e. <strong>bold</strong> and <em>italic</em>, that can transform the selected text.</span></p>
+          <p>From the fourth button onwards, we found instead some special behaviours about RASH, ever inside the <strong>inline</strong> category (behaviours applied only to plain text) that are: <em>code</em>, <em>link</em>, <em>cross reference</em>, <em>quote</em>, <em>subscript</em> and <em>superscript</em> <a href="#bib2"> </a><span style="font-size: 12pt;">. Among the various, noteworthy is the cross reference one (represented with ad anchor) that shows a modal window with which to choose exaclty on what element refers, and is also allowed to create a new </span><em style="font-size: 12pt;">reference</em><span style="font-size: 12pt;"> or </span><em style="font-size: 12pt;">footnote</em><span style="font-size: 12pt;">. These buttons need to have a portion of text selected.</span></p>
           <figure id="figure_2">
             <p><img src="img/toolbar.png" alt="toolbar.png" /></p>
-            <figcaption>​Caption of the <code>figure</code>.</figcaption>
+            <figcaption>​Editor's toolbar.</figcaption>
           </figure>
-          <p>Il secondo gruppo comprende i "<strong>blocks</strong>" che nella documentazione ufficiale di RASH sono <code>codeblock</code>, <code>blockquote</code>, <code>ordered list</code> e <code>unordered list​</code>. <br /></p>
-          <p>L'elemento <code>codeblock</code>​ è molto importante per quanto riguarda semplici <strong>snippet di codice</strong>, è possibile dunque scrivere diverse righe di codice (anche in formato HTML) senza che esse vengano interpretate e mostrate come se fosse una pagina web, in altre parole tutto ciò che si trova compreso tra l'apertura e la chiusura del tag <code>code</code>​ è codice solo graficamente, ma è testo a tutti gli effetti. ​​​<span style="font-size: 12pt;">​​</span></p>
-          <p><span style="font-size: 12pt;">Per quanto riguarda le citazioni, ci viene in aiuto il pulsante relativo all'elemento </span><code>blockquote</code>​. E' possibile aggiungere una citazione che, diversamente al normale <code>quote</code>​ (che crea una citazione <strong>inline</strong>), si estende completamente per una riga. Citazioni di questo tipo sono molto importanti, anche per dare maggiore enfasi rispetto alle semplici citazioni inserite nel testo.</p>
-          <p>E' accettabile e quasi scontato decidere di voler inserire delle liste all'interno dell'articolo che si sta scrivendo, a questo proposito all'utente vengono in aiuto i pulsati delle liste. Quelle più utilizzate e popolari sono naturalmente quelle ordinate e non ordinate e possono essere utilizzati in contesti diversi, è necessario dare la possibilità ad ogni utente di poter inserire la lista che più è in linea con le sue volontà.</p>
-          <p>Tra i bottoni del blocco denominato "<strong>figure</strong>" troviamo <code>table</code>, <code>figure</code> e <code>formula</code>​. Sempre seguendo le indicazioni scritte nella <span id="selectionBoundary_1487168895885_017088877954352766" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">documentazione ufficiale di RASH</a> si nota l'importanza dell'utilizzo di questi tre blocchi (considerati tra i principali per la scrittura di un articolo di ricerca).<span id="selectionBoundary_1487168895884_43822155409909813" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
-          <p>Le <strong>tabelle</strong> vengono inserite insieme ad un piccolo bottone di configurazione, posizionato alla loro sinistra. E' possibile modificare la tabella grazie a questo pulsante e, tra le opzioni permesse troviamo la possibilità di ridimensionarla e di cambiare l'organizzazione della testata. Un'altra funzionalità molto importante, permessa da <strong>RASH</strong> ma non ancora implementata con <strong>RAJE</strong> (dei motivi ne parlerò maggiormente nella <strong>section 3.2.</strong>), è l'espansione delle celle o dell'intera colonna. Sarà una delle prime funzionalità che verranno implementate nelle release successive dell'editor.</p>
-          <p>L'inserimento, tramite il corrispondente bottone, delle immagini è affidato al secondo bottone del blocco: <code>figure</code>​. Alla pressione sarà immediatamente visibile una finestra modale (<a href="#figure_3"> </a><span style="font-size: 12pt;">) che permette di scegliere tra due modalità distinte di inserimento: da selezione di un file di immagine o dall'inserimento di un URL. Entrambi importano fisicamente l'immagine all'interno della cartella del progetto.</span></p>
+          <p><span style="font-size: 12pt;">The second group includes the <strong>blocks</strong>​, that are, as you can find in the ufficial RASH documentation: <em>codeblock</em>, <em>blockquote</em>, <em>ordered list</em> and <em>unordered list</em>.</span></p>
+          <p><span style="font-size: 12pt;">The element <em>codeblock</em> is very important to insert some code snippets, and is allowed wrote down some code lines (also in HTML format) without interpretation and are shown as a web page. In other words everything is wrapped inside the opening and closing of the <em>code tag</em> is only graphical code, but is text at all effects.</span></p>
+          <p><span style="font-size: 12pt;">About the quotes, the <em>blockquote</em> element comes in our aid. A quote can be added, and instead the normal quote (that creates a inline citation), it is extended to all line. This kind of citation are very important, also to give more emphasis than the ones inserted in text.</span></p>
+          <p>Is acceptable and predictable decide to insert lists in the draft document, about that list buttons come in aid to users. The most used and popular naturally are the ordered and unordered. Every users can have the possibility to add the list more in line with his will.</p>
+          <p>Then, inside the block called <strong>figure</strong> we find out table, figure and formula. Always following the directions inside the RASH documentation, we can notice the importance of using these three blocks (considered main for writing research articles).</p>
+          <p>The tables are inserted with a small configuration button, positioned at their left. The table can be modified thanks to this button and, among the aother permitted operations, we can resize ti and change his heading. Another important functionality, permitted by RASH but not implemented yet in RAJE, is the expantion of cells or the entire column. Will be one of the first new operations permitted in the next releases of the editor.</p>
+          <p>The insertion, with the corrisponding button, of the images is entrusted to the second button of the block: <em>figure</em>. After pressing the button, will be immedialty visible a modal window (<a href="#figure_3"> </a><span style="font-size: 12pt;">) that permits to chosse beetwen two different modality: selection a local image file or typing an URL. Both import physically the image inside the project folder.</span></p>
           <figure id="figure_3">
             <p><img src="img/figure_modal.png" alt="figure_modal.png" /></p>
-            <figcaption>​Modale per l'inserimento delle immagini.</figcaption>
+            <figcaption>​Modal window to insert images.</figcaption>
           </figure>
-          <p>Uno dei bottoni più importanti è sicuramente quello per aggiungere una formula nella posizione selezionata. Questa azione avviene con l'invocazione di un semplice editor <a href="http://asciimath.org/">asciiMath</a>, che a tutti gli effetti crea un ambiente in cui impostare e selezionare la formula che si vuole inserire. Ne parlerò in modo più approfondito nella <strong>Section 3.3.1.</strong> .<span style="font-size: 12pt;">​</span></p>
-          <p>Ho programmato il dropdown "<strong>section</strong>" in modo che sia possibile aggiungere delle nuove sezioni come quelle speciali di <strong>abstract</strong> e <strong>acknowledgement</strong> oppure delle comuni sezioni. Le uniche sezioni speciali che possono essere aggiunte in questo modo sono quelle sopra citate. Se sono già state inserite all'interno del documento, la schermata si posizionerà esattamente all'inizio della sezione visualizzandone il contenuto. Altrimenti verrà eseguito l'inserimento vero e proprio nell'ordine concepito da RASH.</p>
-          <p>Ogni qual volta la posizione del <strong>caret</strong> cambia viene aggiornato il contenuto della lista nel dropdown in base alle possibili sezioni aggiungibili. Se per caso l'utente si trova all'interno di una sezione di primo livello, sarà possibile aggiungere sia un'altra sezione di primo livello, oppure una sottosezione come mostrato nel codice.</p>
-          <pre><code>&lt;section&gt;&lt;h1&gt;Sezione di primo livello&lt;/h1&gt;[caret]
+          <p>One of the most important buttons is surely the one to add a new formula in the selected position. This action takes place with the invocation of a simple asciiMath editor, that at all effects create an environment where set and select the formula. I will discuss this after, in the <span class="cgen" data-rash-original-content=""><a href="#section33">Section 3.2.1</a>.</span></p>
+          <p>I developed the dropdown section to grant the possibility to add new sections such the special <em>abstact</em> and <em>acknowledgement</em> or common sections. The only special section that can be added in this way are the two quoted above. If these are already inserted inside the document, the screen will reposition exaclty at the begin of the section, showing its contents. Insted will be executed the real insertion in the order describer by RASH.</p>
+          <p>Every time that the caret position change, the dropdown content will be updated with the insertable sections. If the caret is inside af a first level section, will be possible add both a top-level section or a sub sections as shown in the code.</p>
+          <pre><code>&lt;section&gt;&lt;h1&gt;Top level section&lt;/h1&gt;[caret]
 &lt;/section&gt;</code>​ ​</pre>
-          <p>E' molto importante ricordare che questo non è l'unico modo a disposizione dell'utente per aggiungere delle sezioni, ma è l'unica strada per aggiungere quelle di <strong>astract</strong> e <strong>acknowledgement</strong> (maggiori informazioni sulle shortcuts nella <strong>section 3.1.4</strong>)</p>
+          <p>Is very important remember that this is not the only one way for the user to add sections, instead it is for the abstract and acknowledgement (more informations about shortcuts in the <a href="#section74"></a>)</p>
         </section>
         <section id="section72">
-          <h1>Menu software</h1>
-          <p>RAJE è un software quindi, come tale, è servito con un menù la cui implementazione è stata scelta a mia più totale discrezione. E' molto importante aggiungere che in base al sistema operativo dell'utente la visualizzazione può cambiare in modo considerevole, particolarmente passando da sistemi <strong>Unix</strong> al sistema operativo <strong>Windows</strong>. Per quanto riguarda questa sezione non mi metterò a spiegare passo passo ogni singolo pulsante che è possibile trovare all'interno dei dropdown dei menu, perchè tutt'ora il progetto, ed in particolare questo modulo, sta subendo un numero importante di modifiche. Il mio obiettivo è spiegare, correlando degli esempi, come più ho pensato di dividere e raggruppare i molteplici attori del menù.</p>
-          <p>Sinceramente non sono partito da una progettazione senza fondamenti, ma bensì ho ripreso alcune linee guida e consigli trovati tramite internet. In particolar modo ho preso molto spunto dalla composizione dei menù di alcuni software di editing, tra i cui <strong>Visual Studio Code</strong>, <strong>Atom text editor</strong> (che ho utilizzato durante lo sviluppo di questo progetto) e Open Office come mostrato in <a href="#figure_4"> </a>​.</p>
+          <h1>Software menu</h1>
+          <p>RAJE is a software, and such as, is served with a menu. Its implementation has been chosen to my utter discretion. Is very important to say also that the visualization can considerably change beetwen the different Operating Systems, in particular passing from Unix systems to Windows. Inside this section I will not explain step by step every single button inside the dropdowns, because now the project, in particular this module, is undergoing updates. My task is to explain, with some examples, why and how i devided and group the multiple actors of the menu.</p>
+          <p>Sincerely I did not started from a development without foundations, instead I followed few guidelines and advices founded on the Internet. In particular I was inspired by the composition of some editing softwares menu. Among the various <strong>Visual Studio Code</strong>, <strong>Atom text editor</strong> (both used during the making of) and <strong>Open Office</strong> as shown in <a href="#figure_4"> </a>​. </p>
           <figure id="figure_4">
             <p><img src="img/menubar.png" alt="menubar.png" /></p>
-            <figcaption>​Menubar di OpenOffice.</figcaption>
+            <figcaption>​Open Office menu bar.</figcaption>
           </figure>
-          <p>L'organizzazione che ho seguito è molto in linea con questo schema. Tralasciando il bottone con il nome del software, che è una delle caratteristiche visibile solo nei sistemi Unix, File e Modifica sono stati introdotti anche in RAJE.<span style="font-size: 12pt;">​</span></p>
-          <p><span style="font-size: 12pt;">File è necessario per lavorare con molteplici documenti, dona la possibilità di aprire una nuova finestra riguardo ad un altro articolo. Modifica invece racchiude un gran numero di azioni proprie di un editor: undo, redo, cut, paste e copy. Inoltre ritroviamo il pulsante del salvataggio del file e quelli delle modifiche dell'header.</span></p>
+          <p>The kind of organization i followed was in line with this schema. Omitting the button with the name of the software, that is one of the features only visible on Unix systems, <strong>File</strong> and <strong>Modify</strong> has been introducted in RAJE.</p>
+          <p>File is necessary to work with multiple documents, it gives the opportunity to apen a new window about another article. Modify, instead, encloses a great number of actions allowed inside an editor: <em>undo</em>, <em>redo</em>, <em>cut</em>, <em>paste</em> and <em>copy</em>. Moreover there is a button to save file and others used to modify the header.</p>
         </section>
         <section id="section73">
           <h1>Header</h1>
-          <p>L'intestazione di un file RASH è composta di più elementi necessari a contestualizzare l'articolo per intero. <strong>Titolo</strong> e lista di <strong>autori</strong> sono naturalmente molto importanti per quanto riguarda documenti di stampo scientifico, ma in questo caso anche <strong>keywords</strong> e <strong>ACM subject categories</strong>.</p>
-          <p>Grazie a RASH è permesso avere articoli scritti da molteplici autori, per questo motivo ho programmato RAJE in modo da permettere l'inserimento, modifica e rimozione di autori. Tra le altre cose è ragionevole anche voler modificare l'ordine degli autori, azionando l'azione corrispondente dal menù software è possibile spostarli semplicemente grazie ad una tecnologia di <code>Drag &amp; Drop</code>. Anche per quanto riguarda l'eliminazione di autori è necessario azionare il relativo comportamento dal menù.</p>
-          <p>Così come gli altri elementi che conpongono l'intestazione del documento, sono facilmente editabili grazie ad un <strong>doppio click</strong> del mouse sul relativo elemento. Ho scelto di restringere i permessi di modifica di questa parte cruciale perchè è strutturata in un modo abbastanza complesso rispetto al resto del documento, quindi anche solo una piccola modifica strutturale avrebbe precluso la possibilità di salvare (e successivamente renderizzare) il documento RASH correttamente. Inoltre il doppio click è un'azione molto banale ed è anche l'azione principale per esprimere la volontà di interagire con un elemento grafico oppure la modifica di un testo (vedi rinomina di file su Windows).</p>
-          <p>Categories e keyword di possono rendere modificabili sempre dopo l'evento di <strong>doppio click</strong>, l'unica differenza è che il comportamento è identico agli elementi di <code>code</code>​ inline: il tasto spazio inserisce uno <code>space</code> all'interno dell'elemento, mentre il tasto <code>enter</code> inserisce uno spazio dopo l'elemento (serve per indicare la fine della scrittura)​.</p>
-          <p>Il titolo solitamente è accompagnato da un sottotitolo. Se durante la scrittura del titolo si vuole inserire il sottotitolo, è semplicemente necessario premere il tasto <code>enter</code>.</p>
-          <p>Quindi per quanto riguarda l'header di un documento scientifico in formato RASH è possibile modificarlo con la più assoluta compatibilità. L'unico punto esclamativo da aggiungere è la diversa modalità di modifica rispetto al corpo dell'articolo, che gode di un grado di restrizione minore.</p>
+          <p>The header of a RASH file is made up with more elements, needed to contextualize the entire article. <strong>Title</strong> and <strong>authors list</strong> are obviously very important for what concern documents of scientific mold and, in this case, also <strong>keywords</strong> and <strong>ACM subject categories</strong>.</p>
+          <p>Thank RASH you can have articles written by many authors, for this reason RAJE permits the insertion, modification and deletion of authors. Among the other things is reasonable wanting to change the author's order, triggering the corrispondent action from software menu. Now you can move them simply with a <code>Drag &amp; Drop</code> technology. As for what concerns the deletion of authors, you need to choose the relative behaviour from the menu.</p>
+          <p>As well as the other elements that make up the header, they are easily editable with a <em>double click</em>. I chose to restrict the editing permissions of this crucial part because it has been structured very more complex than the rest of the document, so also a small structural edit would have foreclosed the possibility of saving (and then render) the RASH document correclty. Besides the double click is a banal action, and is the main action to express the willingness to interc with a graphic element or text modification (same as rename action on windows).</p>
+          <p>Categories and keyword can be editable also after the <em>double click event</em>, the only one difference is that the behaviour is the same as the inline code elements: <em>space button</em> will insert a <code>space</code> inside the element, instead the <em>enter key</em> will insert a <code>space</code> after the element (it indicates the end).</p>
+          <p>The title is usually accompanied with a subtitle. If during the title editing you want to add the subtitle, you can do it simply pressing the <em>enter key</em>.</p>
+          <p>So, for what concern the header of a scientific document in RASH format, you can modify it with the most absolutly compatibility. The only exclamation mark is the different editing way other than the body, with a lesser degree of restriction.</p>
         </section>
         <section id="section74">
           <h1>Shortcuts</h1>
-          <p>In questa sotto sezione mi trovo a descrivere ed a creare la lista delle <strong>scorciatoie da tastiera</strong> che ho pensato di implementare. Le modalità di implementazione verranno spiegate in modo approfondito nella <strong>section 4.3.2.</strong> .</p>
-          <p>Tutte le successive scorciatoie con il carattere <code>mod</code>​ equivale a scrivere <code>ctrl</code> per <strong>windows</strong> e <code>cmd</code> per <strong>osx</strong>​​.</p>
+          <p>In this subsection, I am here to describe and create the list of all the keyboard shortcuts that i decided to implement. The implementation modalities will be deeply explained in <a href="#section38"></a>.</p>
+          <p>Inside the list the key <code>mod</code> is to say <code>ctrl</code> for <strong>Windows</strong> and <strong>Linux</strong>, and <code>cmd</code> for <strong>OSX</strong>.</p>
           <ol>
             <li>
-​<code>mod+s</code> è il salvataggio in locale del file. Tutte le modifiche che vengono apportate al documento sono visualizzabili nel documento HTML sorgente.            </li>
+
+mod+s is the local save. All changes that will occur to the document will be viewable inside the HTML source document.            </li>
             <li>
-<code>mod+shift+s</code>​ è la push alla repository Github. Mostra una finestra modale per inserire il commento con cui verrà etichettata la modifica.<br />            </li>
+<code>mod+shift+s</code>​ is the push to Github. It shows a modal window to insert the comment which it will be labelled.<br />            </li>
             <li>
-​<code>mod+c</code>​, <code>mod+v</code>​ e <code>mod+x</code> rispettivamente copia, incolla e taglia.            </li>
+​<code>mod+c</code>​, <code>mod+v</code>​ and <code>mod+x</code> are <em>copy</em>, <em>paste</em> and <em>cut</em>.            </li>
             <li>
-​<code>mod+z</code> e <code>mod+shift+z</code>​ sono le scorciatoie per le azioni di <strong>undo</strong> e <strong>redo</strong>.            </li>
+​<code>mod+z</code> and <code>mod+shift+z</code>​ are the shortcuts for <em>undo</em> and <em>redo</em> actions.            </li>
             <li>
-<code># enter</code>​ permette di creare una nuova sezione. in base al numero di caratteri <code>#</code> si può scegliere la profondità della sezione            </li>
+<code># enter</code>​ permits to create a new section. Based on the number of the characters <code>#</code> you can choose the deepness of the section.            </li>
             <li>
-<code>* enter​</code>​ aggiunge una lista non ordinata.<br />            </li>
+<code>* enter​</code>​ add an unordered list.<br />            </li>
             <li>
-​<code>1. enter</code> aggiunge una lista ordinata.            </li>
+​<code>1. enter</code> add an ordered list.            </li>
             <li>
-​<code>| enter</code> inserisce l'elemento blockquote.            </li>
+​<code>| enter</code> add blockquote element.            </li>
             <li>
-​<code>` enter</code> inserisce l'elemento codeblock.            </li>
+​<code>` enter</code> add codeblock element.            </li>
           </ol>
         </section>
       </section>
       <section id="section32">
-        <h1>Punti di forza</h1>
-        <p>RAJE è stato creato per ovviare al problema di avere un editor WYSIWYG di articoli scientifici di ricerca strutturati in formato RASH, oltre che avere un luogo centralizzato accessibile a tutti dove salvare i documenti. Durante la presentazione di questa sezione sarà mi compito descrivere i punti di forza del progetto da me sviluppato. <span id="selectionBoundary_1487249086358_9270292361330679" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
-        <p>Durante il periodo di sviluppo, insieme al mio Co-relatore di tesi abbiamo definito un ulteriore necessità, correlata all'accessibilità dei documenti (problema ampiamente dettagliato all'interno della <span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;"><a href="#section1">Section 2</a>), cioè un editor di formule matematiche con caratteri <strong>asciiMath</strong> che genera formule grazie al processore di <strong>MathJax</strong>.</span></p>
-        <p><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;">Il secondo punto di forza che andrò a presentare è l'integrazione con Github, in particolare parlerò di come ho pensato di gestire l'interconnessione tra più autori dei documenti.</span></p>
+        <h1>Strenghts</h1>
+        <p>RAJE has been created to remedy the problem: having a WYSIWYG editor of research scientific articles structed in RASH format, furthermore to have a centralized placeacessible to everyone where to store documents. During all the presentation of this section, will be my task describe the strenghts of this project.</p>
+        <p>During the development period, with my Co-supervisor we defined another need, related to the document accessibility (issue widely described inside the <a href="#section63"></a>), a math formulas editor with asciiMath as input, which generates rendered formulas with MathJax process.</p>
+        <p>The second pro that I will present is integration with Github, in particular I will talk about how I tought to manage the interconnetion beetwen more authors of same documents.</p>
         <section id="section33">
           <h1>Mathjax and Mathml</h1>
-          <p>A partire dalla <a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">release 0.6 di RASH</a>, grazie al lavoro svolto dal mio collega <strong>Vincenzo Rubano</strong> (<a href="https://github.com/falcon03">@falcon03</a>), è possibile renderizzare formule con input <a href="http://asciimath.org/">asciiMath</a> in un elemento renderizzato grazie alle librerie di MathJax.</p>
-          <p>Una sfida significativa di questo lavoro è stata introdurre un editor pensato per essere di facile utilizzo, con tutti gli strumenti a disposizione, così anche chi non è a conoscenza delle sequenze di tasti può comunque pensare di costruire una formula matematica. L'editor (<a href="#figure_7"> </a>​) è anch'esso una finestra modale. Presenta una <code>textbox</code>​ per i caratteri <strong>ascii</strong> di input​, e una schermata predisposta alla sua visualizzazione in tempo reale. Infatti un'altra sfida che mi sono preposto è stata la velocità di aggiornamento della formula, che avviene ad ogni carattere o set di caratteri inseriti.</p>
-          <p>Per chi non è a conoscenza della sintassi necessaria per inserire particolari simboli o funzioni, è sempre possibile avvalersi dei bottoni che ho pensato di aggiungere immediatamente sotto della <code>textbox</code> di input. La disposizione deglli elementi è stata pensata incrociando i dati presenti dalla sintassi di <strong>asciiMath</strong> e l'impostazione dell'editor di <strong>OpenOffice</strong>. </p>
+          <p>Starting from the <a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">release 0.6 di RASH</a>, thanks to work performed by my colleague Vincenzo Rubano<span style="font-size: 12pt;"> (</span><a href="https://github.com/falcon03">@falcon03</a><span style="font-size: 12pt;">), is not possible render asciiMath formulas with MathJax processor.</span></p>
+          <p><span style="font-size: 12pt;">A significant challeng of this work was to introduce an environment tought to be easy to use, with all tools aviabile, so that also who do not know the key sequence can think of build the mathematical formula. The editor (</span><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;"><a href="#figure_7">Figure 7</a>) is a modal window. It has a <em>textbox</em> for <strong>ascii</strong> input characters, and a screen prepared to render it in real time. In fact another challeng that I charge was the refresh speed of the formule, that happens every time a character or a set are typed.</span></p>
+          <p><span class="cgen" data-rash-original-content=" " style="background-color: rgb(255, 255, 255); font-size: 12pt;">For those not familiar with the syntax necessary to add particular symbols or functions, they can always use buttons that i tought to add immediatly under the input textbox. The arrangement of the elements was designed crossing the <strong>asciiMath</strong> syntax and the <strong>OpenOffice</strong> editor layout.</span></p>
           <figure id="figure_7">
             <p><img src="img/formulaeditor.png" alt="formulaeditor.png" /></p>
-            <figcaption>​Presentazione dell'editor di formule.</figcaption>
+            <figcaption>​RAJE formula editor.</figcaption>
           </figure>
-​        </section>
+        </section>
         <section id="section34">
-          <h1>Matrimonio con Github</h1>
-          <p>Come già accennato più volte in precedenza, RAJE è strettamente collegato ad un sistema <strong>simil-cloud</strong> in modo tale da semplificare la comunicazione e la condivisione degli articoli tra i vari Stakeholders dell'articolo (che, oltre agli autori, possono essere anche i reviewer incaricati di revisionare un articolo inviato per una conferenza). </p>
-          <p>Github è il più popolare network per progetti prevalentemente di stampo <strong>Open Source</strong>, conosciuto ed utilizzato da milioni di sviluppatori in tutto il mondo. Il cuore pulsante di Github è Git, il sistema di controllo di versione distribuito creato da Linus Torvald durante lo sviluppo del sistema operativo ad oggi conosciuto con il nome di <strong>Linux</strong>. Nei tempi moderni è diventato un must per gli "Open Source Developer" avere un profilo su Github. Non solo per per motivi di curriculum, ma anche per ricevere apprezzamenti o miglioramenti dei propri lavori. Ad ogni utente è permesso quindi di lavorare insieme a persone di tutto il mondo per costruire progetti sempre più completi e complessi con, come unico vincolo, conoscenza della lingua inglese. Tutti i testi sono interamente in lingua inglese.</p>
-          <p><em>Ma come mai un sistema potente come questo non è popolare anche per la condivisione per materiale testuale?</em> Per rispondere a questa domanda è necessario sapere che Git è stato creato con l'obiettivo di condividere codice, e questo semplifica moltissimo le cose. Il codice deve essere interpretato da una macchina, quindi è necessario definire in modo corretto dove inizia e dove finisce ogni istruzione, questo perchè ogni macchina legge, comprende ed elabora una <strong>riga</strong> alla volta.</p>
-          <p>Se RASH fosse del semplicissimo testo, forse altre modalità di controllo di versione sarebbero state molto più adatte. Ma un documento RASH non è semplice testo, questi documenti sono in formato HTML; Grazie a questa piccola differenza possiamo dire che Github e RASH si sposano perfettamente l'uno alla causa dell'altro.</p>
-          <p>Dopo questa premessa posso iniziare a descrivere l'integrazione vera e propria tra l'editor e il network.</p>
-          <p>In questa sezione, dopo aver dato delle informazioni basiche su cosa sia Github, posso estendere il discorso iniziato nella <strong>section 3.1.1.</strong> descrivendo il comportamento dell'ultimo bottone della toolbar. Cliccandolo è possibile creare una nuova cartella nel percorso scelto, che sarà immediatamente riempita con il codice e gli assets dell'articolo corrispondente all'URL inserito dall'utente. E' a tutti gli effetti la stessa cosa di aprire un documento precedentemente creato, con la differenza che questa volta stiamo parlando della repository <code>https://github.com/{author}/{repository}</code>​.</p>
-          <p>Per quello che riguarda la scrittura di un articolo, arriva il momento in cui un utente ha intenzione di salvare il contenuto online. Per fare ciò è necessario autenticarsi con il proprio profilo di Github. Questo tipo di richieste sono impossibili senza un'autenticazione che certifica l'identità dell'utente.</p>
-          <p><span style="font-size: 12pt;">Tralasciando la modalità di autenticazione, o meglio lo sviluppo del modulo predisposto per l'autenticazione, l'utente ha la possibilità di salvare il documento online, sui server di Github. L'azione può essre eseguita con la scorciatoia </span><code>mod+shift+s</code>​ oppure tramite l'apposito pulsante nel menù del software. Verrà visualizzata una semplice modale che permette all'utente di etichettare l'insieme di modifiche sotto un unico commento. Ad upload avvenuto sarà visualizzato un messaggio di successo ,in modo non invasivo, sullo schermo. La cosiddetta <code>push</code> è stata eseuguita con successo!</p>
-          <p>La gestione di documenti condivisi richiede che tutti gli autori della repository siano costantemente aggiornati sull'ultima versione dell'articolo, per non cadere in conflitti di merging. Nella corrente versione di RASH questa funzionalità non è ancora stata introdotta, ma è un punto cruciale della gestione di sistemi distribuiti, sarà implementata a breve.</p>
-          <p>Quelle sopra elencate sono le motivazioni del perfetto connubio tra Github e RAJE, che per l'appunto è uno dei motivi per cui è nato quest'ultimo.</p>
+          <h1>Marriage with Github</h1>
+          <p>As already mentioned more times before, RAJE is strictly wired with a cloud-like system in such a way to easy up the communication and sharing of articles beetwen its stakeholders (which are, in addition to the authors, reviewers in charge of reviewing).</p>
+          <p>Github is the most popular network for Open Source projects, known and utilized from million of developer all over the world. Its beating heart is <strong>Git</strong>, a version control system built by Linus Torvald during the development of the operating system called with the name of Linux. Now is a must for the Open Source Developers having a Github profile. Not only for curriculum purposes, but also for appreciations and improvements of its own projects. To every user is allowed to work with people around the world to built project more and more complete and complex, with the only bond, know English. All texts are entirely in English.</p>
+          <p><em>Why this powerful system like this is not popular also for sharing textual material?</em> To answer this question we need to know that Git has been built with the purpose of sharing code, and that simplify all things. Code needs to be interpreted by a machine, that's why it needs to define where every instruction starts and ends. This because every machine read, understand and elaborate only one row at time.</p>
+          <p>If RASH would be raw text, probably other version control sources would be more suitable. But a RASH document is not only plain text, these documents are HTML; Thanks this small difference we can say that RASH and Github they go perfectly in tune each other.</p>
+          <p>After this introduction we acn describe the real integration beetwen the editor and the network.</p>
+          <p>In this section, after give some basic informations about what is Github, we can extend the discourse started in <a href="#section75"></a>​ describing the last button behaviour. Pushing it you can create a new folder to the choosen path, that will be immediatly filled with code and assets of the article corrispondent to the typed URL. To all effect is the same things to open a document previously created, with the only difference that this time we are talking about the <code>https://github.com/{author}/{repository}</code>​ repository.</p>
+          <p>When a user wants to save online the content of a document, to do it, he needs to be logged in with its personal Github profile. These types of requeste are not allowed without authentication, which certifies the user identity.</p>
+          <p>Omitting the authentication mode, o better the development of the predisposed module for handling authentication, the user has the option to save the document online, on Github servers. The action can be executed with the shortcut <code>mod+shit+s</code>​ or the appropriate button in software menu.​ Will be viewed a simple modal that permits the user to label up the entire sets of changes under an unique comment. When the upload is done will be shown a success message, noninvasively, on the screen. Now the push has been executed with success.</p>
+          <p>The mangement of sharing documents needs that all repository contributors are always updated to the latest article version, to avoid merge conflicts. In the RAJE current version this functionality has not been introduced yet, but is a crucial fact of distributed system management, will be implemented soon.</p>
+          <p>These, listed above, are the reasons of the perfect union beetwen Github and RAJE, that precisely is one of the reasons which it was born. </p>
           <p><br /></p>
         </section>
       </section>
     </section>
     <section id="section22">
       <h1>Raje in deep</h1>
-      <p>Descrizione tecnica di raje, requisiti, tecnologie su cui è basato</p>
+      <p>Until now I have described just few specific words about RAJE, from all the duration of this chapter I will tell the technologies and the development process i have adopted to create this software.</p>
+      <p>A little note: I always referred to RAJE called it also "software". The editor is multiplatform, but it has been created as unique project, with the libraries made available from Electron, Also Known As <em>Atom shell</em>.</p>
+      <p>In this chapter I will describe what Eletron is, and how I used the <em>File System's API</em> to create this software. Next I will introduce the beating heart of RAJE, the script <em>raje.js</em> that I personally built with the aid of <a href="https://jquery.com/">JQuery</a> and some other modules, like <a href="https://github.com/timdown/rangy">@TimDown's rangy</a> used to abstract the selection elements and <a href="https://craig.is/killing/mice">Mousetrap</a> to simplify the manageof shortcuts. Finally, regarding Electron, I will explain how I have made different deploys for the different Operating Systems supported by RAJE: <em>OSX</em>, <em>Windows</em> and <em>Linux</em>.</p>
       <section id="section23">
         <h1>How electron works</h1>
-        <p>Descrizione del comportamento che ha raje come software, delle librerie usate e come è stato possibile comunicare trarendereremainprocess</p>
+        <p>Electron is a Open Source framework created by Github developers. Based on the already famous node.js API, we can say that is a very lively project and it can obtain more and more supporters. Today we can count near <em>13.000 commits </em>divided beetwen the <em>500 total contributors</em>.</p>
+        <p>Electron is pratically a browser wrapper, it utilize Chromium as browser to create multi platform softwares. Thanks to this framework is guaranteed the development with technologies like HTML, CSS and Javascript.</p>
+        <p>Two are the important process in a Electron-based software: The <em>Main process</em> and the <em>Renderer process</em>.</p>
+        <p>The Main process is a node.js script, that includes every kind of necessary information and setting to guarantee thesmooth progress of the software, e.g. the instance of the windows and the relatives HTML pages, the use of specialAPI normally unaccessible from the browser or "vanilla Javascript", or else local or remote databases.</p>
+        <p>Instead the Renderer process is a script imported directly in the document with the classical syntax <code>&lt;script src="rendered.js"&gt;&lt;/script&gt;</code>​.it allow to utilize NPM packages (the manager of node.js modules) and can communicate in an <em>Async</em> or <em>Sync</em>way with the main process to exchange messages. ​</p>
+        <p>After this general presentation, I will describe in detail the main API that I have adopted during the project development,and how I handled the communication beetwen processes.</p>
         <section id="section27">
-          <h1>FS api</h1>
-          <p>Come sono state gestite queste api per creare le directory e i file</p>
+          <h1>File system API</h1>
+          <p>For a sofware that make every kind of CRUD operation (Create, Retrieve, Update, Delete) on files was impossible notto use the File System API. In my aid, in this case, the FS library of node.js has intervened.</p>
+          <p>This is one of the most important library, because it is inside the package of libraries inserted inside the officialdistro of node, then it was enough to import it with the next line of code: <code>const fs = require("fs")</code>.</p>
+          <p>Inside this module, we can find out some very useful methods such as <code>readDir</code>, <code>writeFile</code> and <code>readFile</code>,which are <em>asynchronous</em>, but the corrispondent method that ends with Sync (e.g. <code>readDirSync</code>)is its sync counterpart.</p>
+          <p>When a new article is created, the editor creates the new directory and copy inside every necessary asset with thiscode:</p>
+          <pre><code>copyAssetFolder: function (assetFolderName, folderPath) {fs.mkdir(`${folderPath}/${assetFolderName}`, (err) =&gt; {if (err) console.log(err)fs.readdirSync(`${assetFolderName}`).forEach((file) =&gt; {let fullFilePath = `${assetFolderName}/${file}`if (fs.lstatSync(fullFilePath).isFile())fs.createReadStream(fullFilePath).pipe(fs.createWriteStream(`${folderPath}/${assetFolderName}/${file}`))})})
+}</code>​ ​ ​ ​<br /></pre>
+          <p><span style="font-size: 12pt;">Inside the method signature we can find out two input variables: assetFolderName and folderPath. The first one is the name of the directory that we want to copy the contents i.e. <em>js</em>, <em>css</em> or <em>fonts</em>, while the second is the absolute path of the article's directory, where next the assets will be saved. </span><br /></p>
+          <p><span style="font-size: 12pt;">The asynchronous mehod </span><code>fs.mkdir()</code>​ show us that it has a callback(in this case is very simply and it return a not empty variable only if there is an error). Then the directoryis readed and the names of its contents are written inside an array, every element inside the folder is a variableinside the array. Wanting to work only with files, we do not care about folders. Finally a read stream is createdto read the content of the assets and to write a new file with the same content, to the destination folder.<span style="font-size: 12pt;">​</span></p>
+          <p>Inside this code snippet I used the fs package to do some easy operation with the FS API.</p>
+          <p>Another example that i can show is when the user express to open a new article. The editor wants to be sure thatthe folder has been created before with RAJE.</p>
+          <pre><code>checkIfRaje: function (dirPath) {let isRaje = falsefs.readdirSync(dirPath).forEach((file) =&gt; {if (file == '.raje')isRaje = true})return isRaje
+},</code>​</pre>
+          <p>One of the main reasons that guide me to create a real software was the need to interface with file system, and thatis not allowed by all browsers<a href="#fn1"> </a><span style="font-size: 12pt;">, so the development has been hijacked to this way.</span></p>
         </section>
         <section id="section28">
-          <h1>Github api</h1>
-          <p>​Come sono state gestite queste api (octonode library)</p>
+          <h1>Github API</h1>
+          <p>Just like what happened with the File System describer right above, also the APIs to communicate with Github areimplemented using a wrapper: <span id="selectionBoundary_1487684663359_8851695913317796" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://github.com/pksunkara/octonode">Octonode</a><span id="selectionBoundary_1487684663356_05119590608499158" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span>.</p>
+          <p>The interfaces that Github provides are updated to the versione v3, and personally I think that these API allows a lot of actions on contents, users and repositories. Of course it provides also OAuth2 login.</p>
+          <p>To set up a project and arrange to have login, first of all is necessary that the developer application is alreadycreated, as shown in <a href="#figure_8"> </a>​, and be in possession of the two necessary codes: <em>client ID</em> and <em>secret ID</em>.</p>
+          <figure id="figure_8">
+            <p><img src="img/github.png" alt="github.png" /></p>
+            <figcaption>​RAJE developer application.</figcaption>
+          </figure>
+          <p>As soon the application is created, is now possible to use some code lines to authenticate users with the protocol OAuth2. The Octonode library also serves a different method to authenticate with Github. I adopted the following way: <span style="font-size: 12pt;">​you can store all needed functions inside a </span><code>client</code><span style="font-size: 12pt;"> variable, that is created passing the token generated by Github when a user make the request to be logged in with its account.</span></p>
+          <p><span style="font-size: 12pt;">In order to obtain this token, with the developer application created, the user needs to press the login button. Then the request in </span><a href="#figure_9"> </a><span style="font-size: 12pt;"> window will be shown. This window will describe what kind of permissions RAJE needs, it can read all public information about the user (such as email, name, biography and so on) and about public repositories (the ones which are important for RAJE). Another permission is to read the notifications, but now nothing about that is yet implemented.</span></p>
+          <figure id="figure_9">
+            <p><img src="img/authorization.png" alt="authorization.png" /></p>
+            <figcaption>​Github authorization window.</figcaption>
+          </figure>
+          <p>Once authorizations are given by the user this happens: a message in sent to Github servers, and a result comes back in return. Normally Github needs an URL callback, so the token can be directly sent there, where it will be elaborated. But we do not need that, we only need a mechanism that handle the navigation event. Electron use Chromium as browser, and because that it can understand when a URL is requested with all information normally needed, so we chan handle the callback URL directly from the main process.</p>
+          <p>First of all I use a regular expression to decode and extract the code from URL (as shown in code block).</p>
+          <pre><code>var raw_code = /code=([^&amp;]*)/.exec(url) || null
+var code = (raw_code &amp;&amp; raw_code.length &gt; 1) ? raw_code[1] : null</code><br /></pre>
+          <p>Then I will elaborate the code to get the user token directly from the Github API with the method <code>requestGithubToken(githubOptions, code)</code>​. This method needs as input the options (which are the IDs explained before) and the code extracted from the callback URL.</p>
+          <pre><code>function requestGithubToken(githubOptions, code) {apiRequests.post('https://github.com/login/oauth/access_token', {client_id: githubOptions.client_id,client_secret: githubOptions.client_secret,code: code,}).end(function (err, response) {if (response &amp;&amp; response.ok) {/** Save github token to settings */storage.set('githubSettings', { 'token': response.body.access_token }, (err) =&gt; {if (err) throw errgetUserInfo()})} else {// Error - Show messages.console.log(err)}})
+}</code>​</pre>
+          <p>The method above uses a node.js module called <em>superagent</em>, an high level wrapper for ajax requests. With this module we can make a <strong>POST</strong> request, passing all needed informations to get, after, the token. In this snippet the token is saved inside the <em>electron_storage</em>, i.e. a simple environment JSON storage for the current machine.</p>
+          <p><span style="font-size: 12pt;">The <strong>login workflow</strong> is the following:</span></p>
+          <ol>
+            <li>
+The user express the will to be logged in.            </li>
+            <li>
+RAJE shows athe authorization modal.            </li>
+            <li>
+The user eccept authorization requirements.            </li>
+            <li>
+Github send the URL callback containing the code.            </li>
+            <li>
+RAJE extract the code and request the token.            </li>
+            <li>
+Github send the token in return.            </li>
+            <li>
+RAJE stores the token for next requests.            </li>
+          </ol>
+          <p>When the token is stored, every successive requests (such as <em>create a repository</em> or <em>push a commit</em>) are instantly served, as we discussed before, with the variable <code>client</code>​, that is created with in input the token stored.</p>
+          <p>When a new article is opened, only locally the folder, with document and assets, is created. When the user wants to push changes and the repository does not exists, it needs to be created with all needed folders and files.</p>
+          <p>Every time a push is requested we needs the SHA of the HTML file to update it and, if no repositories are founded RAJE needs to create it. Inside the client variable we can find the method <code>.me()</code>​ which returns an instance of the logged user. The me object has inside all allowed operations to users, and among them, the creation of a new repository. With the method <code>client.me().repo({},callback)</code>​ in our aid, a new repository is created, the first parameter is an object that contains properties like name, description and other less important information.</p>
+          <p>Once the repository is created we need to push also the assets, which are Javascript scripts, CSS style files and fonts​ (required by <span id="selectionBoundary_1487688869031_20996904959199925" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="http://fontawesome.io/icons/">FontAwesome</a><span id="selectionBoundary_1487688869030_8753377172087795" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span>). The current versione of RAJE needs to synchronize these files one after another (synchronous paradigm).</p>
+          <p>Those two are the most important examples of integration with the big API of Github, but they give us the proof of what it can be possible to do.</p>
         </section>
         <section id="section31">
-          <h1>Comunicazione tra processi</h1>
-          <p>Descrivere la comunicazione tra i processi di rendering e main</p>
-        </section>
+          <h1>Communication beetwen processes</h1>
+          <p>Electron needs to ran with two processes: Main and Renderer. Main allow to use node.js syntax and manages the software behaviour, instead the Renderer one can be imported inside the HTML document, as like happens with RAJE.</p>
+          <p>Rendered process is stored inside the <em>raje.js script</em>, that is concatenated with <a href="http://gulpjs.com/">gulp.js</a>. Said that, there are a lot of behaviours triggered by the Renderer process and executed by the Main, such as the one which is triggered when user wants to close the editor, when changes are not saved yet. To know that changes are unsaved there are some steps to explain. First, when the editor is opened, the entire body of the editable document is saved in a global variable inside the Renderer process. When the event <em>input</em> is triggered (it happens when some kind of input has been added in the editor), the system check if the saved body is different from the current body, and if they are it means that something has changed, and the <strong>editor state is set to changed</strong>.</p>
+          <p>At this point the Renderer need to send this information to the Main process, to handle unexpected quit without saving changes. We need to instantiate the <em>ipcRenderer</em> module in the Renderer process, to handle and make requests destinated to the Main process. I set a function to do that, setEditState.</p>
+          <pre><code>function setEditState() {ipcRenderer.send('setEditState', edit_state)
+}</code><br /></pre>
+          <p>It send the edit_state variable (that is a boolean) directly to the Main process, to be stored there. Right now w<span style="font-size: 12pt;">e need to do the specular thing inside the Main process, but with the mainProcess module:</span></p>
+          <pre><code>ipcMain.on('setEditState', (event, state) =&gt; {edit_state = state
+})</code><br /></pre>
+          <p>The event parameter inside the callback bring with it a lot of information about the trigger event, instead the state variable is what is passed from the Renderer process, i.e. the boolean that describe the state.</p>
+          <p>Thank to this now we do not need to ask, from the Main, to the Renderer in Synchronous way (which is not possible) to know if the document has been changed before, but instead we can inform the Main every time a change took place, using the asynchronous paradigm.</p>
+          <p>In the other way, there are some cases which need to communicate from Main to Process. The entire menu is created ad setted up by the Main, and the behaviour behind the <em>editor mode</em> and <em>preview mode</em> buttons need to change the visualization of the Renderer one.</p>
+          <p>In this case we use the webContent object in this way to communicate with the Renderer.</p>
+          <pre><code>{label: 'Editor mode',click() {mainWindow.webContents.send('setEditorMode')}
+},
+{label: 'Preview mode',click() {mainWindow.webContents.send('setPreviewMode')}
+},</code>​</pre>
+          <p>And inside the Renderer process we have something like this to set the way how the editor will display the article.</p>
+          <pre><code>ipcRenderer.on('setPreviewMode', (event) =&gt; {$(rash_inline_selector).setNotEditable()
+})ipcRenderer.on('setEditorMode', (event) =&gt; {$(rash_inline_selector).setEditable()
+})</code><br /></pre>
+          <p>These above are examples of asynchronous communications, but for example when the user wants to add a image inside the article, the communication needs to be Synchronous. That is because first the editor save the file, then the file can be displayed with the <em>img</em> element.</p>
+          <p>The message is sent with a sync function, passing some informations about the file.</p>
+          <pre><code>function sendWriteFigure(file) {ipcRenderer.sendSync('writeFigureSync', { 'name': file.name, 'path': file.path })
+}<br /></code>​</pre>
+          <p>In the Main process is pretty similar as the asynchronous behaviour, the only difference is when it need to send back the result to let know, at the sender process, that it finished its job.</p>
+          <pre><code>ipcMain.on('writeFigureSync', (event, image) =&gt; {storage.getRecentArticles((err, recentArticles) =&gt; {fsUtils.writeFigureSync(recentArticles[recentArticles.length - 1], image, (err) =&gt; {if (err) throw errevent.returnValue = true})})
+})<br /></code></pre>
+In this case I send only a boolean in return, it notify to the renderer ​​that it can stop the blocking behavior, and resume from the last util instruction. In this case the last one is the one that creates the img element.        </section>
       </section>
       <section id="section24">
         <h1>Web-based techs</h1>
-        <p>Descrizione della parte html based, il software è generato partendo da tecnologia web based quindi js css e html.</p>
+        <p>As mentioned before, RAJE in built on Electron, which uses web technologies as Javascript and CSS to give at client-side behaviours and styles. First, the splash activity (section) is only a html file with its own Javascript and CSS, rendered by the Main process. The editor itself is the HTML file stored inside the article folder. When it is viewed by a browser (Chromium in our case) it has <strong>rash.js</strong> script that built, into the RASH schema, the document. With the addition of raje.js a RASH document can be turned into a editable document with toolbar and other elements.</p>
+        <p>For this reason, the core of this editor is not the software itself, but insted is the script imported, but the software gives some important wiring behaviors (FS and Github APIs).</p>
+        <p>By the way, if the editor is inside the document stored as a script, why we do not use a normal web browser to edit? If someone try to open the file with a normal browser, he can view only a normal RASH file, because the editor behaviour will be shown and added only if the document is opened with RAJE. <span style="font-size: 12pt;">In other words, this is very useful to send read-only documents or show it with </span><a href="https://rawgit.com/">rawgit</a><span style="font-size: 12pt;">.</span><span style="font-size: 12pt;"> </span></p>
+        <p><span style="font-size: 12pt;">Here, in this section, I will explain everything about the "client side" editor, describing the raje.js script, contenteditable element and the issues jumped out using it.</span></p>
         <section id="section25">
           <h1>Raje.js: the core script</h1>
-          <p>Descrizione dello script che gestisce l'editor vero e proprio come toolbar, derash functions.</p>
+          <p>All the RAJE project flow around the raje.js script. It is built concatenating more scripts with gulp.js.</p>
+          <p>Gulp is a toolkit that helps to automate tasks during development, and i used it to write raje.js when one of the inner scripts change. I created a task called <strong>watch</strong> that listens for saved changes, to build up the output.</p>
+          <p>Raje.js is made up of eight different files:</p>
+          <ol>
+            <li>
+init.js            </li>
+            <li>
+caret.js            </li>
+            <li>
+const.js            </li>
+            <li>
+raje.js            </li>
+            <li>
+shortcuts.js            </li>
+            <li>
+toolbar.js            </li>
+            <li>
+derash.js            </li>
+            <li>
+rendered.js            </li>
+          </ol>
+          <p><strong>Init.js</strong> is the initialization script, it initializes the variables (like bodyContent or edit_state), extends JQuery object adding more new functions, handle the creation of figures and call the <code>$(document).ready()</code> function to set up the editor. Two important functions added to the JQuery object are: <em>setEditable</em> and <em>setNotEditable</em>, both act on the document editability. Very important is what happen to the sections: them are detached from the body and after attached to the <em>editor section</em> (i.e. the section with conteeditable attribute sets to true, i will explain its behaviour in the next section).</p>
+          <p>The second script, that is <strong>caret.js</strong>, provides some utility methods about the caret and its position. Here we can find functions to check if the caret is inside some elements (e.g. if is inside the editor), or to create a selection that wraps entirely the node where the caret is. All the methods here are based on rangy.</p>
+          <p>Sometimes i felt the need to use some constants to store numbers and string called multiple times. Those are wrapped inside the <strong>const script</strong>, in orde to aware of <a href="http://sahandsaba.com/nine-anti-patterns-every-programmer-should-be-aware-of-with-examples.html#magic-numbers-and-strings">magic numbers anti-pattern</a>.</p>
+          <p>Then we find <strong>raje.js</strong>, that is a set of actions to add elements directly onto the body. More of them uses the contenteditable APIs (see <em>undo</em> and <em>redo</em>) or the method <code>document.execCommand('insertHTML')</code>​ that add a HTML string to the caret (as shown in figure right below). All <em>figure elements</em> and <em>crossref</em> are intended as classes, where a new element is a new object​. There are also methods to add sections of any kind, from normals to specials. </p>
+          <pre><code>insertCodeBlock: function () {document.execCommand("insertHTML", false,'&lt;pre&gt;&lt;code&gt;&lt;br/&gt;&lt;/code&gt;&lt;/pre&gt;')
+}</code>​</pre>
+          <p>All shortcuts are stored in <strong>shortcuts.js</strong> script. All shortcuts are binded inside an init function called when the document is ready. Those are all implemented using the Mousetrap module, and needed to trigger a different behaviour from the normal one. Over that the enter key press event, may triggers different behaviour based on where the caret is (e.g. when user press enter inside a figure, he wants to add a new paragraph next to the figure, so he can write down a new text line).</p>
+          <p>I wrapped every graphical elements, that will be added, inside <strong>toolbar.js</strong>. Here there are some variables which contain HTML strings that need to be added after. Among them there is the toolbar and all other modals, each with its own method to show it.</p>
+          <p>Because the rendered document is different from the stored one, and <em>rash.js</em> deals with transformation beetwen the stored and rendered article, the editor needed some kind of mechanism that do the specular thing, in other words <strong>derash.js</strong>. This comes in aid when we save the article, because it creates and beautify the HTML string that is the file. When it creates the string, is minified, for this reason I created a function that mantains the multi line property and tabulation.</p>
+          <p>At least <strong>rendered.js</strong> contains everything to handle communication with the Main process.</p>
+          <p>Next, always with gulp.js, I will build raje.js also with all client-side modules (e.g. rangy and Mousetrap).</p>
         </section>
         <section id="section29">
           <h1>Contenteditable and issues with different browsers</h1>
-          <p>descrizione della tecnologia utilizzata, <code>contenteditable</code> e degli errori che sono saltati fuori,soprattutto perchè prima si voleva fare un sistema diverso e non software, quindi ci sarebbero stati problemi dicompatibilità (soprattutto firefox e chrome)</p>
-          <p>Da scrivere anche il problema del non rompere la funzionalità di <strong>undo/redo</strong> di default, quindi di"tradurre"alcunielementiper farli <em>fittare</em> con rash</p>
-          <p>Problema del caret e dell'utilizzo di caratteri speciali zero_space per gestire l'inserimento di html.</p>
+          <p>When the document is ready all sections are detached from the body, and a new section is added instead (using the following code shown after).</p>
+          <pre><code>&lt;section id="rashEditor" class="cgen editgen container mousetrap" contenteditable="true"&gt;&lt;/section&gt;</code>​ <span style="font-size: 12pt; background-color: rgb(255, 255, 255); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">​</span><span style="font-size: 12pt; background-color: rgb(255, 255, 255); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;">​</span></pre>
+          <p>This mean that the entire body is inside this new <code>section#rashEditor</code>​, which grants editability thanks to the attribute <a href="https://www.w3.org/TR/2008/WD-html5-20080610/editing.html#contenteditable0">contenteditable</a> setted as true.​</p>
+          <p>Contenteditable is an attribute, which can be true or false. If this section has contenteditable set to true, it is <strong>editable</strong>. This means that text can be added directly inside it, and it comes with some powerful APIs which give us important manageable skills (such as <q>transform selection into bold text</q> or <q>add new line paragraph</q>).</p>
+          <p>This technology is very powerful, but have a so many exploits and, as the <strong>browser war</strong> shown us, every one decided to implement every function in his mid. For instance, after pressing the enter key, Internet Explorer will add a <code>&lt;p&gt;</code> element, Chrome will insert a <code>&lt;p&gt;</code> or <code>&lt;div&gt;</code> depending of the situation and finally Firefox will attach a <code>&lt;div&gt;</code>.</p>
+          <p>This is only one of the issues jumped out during the development. A RASH article needs a specific set of element which comprends <em>strong</em> and <em>em</em>, but all browsers (without counting on IE) handle <em>bold</em> and <em>italic</em> instead. For this reason, inside the derash script, I added a function that convert a <em>bold</em> into <em>strong</em>.</p>
+          <p>In the first instance, RASH should not be a software, but a simple script that could be imported directly as script, granting users to edit and save directly using a common browser. Then, according to the impossibility of use FileWriter API from all browsers, I choose to use a technology that allowed that. Right now raje.js works on Chromium, because that everything inside the raje core is intended for it.<br /></p>
+          <p>All issues listed above are based on the one idea that I always need to use contenteditable because it implements also undo and redo behaviours. Becuase if i broke the contenteditable changes buffer (e.g. if I used JQuery to add directly a strong element), I will not be able anymore to know the order of changes to revert or do again. On the Internet I have not find anything that would aid me, neither the APIs to access the undo buffer.</p>
+          <p>Another important problem (and well documented on Github) is about the need to insert a sibling element. This went out when I was developing for Chrome and Firefox, so I found a common solution for both. In particular if the user wants to add a new section below the current one (a sibling one) when he is in this situation, where the caret is at the end of the paragraph.</p>
+          <pre><code>&lt;section&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;&lt;br/&gt;[caret]&lt;/p&gt;&lt;/section&gt;</code></pre>
+          <p>Now, we probally want to add a new section after the current one, not inside. To do that we need to move the caret right at the end, because adding custom HTML need to call the method <code>execCommand("insertHTML", false, string)</code>​, and it will add the passed string where the caret is positioned. There is a function to do that and this is it <code>caret.moveAfterNode(node)</code>​.</p>
+          <p>Here is where the problem comes out, not if you are using Firefox. For Chrome users (and RAJE indeed), this will move the caret at the end of the element, not outside but inside instead.</p>
+          <pre><code>&lt;section&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;[caret]&lt;/section&gt; //Chrome&lt;section&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/section&gt;[caret] //Firefox</code></pre>
+          <p>​​With Chrome, after that, attaching the new section, will not add a sibling but a child instead. After few researches online, i foud out a special character: the <em>Zero Space character</em> i.e. <code>"&amp;#8203"​</code>​. ​ Adding this after the current section, will be possible move the caret outside</p>
+          <pre><code>&lt;section&gt;&lt;h1&gt;heading&lt;/h1&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/section&gt;[caret]&amp;#8203</code>​</pre>
+          <p>The only one thing remained here is to sanitize the current section's parent element, and remove all plain text that is not wrapped in elements.</p>
+          <p>That was the contenteditable and some examples of what can be the compatibility issues.</p>
         </section>
       </section>
       <section id="section36">
         <h1>Modules</h1>
+        <p>Inside this section I will describe the third-part modules and packages that I used to easy up the usage of particular packages. Rangy is the most used one which comprends also two of its submodules, another one is Mousetrap that I used to handle the keyboard shortcuts.</p>
         <section id="section37">
           <h1>Rangy</h1>
         </section>
-        <p>usata per astrarre la definizione di range, accedere al caret e selezioni, sub-modulo saveselection.js​​ ​​<span id="selectionBoundary_1487006698454_9324951738454963" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
+        <p><a href="https://github.com/timdown/rangy">@TimDown's rangy</a> is very popular, and it has also a active community (obviusly leaded by his founder Tim Down), on <a href="http://stackoverflow.com/search?q=rangy">StackOverflow</a> is a question of an enormus quantity of answers about contenteditable and selection management.<span id="selectionBoundary_1487006698454_9324951738454963" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
+        <p>Every browser implements a <a href="https://www.w3.org/TR/selection-api/#selection-interface">naïve selection interface</a> (Firefox is the only one that allows multiple selection <a href="#figure_10"> </a><span style="font-size: 12pt;">), and for a wider spectrum of methods, I personally think that rangy grants a lot of useful operations. In a particular way, I used that to know where the caret is when is needed to know, or the caret position inside its parent. It can also allow to move the caret to start or the end of an element.</span></p>
+        <figure id="figure_10">
+          <p><img src="img/firefox3selecttext.gif" alt="firefox3selecttext.gif" /></p>
+          <figcaption><span class="cgen" data-rash-original-content="">Multiline selection with Firefox.</span></figcaption>
+        </figure>
+        <p>Otherwise I imported also a submodule, that is <em>rangy-selectionsaverestore</em>. <em>It can save the current caret position to be restored afte</em>r. E.g. when the user wants to add an image inside the article, after clicking the button, a modal is shown. Is here where the editor needs to save the current selection, because next he probably change the focus to a button, a textbox or directly with a single click in anywhere else position. When he chose file and it is saved, RAJE will restore the selection to move the caret where it was before and then add the new image element.</p>
+        <p>The other subpackage is <em>rangy-textrange</em>, and can allows to move the caret ahead or behind of some characters. This behaviour is used to exit from inline elements. From inside a code element spaces are allowed, instead if you press enter you will exit from it (and the caret will be moved by a character to right).</p>
         <section id="section38">
           <h1>Mousetrap and shortcuts</h1>
-          <p>Descrizione di questa libreria e quali shortcuts sono state usate</p>
+          <p>All the shortcuts are attached directly to the <code>section#rashEditor</code>​, because it have the <em>mousetrap</em> class, which is the one recognized by <a href="https://craig.is/killing/mice">Mousetrap</a>. This script is really easy yo use, is only about to connect somehow a character or a sequence of them.</p>
+          <p>As shown in <a href="#figure_11"> </a><span style="font-size: 12pt;"> everythig is referred to a </span><em style="font-size: 12pt;">Mousetrap class</em><span style="font-size: 12pt;">, and only the function bind is called. The signature means that it accepts a string (that is the sequence to trigger the event) and a callback called when the event is triggered.</span></p>
+          <p><span style="font-size: 12pt;">I used the same functions of the <em>Mousetrap objec</em>t to bind <strong>ctrl+b</strong> or <strong>cmd+b</strong> (the plus indicates that the two buttons need to be pressent at the same time) to handle the bold behaviour, handled in another script.</span></p>
+          <pre><code>Mousetrap.bind('mod+b', function (event) {rashEditor.insertBold();return false;
+});<br /></code></pre>
+          <figure id="figure_11">
+            <p><img src="img/mousetrap.png" alt="mousetrap.png" /></p>
+            <figcaption>​Mousetrap bind function.</figcaption>
+          </figure>
         </section>
       </section>
       <section id="section67">
         <h1>Deploy</h1>
-        <p>Descrizione di come viene effettuato il deploy, in particolare la compatibilità e le issues (per esempio linux richiede che ci sia anche la mail dell'authore).</p>
+        <p>Descrizione di come viene effettuato il deploy, in particolare la compatibilità e le issues (per esempio linux richiedeche ci sia anche la mail dell'authore).</p>
         <p>La libreria <code>electron-builder</code>​ trovata direttamente da <a href="http://electron.rocks/electron-builder-explained/">Electron ROCKS</a>.</p>
         <p>Per fare il deploy del software per sistemi windows, utilizzando un mac ho dovuto installare wine e le librerie mono</p>
         <p><br /></p>
@@ -295,19 +446,19 @@
       </section>
       <section id="section46">
         <h1>Profiling</h1>
-        <p>Ogni tipo di informazione raccolta riguardo agli utenti che hanno effettuato il test (sia quelli che scrivono sia quelli che posso acquisire come informazioni sulle macchine utilizzate) importantissimo sistema operativo!</p>
+        <p>Ogni tipo di informazione raccolta riguardo agli utenti che hanno effettuato il test (sia quelli che scrivono sia quelliche posso acquisire come informazioni sulle macchine utilizzate) importantissimo sistema operativo!</p>
       </section>
       <section id="section47">
         <h1>Results</h1>
         <p>Discussione dei risultati che sono stato ottenuti, sus (system usability scale) rapportato ad altri risultati</p>
         <section id="section48">
           <h1>Suggestions</h1>
-          <p>Sotto sezione basata sulle risposte ricevute dall'ultimo blocco del test, in particolare per quanto riguarda le informazioni che possono servire per redigere i test successivi su larga scala</p>
+          <p>Sotto sezione basata sulle risposte ricevute dall'ultimo blocco del test, in particolare per quanto riguarda le informazioniche possono servire per redigere i test successivi su larga scala</p>
         </section>
       </section>
       <section id="section69">
         <h1>Personal beta testing</h1>
-        <p>In questa sezione scrivo riguardo alle issues che ho trovato e ho modificato durante la stesura della tesi, poichè ho scritto il tutto con questo editor.</p>
+        <p>In questa sezione scrivo riguardo alle issues che ho trovato e ho modificato durante la stesura della tesi, poichèho scritto il tutto con questo editor.</p>
         <p><br /></p>
       </section>
     </section>
@@ -324,12 +475,17 @@
           <p>Using PDF files. (2009) <a href="http://www.siamcomm.com/website-design/using-pdf-files-pros-and-cons/">http://www.siamcomm.com/website-design/using-pdf-files-pros-and-cons/</a><br /></p>
         </li>
         <li id="bib2" role="doc-biblioentry">
-          <p>Peroni, S. (2017). RASH: Research Articles in Simplified HTML <span id="selectionBoundary_1487102222373_5759282897640037" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">https://rawgit.com/essepuntato/rash/master/documentation/index.html</a><span id="selectionBoundary_1487102222373_9397117972909679" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
+          <p>Peroni, S. (2017). RASH: Research Articles in Simplified HTML<span id="selectionBoundary_1487102222373_5759282897640037" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span><a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">https://rawgit.com/essepuntato/rash/master/documentation/index.html</a><span id="selectionBoundary_1487102222373_9397117972909679" class="rangySelectionBoundary" style="line-height: 0; display: none;">﻿</span></p>
         </li>
         <li id="bib3" role="doc-biblioentry">
-          <p><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span>Garrish M., Siegman T., Gylling M., McCarron S. (2016). Digital Publishing WAI-ARIA Module 1.0. W3C Working Draft, 17 March 2016. World Wide Web Consortium. <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a><br /></p>
+          <p>GarrishM., Siegman T., Gylling M., McCarron S. (2016). Digital Publishing WAI-ARIA Module 1.0. W3C Working Draft, 17 March2016. World Wide Web Consortium. <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a><br /></p>
         </li>
       </ol>
+    </section>
+    <section role="doc-endnotes" id="fnlist">
+      <section id="fn1" role="doc-endnote">
+        <p><a href="http://caniuse.com/#feat=filesystem">Tabella</a> che mostra la compatibilità con le API FileWriter per levarie versioni di browser commerciali.<br /></p>
+      </section>
     </section>
 
 </body>
