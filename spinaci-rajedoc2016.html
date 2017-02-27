@@ -27,49 +27,70 @@
 <body>
     <section role="doc-abstract">
       <h1>Abstract</h1>
-      <p>Introduzione, riassunto chiaro della tesi a tutti i livelli 2 paragrafi</p>
       <p><br /></p>
     </section>
     <section id="section71">
       <h1>Introduction</h1>
-      <p>Introduzione, riassunto chiaro della tesi a tutti i livelli ​</p>
-      <p><br /></p>
+      <p>With this dissertion I describe RAJE, a WYSIWYG editor, which generate RASH documents, i.e. a HTML subset, in output. This software allows authors to write research papers directly with a user-friendly interface, instead of writing raw markup with a IDE or text editors; and grants users the benefits of a word processor combined with the ones given by a HTML-based format which are interactiveness, usability and easiness to be processed by calculators.</p>
+      <p>Actually the most used format in publications is PDF, which has, without uncertainty, strenghts that make it the <em>De Facto standard</em> in document sharing. Among them we can find the hard formatting style, to ensure that every device is able to visualise the file in the way it was created, as is. A big problem, that toady is more important, is the lack of interactivity in a PDF file, and its unuptitude to be shared via web.</p>
+      <p>The publication workflow is made up of two steps. The first is when the article is submitted to a commission of peer reviewers, which will read and comment it. After revision complete, the document can be accepted or rejected from conference chair. All articles are shared and sent as PDF, with a pre-choosen LaTeX layout. The second step accour only for accepted papers, and it consists of sending sources and generated PDF to editor houses, that will create a new PDF, ready to be published.</p>
+      <p>Before these steps, the document is needed to be created, and in order to do this, everyone uses his preferred editor. There are MS Word, OpenOffice and LibreOffice which are popular word processors. They produce DOC(X) or ODT files, but of course, authors can export the document in PDF. Another way is using LaTeX i.e. a typesetting format that can be compiled to create the corrispondant PDF file. This method is different because users have to use a markup editor instead of a word-processor like one (there are also WYSIWYG LaTeX editors).</p>
+      <p>Recently, expecially inside semantic community where interactions about papers is more consistent (because of linked datas), reasearchers started to talk about HTML publication. Publication modalities have not change but instead new HTML-based editors or formats are released. Among them we can find Authorea, Fidus Writer, Dokieli and TinyMCE, that are the most populars.</p>
+      <p>RAJE places inside the last group, with the difference that it is developed on a format i.e. RASH, and all its framework can comes in aid for handling conversions. Having only a univocal subset of HTML can help a lot with problems such as an unimplemented structural restriction, where same result can be reached with different structures (e.g. <code>&lt;b&gt;lorem&lt;/b&gt;</code> elements are different of <code>&lt;span style="font-wight:bold"&gt;lorem&lt;/span&gt;</code>, but they are displayed equal).</p>
+      <p>RAJE can be a good alternative for writing technical articles but can be difficult, also for whom know HTML, especially for long documents. Here is where RAJE comes in authors aid, without showing the code itself but instead the output will be shown.</p>
+      <p>Before the development of RAJE, actually I worked directly on raje.js script, that is the beating heart of RAJE. Then the focus was moved onto the software itself. Everything is created using web technologies as HTML, CSS and JavaScript, the node.js framework and the Electron module in order to build software.</p>
+      <p>This dissertion is written using RAJE, and this is a good testing, but other tests are made. In particular a <em>Task Driven Test</em> was organized with 3 researchers of the deparment of computer science and engineering at Bologna University. This test is a kind of Discount Usability Test (DUT) that aim to discover the RAJE usability and inprove test question to do the same a wider population succesively.</p>
+      <p>Next there is the thesis organization.</p>
+      <ul>
+        <li>
+          <p>The <a href="#section1"> </a>​ describes the specific context where RAJE operates, and it is useful to grant an outline of how publications and editors work.</p>
+        </li>
+        <li>
+          <p><span class="cgen" data-rash-original-content=" ">The <a href="#section15">Section 3</a></span>​ give high-level informations about what RAJE allows authors to do, how the inteface is arranged and its strenghts.<br /></p>
+        </li>
+        <li>
+          <p>The <a href="#section22"> </a>​ is a RAJE low-level description. It is about technologies and external libraries used to develop it.</p>
+        </li>
+        <li>
+          <p>The <a href="#section43"> </a>​ describes the evaluation process: population background, tasks implementation, development of results and conclusions.</p>
+        </li>
+      </ul>
     </section>
     <section id="section1">
       <h1>Literature review</h1>
       <p>Before talking about RAJE I must describe the domain where it operates.</p>
-      <p>First of all I introduce the submission workflow <a href="#section54"></a>, for creation, evaluation and publication, and few words about HTML publication. Then I will give an overall aboutpopular editors and formats today, which are mainly PDF and ePub as formats, and the WYSIWYG for what concern the editors.At least I describe the RASH framework, where RAJE will be setted in.</p>
+      <p>First of all I introduce the submission workflow <a href="#section54"></a>, for creation, evaluation and publication, and few words about HTML publication. Then I will give an overall about popular editors and formats today, which are mainly PDF and ePub as formats, and the WYSIWYG for what concern the editors. At last I describe the RASH framework, where RAJE will be placed in.</p>
       <section id="section52">
         <h1>Submission workflow<br /></h1>
         <blockquote>
           <p>More than 400 years passed, but the structure which sustain scientific papers is still the same of Galieo Galilei— A. Pepe Authore Co-Founder.</p>
         </blockquote>
-        <p>When a researcher, or a group of them, wants to submit a paper to a technical journal, workshop or conference theyfirst of all, need an editor. If we are talking about a more than one author, they probably set up a communicationlink among them, to exchange and share the new changes; To have always the last updated release. The editor can bea WYSIWYG word processor or a markdown one (that will be described in​), and in some case it has a collaborationsystem directly integrated inside.</p>
-        <p>When the article is finally ready, it must be submitted to the conference, answering to the <em>call of papers</em>.Before the deadline the abstract must be sent, and then the whole article. Only one requirement is asked: the articleis accepted only in PDF format, but sometimes, in few specific conferences also EPUB is accepted. Not only the extensionformat is required, but also the layout format (see LNCS, ACM and others).</p>
-        <p>This step can be called <strong>evaluation</strong>. Here a commission of peers researchers or conference chairs haveto review all submitted articles, with annotations and comments. Every article can be accepted or rejected, but sometimeschanges are required. This step can take up to 3 months.</p>
-        <p>When a paper is accepted the second phase comes: <strong>publication</strong>. Authors, now, have to send an archivecontaining source code of written paper (e.g. if LaTeX is used, inside the archive can be found .tex markdown files)and a the PDF corrispondent document, to the nominated editor house. They will create a new PDF file starting fromthe sent one. The source code will be consulted only for doubts.</p>
+        <p>When a researcher, or a group of them, wants to submit a paper to a technical journal, workshop or conference they, first of all, need an editor. If we are talking about a more than one author, they probably set up a communication link among them, to exchange and share the new changes; To have always the last release. The editor can be a WYSIWYG word processor or a markdown one (that will be described in <a href="#section59"> </a>), and in some case it has a collaboration system directly integrated inside.</p>
+        <p>When the article is finally ready, it must be submitted to the conference, answering to the <em>call of papers</em>. Before the deadline only the abstract must be sent, and then the whole article. Only one requirement is asked: the article is accepted only in PDF format, but sometimes, in few specific conferences also EPUB is accepted. Not only the format is required, but also the TeX layout (such as LNCS, ACM and others).</p>
+        <p>This step can be called <strong>evaluation</strong>. Here a commission of peers researchers or conference chairs have to review all submitted articles, with annotations and comments. Every article can be accepted or rejected, but sometimes changes are required. This step can take up to 3 months.</p>
+        <p>When a paper is accepted the second phase comes: <strong>publication</strong>. Authors, now, have to send an archive containing source code of written paper (e.g. if LaTeX is used, inside the archive can be found .tex markdown files) and a the PDF corrispondent document, to the nominated editor house. They will create a new PDF file starting fromthe sent one. The source code will be consulted only for doubts.</p>
         <p>This, described above, is the academic submission workflow.</p>
         <section id="section54">
         </section>
         <section id="section62">
           <h1>HTML and publication</h1>
-          <p>The main format widely used to submit academic articles is PDF. <em>It usage has many problems</em> (that will belisted after) however the worst one, in this case, is about the difficulty to be ridden by machines. For this reasonthe web scientific community propose the adoption of HTML for submitting and sharing scientific articles. In additionto the ability to be easily ridden by machines or browsers, it is not static as PDF, e.g. the RASH format allowsreader users to change<a href="#fn5"> </a> beetwen the different supported styles only interacting with specific button placed at the bottom of the article.</p>
+          <p>The main format widely used to submit academic articles is PDF. <em>It usage has many problems</em> (that will belisted after) however the worst one, in this case, is about the difficulty to be ridden by machines. For this reason the web scientific community propose the adoption of HTML for submitting and sharing scientific articles. In addition to the ability to be easily ridden by machines or browsers, it is not static as PDF, e.g. the RASH format allows reading users to change<a href="#fn5"> </a> beetwen the different supported styles only interacting with specific button placed at the bottom of the article.</p>
           <p>Enhancements are multiple. Videos, SVG images, user interactions are all things that PDF does not have.</p>
-          <p>As just said, HTML is currently not used to publication, but instead many reasearchers already use this format becausethey use web-first editors.</p>
-          <p><a href="https://www.elsevier.com/">Elsevier</a>, that is a world-leading provider of web-based solutions, <em>has posed a series of questions online to a group of 500 researchers</em>about which one do they prefer beetwen HTML or PDF to create research articles. First they asked few question aboutpros and cons and then, after a video regarding the <q>article of the future</q>​, they asked if the video changed its perception<a href="#bib14"> </a>. The 60% of the interviewed researcherers changed its mind about a HTML based article, instead a few morethan a third of them was little sceptical about maintainig costs, offline reading and how much this features arerelevant. At least 50% of interviewed people declared that maybe in future, <strong>HTML can be the next way to create, share and navigate the future research articles</strong>.</p>
+          <p>As just said, HTML is currently not used to publication, but instead many reasearchers already use this format because they use web-first editors.</p>
+          <p><a href="https://www.elsevier.com/">Elsevier</a>, that is a world-leading provider of web-based solutions, <em>has posed a series of questions online to a group of 500 researchers</em> about which one do they prefer beetwen HTML or PDF to create research articles. First they asked few question about pros and cons and then, after a video regarding the <q>article of the future</q>​, they asked if the video changed its perception <a href="#bib14"> </a>. The 60% of the interviewed researcherers changed its mind about a HTML based article, instead a few more than a third of them was little sceptical about maintainig costs, offline reading and how much this features arerelevant. At least 50% of interviewed people declared that maybe in future, <strong>HTML can be the next way to create, share and navigate the future research articles</strong>.</p>
         </section>
       </section>
       <section id="section57">
         <h1>Editors and formats</h1>
         <p>All the research articles are created with at least one editor or <a href="http://www.webopedia.com/TERM/W/word_processing.html">word processor</a>.The choice is all about the author's preferred one. </p>
-        <p>The major used editors are <strong>word processors</strong>, which are computer programs that allow users to do moreactions than common text editors (as WordPad). Them are used to write down those kind of document such as <a href="https://products.office.com/en-US/word">Microsoft Word</a>,<a href="http://www.openoffice.org/">OpenOffice</a> and <a href="https://www.libreoffice.org/">LibreOffice</a>. Thesethree processors create files with their own format: <strong style="font-size: 12pt;">.doc(x)</strong>. They sharesthe biggest amount of the market. MS Word, which cames with MS Office suit, during his apex was the most used one.</p>
-        <p><a href="https://www.latex-project.org/">LaTeX</a> (a <strong>format</strong>), i.e. a typesetting system to createtechnical and scientific documentation, is popular enough to be the <em>most adopted format for drawing scientific documents in a markdown-like way</em>.Of course it comes with many editors (both markup and WYSIWYG styles), which shares more or less equally the market.One of the LaTeX's strenghts are the mathematical notation and the wide number of packages and styles useable. Mathematicalnotation is pretty simplier than other editors, because it uses a well defined syntax<a href="#fn2"> </a>.</p>
+        <p>The major used editors are <strong>word processors</strong>, which are computer programs that allow users to do more actions than common text editors (as WordPad). Them are used to write down those kind of document such as <a href="https://products.office.com/en-US/word">Microsoft Word</a>,<a href="http://www.openoffice.org/">OpenOffice</a> and <a href="https://www.libreoffice.org/">LibreOffice</a>. Thesethree processors create files with their own format: <strong style="font-size: 12pt;">.doc(x)</strong>. They share the biggest amount of the market. MS Word, which cames with MS Office suit, during his apex was the most used one.</p>
+        <p><a href="https://www.latex-project.org/">LaTeX</a> (a <strong>format</strong>), i.e. a typesetting system to create technical and scientific documentation, is popular enough to be the <em>most adopted format for drawing scientific documents in a markdown-like way</em>.Of course it comes with many editors (both markup and WYSIWYG styles), which shares more or less equally the market. One of the LaTeX's strenghts are the mathematical notation and the wide number of packages and styles useable. Mathematical notation is pretty simplier than other editors, because it uses a well defined syntax<a href="#fn2"> </a>.</p>
         <p>In this chapter I talk about PDF and ePub formats (the most required from publishers), the WYSIWYG editors and, atleast, I will spend some words to describe HTML-based editors.</p>
         <section id="section66">
           <h1>PDF: de facto standard</h1>
-          <p>The <strong>Portable Document Format</strong> (also known as <a href="https://acrobat.adobe.com/us/en/why-adobe/about-adobe-pdf.html">PDF</a>)is a format created by Adobe Systems in the first 90s <a href="#bib5">[5]</a>. It was born to facilitate the exchangeof documents. It became popular because it is independent of software, hardware, or operating system, and now itis <em style="font-size: 12pt;">de facto standard</em>. In other words, documents looked always the same everywhere,regardless of which device or Operating System are opened.</p>
-          <p>After its first release, the new versione PDF 1.1 came out, with more new interesting features such as links, notesand so on. Year over year new releases has been published until, in the 2008, PDF 1.7 became an official<a href="http://www.digitalpreservation.gov/formats/fdd/fdd000277.shtml"> ISO-standard (ISO 32000-1:2008)</a>.</p>
-          <p>Everyone use it: businesses, universities and publishers (as written in<a href="#section54"> </a>​). In<a href="#figure_14"> </a>​ is shown that from April 2011 to February 2014, the most format searched with Google search engine is PDF.The percentage decreased in 2014, reaching 77 points degree. In the same year the ePub format usage, which wasnot there in previous years, is grown up.</p>
+          <p>The <strong>Portable Document Format</strong> (also known as <a href="https://acrobat.adobe.com/us/en/why-adobe/about-adobe-pdf.html">PDF</a>) is a format created by Adobe Systems in the first 90s <a href="#bib5">[5]</a>. It was born to facilitate the exchange of documents. It became popular because it is independent of software, hardware, or operating system, and now it is <em style="font-size: 12pt;">de facto standard</em>. In other words, documents looked always the same everywhere, regardless of which device or Operating System are opened.</p>
+          <p>After its first release, the new versione PDF 1.1 came out, with more new interesting features such as links, notes and so on. Year over year new releases has been published until, in the 2008, PDF 1.7 became an official<a href="http://www.digitalpreservation.gov/formats/fdd/fdd000277.shtml"> ISO-standard (ISO 32000-1:2008)</a>.</p>
+          <p>Everyone use it: businesses, universities and publishers (as written in <a href="#section54"> </a>​). In <a href="#figure_14"> </a>​ is shown that from April 2011 to February 2014, the most format searched with Google search engine is PDF. The percentage decreased in 2014, reaching 77 points degree. In the same year the ePub format usage, which was not there in previous years, is grown up.</p>
           <p>A PDF file is made up combining three different technologies:</p>
           <ol>
             <li>
@@ -79,30 +100,30 @@
               <p>A font-embedding system that aggregate used fonts inside the document.</p>
             </li>
             <li>
-              <p>A storage system which embeds all elements (also the two listed above, images and other external things) togheter,in one single file.</p>
+              <p>A storage system which embeds all elements (also the two listed above, images and other external things) togheter, in one single file.</p>
             </li>
           </ol>
           <figure id="figure_14">
             <p><img src="img/2014-02-pdf-vs2-1024x686.png" alt="2014-02-pdf-vs2-1024x686.png" /></p>
             <figcaption><span class="cgen" data-rash-original-content="">PDF dominance </span><a href="​http://duff-johnson.com/2014/02/17/the-8-most-popular-document-formats-on-the-web/">​http://duff-johnson.com/2014/02/17/the-8-most-popular-document-formats-on-the-web/</a>.</figcaption>
           </figure>
-          <p>PDF files did not succeed because of its technical supremacy, but mostly because Adobe, in 1993, realized that thisformat has to became free of charges, unlike its competitors<a href="#bib6"> </a>. This move is the architect of future popularity.</p>
-          <p>The accessibility is a problem since PDF format's focus was more characterized by graphical rappresentation thansemantical. When, in 2012, a new standard has been released (<a href="https://www.pdfa.org/pdfua-the-iso-standard-for-universal-accessibility/">PDF/UA</a>,Universal Accessibility) PDF files can be created specifically to be accessible for disabled people, with additionalinformations like XML tags, captions and audio descriptions. <strong>The PDF/UA standard is deeply different from the PDF one</strong>,this means that a PDF file can or cannot be compatible with the accessible standard. Moreover the only one programthat allows users to modify compliance issues on a PDF file is Adobe Acrobat Reader Pro, where its license hasa significant cost <a href="#bib7">[6]</a><a href="#bib1"> </a>​.</p>
-          <p>The last problem is that PDF is a static format, good to be read form humans, but (because is shared as binary) isless good to be read from machines.</p>
+          <p>PDF files did not succeed because of its technical supremacy, but mostly because Adobe, in 1993, realized that this format has to became free of charges, unlike its competitors <a href="#bib6"> </a>. This move is the architect of future popularity.</p>
+          <p>The accessibility is a problem since PDF format's focus was more characterized by graphical rappresentation than semantical. When, in 2012, a new standard has been released (<a href="https://www.pdfa.org/pdfua-the-iso-standard-for-universal-accessibility/">PDF/UA</a>,Universal Accessibility) PDF files can be created specifically to be accessible for disabled people, with additional informations like XML tags, captions and audio descriptions. <strong>The PDF/UA standard is deeply different from the PDF one</strong>,this means that a PDF file can or cannot be compatible with the accessible standard. Moreover the only one program that allows users to modify compliance issues on a PDF file is Adobe Acrobat Reader Pro, where its license has a significant cost <a href="#bib7">[6]</a><a href="#bib1"> </a>​.</p>
+          <p>The last problem is that PDF is a static format, good to be read form humans, but (because is shared as binary) is less good to be read from machines.</p>
         </section>
         <section id="section68">
           <h1>EPUB format</h1>
-          <p>The <a href="http://idpf.org/epub">EPUB</a> (short for​ <em>electronic publication</em>) format is a open standardpublished by the <a href="http://idpf.org/">International Digital Publishing Forum</a>. It is a format for e-bookfiles<a href="#fn3"> </a>​. It can be used to send and publish a single file, while it contains a set of structured assets, <q style="font-size: 12pt;">including XHTML, CSS, SVG, images, and other resources</q>​.</p>
+          <p>The <a href="http://idpf.org/epub">EPUB</a> (short for​ <em>electronic publication</em>) format is a open standard published by the <a href="http://idpf.org/">International Digital Publishing Forum</a>. It is a format for e-bookfiles<a href="#fn3"> </a>​. It can be used to send and publish a single file, while it contains a set of structured assets, <q style="font-size: 12pt;">including XHTML, CSS, SVG, images, and other resources</q>​.</p>
           <blockquote>
             <p>EPUB is the most widely supported vendor-independent XML-based (as opposed to PDF) e-book format; that is, it issupported by the largest number of hardware readers.<br /></p>
           </blockquote>
-          <p>In October 2007 was realeased, with an expansion in 2010, EPUB 2. The version 3.0 became effective in October 2011(it was also re-updated in June 2014 to the version 3.0.1). EPUB 3.0.1 granted specialized formatting (for documentslike graphic novels and comic books), support for <a href="https://www.w3.org/Math/">MathML</a>, and enhanced accessibilityfeatures. From Junuary 5 2017, the current version is <a href="http://idpf.org/epub/31">EPUB 3.1</a><a href="#fn4"> </a> and its purpose is to simplify digital books specifications and align itself to the <a href="https://www.w3.org/wiki/Open_Web_Platform">Open Web Platform</a> (alsobecause the <a href="https://www.w3.org/2017/01/pressrelease-idpf-w3c-combination.html.en">alliance beetwen IDPF and W3C</a> dated2017). Right now, IDPF is developing a new common specifications for allowing users to open publications online,with the help of a simple browser without lose any features. </p>
-          <p>An EPUB file is ZIP archive containing HTML5 files (with the last release), CSS and other needed assets. As saidbefore, an EPUB is delivered as a single file to facilitate sharing, but it can be unzipped to see his internalstructure (<a href="#figure_15"> </a>​). Inside the root folder there are two directories and a mimetype that must be included in. The mimetypeis only needed to reveal what kind of ZIP is, in this case it only containts <code>application/epub+zip</code>​. The <strong style="font-size: 12pt;">META-INF</strong> directory must contains the <a href="https://www.w3.org/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-files">reserved files</a> suchas <em style="font-size: 12pt;">encryption.xml</em>,<em style="font-size: 12pt;"> signatures.xml</em> and <em style="font-size: 12pt;">container.xml</em> whichis the main one. It has a <em style="font-size: 12pt;">rootfile</em> element for each one asset inside the EPUB(<a href="#figure_16"> </a>​ show its contents).</p>
+          <p>In October 2007 was realeased, with an expansion in 2010, EPUB 2. The version 3.0 became effective in October 2011(it was also re-updated in June 2014 to the version 3.0.1). EPUB 3.0.1 granted specialized formatting (for documentslike graphic novels and comic books), support for <a href="https://www.w3.org/Math/">MathML</a>, and enhanced accessibility features. From Junuary 5 2017, the current version is <a href="http://idpf.org/epub/31">EPUB 3.1</a><a href="#fn4"> </a> and its purpose is to simplify digital books specifications and align itself to the <a href="https://www.w3.org/wiki/Open_Web_Platform">Open Web Platform</a> (also because the <a href="https://www.w3.org/2017/01/pressrelease-idpf-w3c-combination.html.en">alliance beetwen IDPF and W3C</a> dated 2017). Right now, IDPF is developing a new common specifications for allowing users to open publications online,with the help of a simple browser without lose any features. </p>
+          <p>An EPUB file is ZIP archive containing HTML5 files (with the last release), CSS and other needed assets. As said before, an EPUB is delivered as a single file to facilitate sharing, but it can be unzipped to see his internal structure (<a href="#figure_15"> </a>​). Inside the root folder there are two directories and a mimetype that must be included in. The mimetype is only needed to reveal what kind of ZIP is, in this case it only contains <code>application/epub+zip</code>​. The <strong style="font-size: 12pt;">META-INF</strong> directory must contains the <a href="https://www.w3.org/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-files">reserved files</a> suchas <em style="font-size: 12pt;">encryption.xml</em>,<em style="font-size: 12pt;"> signatures.xml</em> and <em style="font-size: 12pt;">container.xml</em> whichis the main one. It has a <em style="font-size: 12pt;">rootfile</em> element for each one asset inside the EPUB (<a href="#figure_16"> </a>​ show its contents).</p>
           <figure id="figure_16">
             <p><img src="img/container.xml.png" alt="container.xml.png" /></p>
             <figcaption>​Example of a container.xml file.</figcaption>
           </figure>
-          <p>Then there is the OEBPS ​directory that contains: ncx, opf and other required assets. Among them, <strong style="font-size: 12pt;">OPF</strong> integratesall metadata normally required as the <em style="font-size: 12pt;">unique-identifier</em> or other <a href="http://dublincore.org/">dublin core metadata</a> (whichare <em>dc:language</em>, <em>dc:creator</em> and others). The manifest node wraps every needed assets, in<a href="#figure_17"> </a> are the entire book in HTML format, a cover image and the table of content which is <em style="font-size: 12pt;">nav.html</em>.</p>
+          <p>Then there is the OEBPS ​directory that contains: ncx, opf and other required assets. Among them, <strong style="font-size: 12pt;">OPF</strong> integrates all metadata normally required as the <em style="font-size: 12pt;">unique-identifier</em> or other <a href="http://dublincore.org/">dublin core metadata</a> (whichare <em>dc:language</em>, <em>dc:creator</em> and others). The manifest node wraps every needed assets, in<a href="#figure_17"> </a> are the entire book in HTML format, a cover image and the table of content which is <em style="font-size: 12pt;">nav.html</em>.</p>
           <figure id="figure_17">
             <p><img src="img/opf.png" alt="opf.png" /></p>
             <figcaption>​OPF example from <a href="https://www.w3.org/Submission/2017/SUBM-epub-ocf-20170125/#example">EPUB specification in W3C</a>.</figcaption>
@@ -111,11 +132,11 @@
             <p><img src="img/structure-epub.png" alt="structure-epub.png" /></p>
             <figcaption>​EPUB 3.1 structure.​</figcaption>
           </figure>
-          <p>An EPUB file, like a web page (which is basically what an EPUB is), is <em>completely responsive</em>. This meanthat, istead of the PDF format (which is shown in the same way with any devides), its structure is different beetwena full width monitor and a smartphone. That is because its core documents are HTML5. This is compatibility is veryuseful if a publisher has already produced a content in <em>HTML</em> or <em>HTML5</em> because the <em>conversion to EPUB 3 should be minimal</em><a href="#bib8"> </a>. </p>
+          <p>An EPUB file, like a web page (which is basically what an EPUB is), is <em>completely responsive</em>. This mean that, istead of the PDF format (which is shown in the same way with any devides), its structure is different beetwen a full width monitor and a smartphone. That is because its core documents are HTML5. This is compatibility is very useful if a publisher has already produced a content in <em>HTML</em> or <em>HTML5</em> because the <em>conversion to EPUB 3 should be minimal</em><a href="#bib8"> </a>. </p>
           <blockquote>
-            <p>This would likely point to HTML5 as the future for online and mobile content formats. EPUB should certainly becounted in that future, since the specification was drawn from existing and emerging web standards, in particularHTML5. <a href="#bib8">[7]</a>​</p>
+            <p>This would likely point to HTML5 as the future for online and mobile content formats. EPUB should certainly becounted in that future, since the specification was drawn from existing and emerging web standards, in particular HTML5. <a href="#bib8">[7]</a>​</p>
           </blockquote>
-          <p>EPUB and PDF formats can be used for the same purposes. But right now PDF still the one most used​ format (also requiredby publishers). in the<a href="#table_1"> </a>​ below, I listed pros and cons about the two formats.</p>
+          <p>EPUB and PDF formats can be used for the same purposes. But right now PDF still the one most used​ format (also required by publishers). in the <a href="#table_1"> </a>​ below, I listed pros and cons about the two formats.</p>
           <figure id="table_1">
             <table>
               <tbody>
@@ -210,38 +231,38 @@
         </section>
         <section id="section59">
           <h1>WYSIWYG and HTML-based editors</h1>
-          <p>WYSIWYG, acronym of <em>What You See Is What You Get</em>, is a kind of editors or word processors that allows developersto see what the end result will look like during the creation of the document interface. In other words users canmodify directly the output itself.</p>
-          <p>A WYSIWYG editor can add bold and italic, change text position, use undo and redo, create lists, links, anchors andimages<a href="#bib10"> </a>.</p>
-          <p>The first difference that can comes in mind is beetwen a <em>LaTeX processo</em>r (<a href="#figure_13"> </a>​). In this image leap out that the left editor allows users to edit directly the output interface, insteadthe right one is simply a code that will be processed after, to compile an interface similar to the left one. Theoutput is the same (more or less) but the input in deeply different. The editor comes with a toolbar, which hasbuttons to insert HTML elements <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>​ and so on. In the other sideLaTeX basics are needed to write markdown instructions.​</p>
+          <p>WYSIWYG, acronym of <em>What You See Is What You Get</em>, is a kind of editors or word processors that allows developers to see what the end result will look like during the creation of the document interface. In other words users can modify directly the output itself.</p>
+          <p>A WYSIWYG editor can add bold and italic, change text position, use undo and redo, create lists, links, anchors andimages <a href="#bib10"> </a>.</p>
+          <p>The first difference that can comes in mind is beetwen a <em>LaTeX processo</em>r (<a href="#figure_13"> </a>​). In this image leap out that the left editor allows users to edit directly the output interface, instead the right one is simply a code that will be processed after, to compile an interface similar to the left one. The output is the same (more or less) but the input in deeply different. The editor comes with a toolbar, which hasbuttons to insert HTML elements <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>​ and so on. In the other side LaTeX basics are needed to write markdown instructions.​</p>
           <figure id="figure_13">
             <p><img src="img/800px-Lorem_Ipsum_-_WYSIWYG_en_Latex_-_tekst_als_paden.svg.png" alt="800px-Lorem_Ipsum_-_WYSIWYG_en_Latex_-_tekst_als_paden.svg.png" /></p>
             <figcaption>​Difference beetwen a WYSIWYG editor and LaTeX code.</figcaption>
           </figure>
-          <p>Popular WYSIWYG editors are MS Word, OpenOffice, LibreOffice (explained above) but also Google Docs and Dropbox Paper.These are word processors, which can give also style and structure to a document, not only text. Everyone has itsown document structure, but this typology is largely used to work with HTML. </p>
+          <p>Popular WYSIWYG editors are MS Word, OpenOffice, LibreOffice (explained above) but also Google Docs and Dropbox Paper. These are word processors, which can give also style and structure to a document, not only text. Everyone has its own document structure, but this typology is largely used to work with HTML. </p>
           <p>Now I describe what are the most used and interesting, for my case, HTML-based editors.</p>
-          <p><a href="https://www.tinymce.com/">TinyMCE</a> Is an Open Source library that can integrate a WYSIWYG HTML-basededitor inside a website. Is a large project that involve 130 contributors with almost 5000 commits on Github. Amongits features there are formatting, table insertion, image editing, customizable themes and it is accesible for<em>users with disabilities because it follows WAI-ARIA specification</em> making it compatible with screen readerssuch as JAWS and NVDA.</p>
-          <p>Another strenght is that TinyMCE can be integrated everywhere. Can be found from CDN and package managers (NPM, Bower,NuGet), and integrated with frameworks such as JQuery and Angular.js, or inside common CMS like Wordpress or Joomla. Itscommunity and contributors ar lively on networks, issues and enhancements are fastly fixed.</p>
+          <p><a href="https://www.tinymce.com/">TinyMCE</a> Is an Open Source library that can integrate a WYSIWYG HTML-based editor inside a website. Is a large project that involve 130 contributors with almost 5000 commits on Github. Among its features there are formatting, table insertion, image editing, customizable themes and it is accesible for <em>users with disabilities because it follows WAI-ARIA specification</em> making it compatible with screen readers such as JAWS and NVDA.</p>
+          <p>Another strenght is that TinyMCE can be integrated everywhere. Can be found from CDN and package managers (NPM, Bower,NuGet), and integrated with frameworks such as JQuery and Angular.js, or inside common CMS like Wordpress or Joomla. Its community and contributors ar lively on networks, issues and enhancements are fastly fixed.</p>
           <figure id="figure_20">
             <p><img src="img/tinymce.png" alt="tinymce.png" /></p>
             <figcaption>​TinyMCE interface.</figcaption>
           </figure>
-          <p><a href="https://www.authorea.com/">Authorea</a> is created and developed in 2013 by two reasearcherers A. Pepe andN. Jenkins. They believed to fix collarative problems that went out during the creation of technical, scholarlyand scientific writings. The first problem is the complex workflow to follow due to write a paper (<a href="#section52"></a>). It is very popular among physicists and astronomers which are the biggest categories of users.</p>
-          <p>Authorea is an online platform (<a href="#figure_18"> </a>), for that reason a paper is an HTML file, actually an article is a <em>git repository</em><a href="#bib11"> </a>. In fact authors can take advante of using its versioning system, without any installations, to keep trackof every single change displayed in the same screen window of the project. Everyone, which has the right permissions,<em>can undo specific commit and revert to its previous version</em>. Every article in accessible anywhere, fromany device connected to the Internet, and any TeX installations are not required. About tables and formulas itis very advanced. Authorea lets anyone write mathematical notations, tables, plots and fgures in each <strong>LaTeX</strong>and <strong>MathML</strong>.</p>
+          <p><a href="https://www.authorea.com/">Authorea</a> is created and developed in 2013 by two reasearcherers A. Pepe and N. Jenkins. They believed to fix collarative problems that went out during the creation of technical, scholarlyand scientific writings. The first problem is the complex workflow to follow due to write a paper (<a href="#section52"></a>). It is very popular among physicists and astronomers which are the biggest categories of users.</p>
+          <p>Authorea is an online platform (<a href="#figure_18"> </a>), for that reason a paper is an HTML file, actually an article is a <em>git repository </em><a href="#bib11"> </a>. In fact authors can take advantages of using its versioning system, without any installations, to keep track of every single change displayed in the same screen window of the project. Everyone, which has the right permissions, <em>can undo specific commit and revert to its previous version</em>. Every article in accessible anywhere, from any device connected to the Internet, and any TeX installations are not required. About tables and formulas itis very advanced. Authorea lets anyone write mathematical notations, tables, plots and fgures in each <strong>LaTeX</strong> and <strong>MathML</strong>.</p>
           <figure id="figure_18">
             <p><img src="img/authorea.png" alt="authorea.png" /></p>
             <figcaption>​Authorea interface.</figcaption>
           </figure>
-          <p><a href="https://www.fiduswriter.org/">Fidus Writer</a> is an open source WYSIWYG collaborative HTML-based word processormade for academics who need to use citations and formulas within papers. All articles can be exported in more ways:website, paper or ebook. In each case the focus is the content, layouts can be choose during publication. FidusWriter<em>supports LaTeX </em><a href="#bib13"> </a>​ for adding footnotes and citations directly inside the documents.</p>
+          <p><a href="https://www.fiduswriter.org/">Fidus Writer</a> is an open source WYSIWYG collaborative HTML-based word processor made for academics who need to use citations and formulas within papers. All articles can be exported in more ways: website, paper or ebook. In each case the focus is the content, layouts can be choose during publication. FidusWriter <em>supports LaTeX </em><a href="#bib13"> </a>​ for adding footnotes and citations directly inside the documents.</p>
           <p>It is also <strong>collaborative in real-time</strong>, which means that FidusWriter aims to fix sharing problemsfor many-authors papers <a href="#bib12"> </a>​, and everyone can automatically see and write the document in the same time.</p>
           <p>Its formula system works hand by hand with MathJax, MathType and LaTeX.</p>
           <figure id="figure_19">
             <p><img src="img/fidus-writer_358563_full.png" alt="fidus-writer_358563_full.png" /></p>
             <figcaption>​Fidus Writer interface.</figcaption>
           </figure>
-          <p>​<q><a href="https://dokie.li/">Dokieli</a> is a client side editor for decentralised article publishing, annotations and social interactions.</q> Isstrongly based on decentralization, authors can publish wherever they want to. Authors can edit any HTML filesjust importing Dokieli CSS and JavaScripts. </p>
-          <p>In this case Dokieli is not a real WYSIWYG word processor, but instead is more a special module that can turn a browser-renderedpaper into a in-browser editable, and annotateable, HTML document. It works same way shown in <a href="#figure_21"> </a>​.</p>
-          <p>Dokieli allows authenticated authors to create in-text annotations and, of course, reply to them with the<a href="https://www.w3.org/TR/annotation-model/"> W3C web annotation specifications</a>.It also implements <em>Linked Data Notifications</em> for notifications about entire or part of articles. Now itgrants notifications for annotations, replies, shares, reviews, citations/links, bookmarks and likes.</p>
-          <p>A big Dokieli's strenght is its <em>full compatibility with HTML5</em>. All HTML5 elements can be attached and insertedwith it, and now some new UI features to do that are under development. For that reason the entire view style canbe customized with just some CSS lines, or if needed style can be changed directly with Dokieli (e.g. passing fromnative visualization to Springer LNCS view).</p>
+          <p>​<q><a href="https://dokie.li/">Dokieli</a> is a client side editor for decentralised article publishing, annotations and social interactions.</q> Is strongly based on decentralization, authors can publish wherever they want to. Authors can edit any HTML files just importing Dokieli CSS and JavaScripts. </p>
+          <p>In this case Dokieli is not a real WYSIWYG word processor, but instead is more a special module that can turn a browser-rendered paper into a in-browser editable, and annotateable, HTML document. It works same way shown in <a href="#figure_21"> </a>​.</p>
+          <p>Dokieli allows authenticated authors to create in-text annotations and, of course, reply to them with the<a href="https://www.w3.org/TR/annotation-model/"> W3C web annotation specifications</a>. It also implements <em>Linked Data Notifications</em> for notifications about entire or part of articles. Now it grants notifications for annotations, replies, shares, reviews, citations/links, bookmarks and likes.</p>
+          <p>A big Dokieli's strenght is its <em>full compatibility with HTML5</em>. All HTML5 elements can be attached and inserted with it, and now some new UI features to do that are under development. For that reason the entire view style can be customized with just some CSS lines, or if needed style can be changed directly with Dokieli (e.g. passing fromnative visualization to Springer LNCS view).</p>
           <figure id="figure_21">
             <p><img src="img/dokieli-citation.jpg" alt="dokieli-citation.jpg" /></p>
             <figcaption><span class="cgen" data-rash-original-content="">Adding a reference inside a document which has Dokieli imported in.</span></figcaption>
@@ -250,9 +271,9 @@
       </section>
       <section id="section61">
         <h1>RASH</h1>
-        <p>RASH is a Web-first format for writing HTML-based scholarly papers. RASH is acronym for <em>Research Articles in Simplified HTML</em>,and it consists in a subset of 32 HTML elements in<a href="#table_2"> </a>. This format is placed inside the <strong>RASH framework</strong>, i.e. a set of specifications and tools forRASH documents.</p>
+        <p>RASH is a Web-first format for writing HTML-based scholarly papers. RASH is acronym for <em>Research Articles in Simplified HTML</em>,and it consists in a subset of 32 HTML elements in<a href="#table_2"> </a>. This format is placed inside the <strong>RASH framework</strong>, i.e. a set of specifications and tools for RASH documents.</p>
         <p>RASH, because is HTML, has been designed to be easy to learn and use<a href="#fn6"> </a>​, and it works well with sharing scholarly documents (and embedding semantic annotations) through the web.For the same reason more articles can be semantically linked each other, with interactive behaviours granted by JavaScriptand web browsers.</p>
-        <p>RASH is strictly focused on content writing, every other needed actions like validation, visualization and conversion(<span class="error cgen" data-rash-original-content=" ">ERR: referenced element 'section64' does not exist</span>)are all leaved to its framework.</p>
+        <p>RASH is strictly focused on content writing, every other needed actions like validation, visualization and conversion are all leaved to its framework.</p>
         <p>RASH is based on WAI-ARIA Module 1.0, which grants complete accesibility for commonly used screen readers like JAWS,NVDA and VoiceOver</p>
         <figure id="table_2">
           <table>
@@ -331,21 +352,21 @@
         </figure>
         <section id="section65">
           <h1>RASH framework</h1>
-          <p>Every new proposed markup language, in general, has some issue. RASH, in order to fix them and facilitate its utilization,has its own framework. The main idea is to allow each author to keep using her/his preferred tools, a liberal approach.</p>
-          <p>The <a href="https://github.com/essepuntato/rash">RASH framework</a> is a set of specifications and writing/conversion/extractiontools for writing articles in RASH. All softwares are releases with ISC license.</p>
+          <p>Every new proposed markup language, in general, has some issue. RASH, in order to fix them and facilitate its utilization, has its own framework. The main idea is to allow each author to keep using her/his preferred tools, a liberal approach.</p>
+          <p>The <a href="https://github.com/essepuntato/rash">RASH framework</a> is a set of specifications and writing/conversion/extraction tools for writing articles in RASH. All softwares are releases with ISC license.</p>
           <p><em>RASH is based on RelaxNG grammar</em>, a well-known schema language for XML documents, which is fully compatiblewith HTML5 specifications. The first element that we can find inside the framework is the <strong>validation</strong>,using the HTML5 validator (<a href="https://validator.w3.org/nu/">W3C Nu HTML Checker</a>). Checking the document,the developed script will alert RASH users about potential mistakes about each HTML5 and RASH togheter.</p>
-          <p>Also <strong>visualization</strong> is a framework's duty. A browser can display a RASH document (in the same wayit displays common HTML documents), and wrapped CSS and JavaScript libraries render the article itself. Actuallyit uses external libraries (<a href="http://getbootstrap.com/">Bootstrap</a> and <a href="https://jquery.com/">JQuery</a>)in order to guarantee the correct visualization. The paper layout can be easily changed, passing beetwen nativevisualization and other requested LaTeX-style layout, immediatly in browser. Articles also have a footbar withstatistics about the paper (e.g. number of words, figures and other blocks).</p>
+          <p>Also <strong>visualization</strong> is a framework's duty. A browser can display a RASH document (in the same wayit displays common HTML documents), and wrapped CSS and JavaScript libraries render the article itself. Actuallyit uses external libraries (<a href="http://getbootstrap.com/">Bootstrap</a> and <a href="https://jquery.com/">JQuery</a>)in order to guarantee the correct visualization. The paper layout can be easily changed, passing beetwen native visualization and other requested LaTeX-style layout, immediatly in browser. Articles also have a footbar with statistics about the paper (e.g. number of words, figures and other blocks).</p>
           <figure id="figure_22">
             <p><img src="img/rash-framework.png" alt="rash-framework.png" /></p>
             <figcaption>​The RASH framework.</figcaption>
           </figure>
-          <p>As said before, the RASH framework, is fully based on a liberal approach, this means that <strong>conversion system</strong>must be implemented.<br /></p>
-          <p><em>A RASH document can be turned into different LaTeX styles</em> (<strong>RASH2TEX</strong>), such as <a href="https://www.acm.org/publications/proceedings-template">ACM ICPS</a>, <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines">Springer LNCS</a> andothers, with the usage of corrispondant XSLT 2.0 documents. This is the crucial step in order to guarantee theuse of RASH. As documented in<a href="#section52"> </a>​ LaTeX and PDF in the most common pattern to write articles, without this conversion no one would use RASH.</p>
-          <p><em>A ODT file can produce a RASH</em> (<strong>ODT2RASH</strong>) with Another XSLT stylesheet is used in this case.OpenOffice, with its standard features like styles, elements and formulas, can be used for writing scientific documentswhich can be converted into RASH formatted articles. Inside the RASH suite there is a web-based service and a javaapplication for online and online conversion process.</p>
-          <p>The last released conversion process is <strong>DOCX2RASH</strong> developed by Nicoletti A. This software allowsauthors of scientific documents to use Microsoft Word as word processor to write its works, having at the sametime the benefits of a HTML-based format. It has been thought because MS Word users were no covered by RASH conversions.Also to develop this process, XSLT 2.0 stylesheets has been used to convert XML (which is the base of DOCX) intoHTML.</p>
-          <p>Very important is <a href="http://dasplab.cs.unibo.it/rocs">ROCS</a> (RASH Online Conversion Service) i.e., the onlineconversion tool for supporting authors to write RASH documents and preprearing submission that can be easily processedby current journals or conferences. ROCS integrates all the conversion tools listed above.</p>
-          <p>Its architecture is described with the<a href="#figure_23"> </a>​. It allows turning a document in ODT or DOCX format into a RASH document, and then into LaTeX accordingto Spinger LNCS or AMC IPCS layouts.</p>
-          <p>Users can upload four different files, ODT, DOCX, RASH or a RASH archive (which has also related asset files). Theoutput is a ZIP containing the original document plus the LaTeX-converted file, because is useful, if authors uploadedODT or DOCX article, to have both RASH and LaTeX.</p>
+          <p>As said before, the RASH framework, is fully based on a liberal approach, this means that <strong>conversion system</strong> must be implemented.<br /></p>
+          <p><em>A RASH document can be turned into different LaTeX styles</em> (<strong>RASH2TEX</strong>), such as <a href="https://www.acm.org/publications/proceedings-template">ACM ICPS</a>, <a href="https://www.springer.com/gp/computer-science/lncs/conference-proceedings-guidelines">Springer LNCS</a> andothers, with the usage of corrispondant XSLT 2.0 documents. This is the crucial step in order to guarantee theuse of RASH. As documented in <a href="#section52"> </a>​ LaTeX and PDF in the most common pattern to write articles, without this conversion no one would use RASH.</p>
+          <p><em>A ODT file can produce a RASH</em> (<strong>ODT2RASH</strong>) with Another XSLT stylesheet is used in this case. OpenOffice, with its standard features like styles, elements and formulas, can be used for writing scientific documents which can be converted into RASH formatted articles. Inside the RASH suite there is a web-based service and a java application for online and online conversion process.</p>
+          <p>The last released conversion process is <strong>DOCX2RASH</strong> developed by Nicoletti A. This software allows authors of scientific documents to use Microsoft Word as word processor to write its works, having at the sametime the benefits of a HTML-based format. It has been thought because MS Word users were no covered by RASH conversions. Also to develop this process, XSLT 2.0 stylesheets has been used to convert XML (which is the base of DOCX) into HTML.</p>
+          <p>Very important is <a href="http://dasplab.cs.unibo.it/rocs">ROCS</a> (RASH Online Conversion Service) i.e., the online conversion tool for supporting authors to write RASH documents and preprearing submission that can be easily processed by current journals or conferences. ROCS integrates all the conversion tools listed above.</p>
+          <p>Its architecture is described with the <a href="#figure_23"> </a>​. It allows turning a document in ODT or DOCX format into a RASH document, and then into LaTeX according to Spinger LNCS or AMC IPCS layouts.</p>
+          <p>Users can upload four different files, ODT, DOCX, RASH or a RASH archive (which has also related asset files). The output is a ZIP containing the original document plus the LaTeX-converted file, because is useful, if authors uploaded ODT or DOCX article, to have both RASH and LaTeX.</p>
           <figure id="figure_23">
             <p><img src="img/rocs.png" alt="rocs.png" /></p>
             <figcaption>​<em>ROCS</em> abstract architecture.</figcaption>
@@ -356,8 +377,8 @@
     </section>
     <section id="section15">
       <h1>RAJE: RAsh Javascript Editor</h1>
-      <p>Most of this project is centered on the development of a HTML-based editor named RAJE (RAsh Javascript Editor), whichis no more than a WYSIWYG editor (these kinds are largely discussed in<a href="#section59"></a>​). It Is based on HTML, but for more precision it uses a subset, called RASH (<a href="#section61"></a>).</p>
-      <p>Inside this chapter i will explain what RAJE is and all the functionalities grant to users (like the splash window, toolbarsand other things) and than I will describe the strenghts, extolling the reasons for which it was created.</p>
+      <p>Most of this project is centered on the development of a HTML-based editor named RAJE (RAsh Javascript Editor), whichis no more than a WYSIWYG editor (these kinds are largely discussed in <a href="#section59"></a>​). It Is based on HTML, but for more precision it uses a subset, called RASH (<a href="#section61"></a>).</p>
+      <p>Inside this chapter i will explain what RAJE is and all the functionalities grant to users (like the splash window, toolbars and other things) and than I will describe the strenghts, extolling the reasons for which it was created.</p>
       <section id="section21">
         <h1>Functionalities</h1>
         <p>Among the main functions that RAJE provides we can find out some obvious and universal needed in a editor such as toolbarand software menu; Other, instead, are specific to the format in which the editor is based on (e.g. swap beetwenpreview and editor modes). I will also talk about the header editability, that deserves to have an entire dedicatedsection because its managment is different from the one of the body. In the end I will talk of the secret shortcutsthat I have implemented to speed up the writing of.</p>
@@ -469,7 +490,7 @@
       <section id="section32">
         <h1>Strenghts</h1>
         <p>RAJE has been created to remedy the problem: having a WYSIWYG editor of research scientific articles structed in RASHformat, furthermore to have a centralized placeacessible to everyone where to store documents. During all the presentationof this section, will be my task describe the strenghts of this project.</p>
-        <p>During the development period, with my Co-supervisor we defined another need, related to the document accessibility(issue widely described inside the<span class="error cgen" data-rash-original-content="">ERR: referenced element 'section63' does not exist</span>), a math formulas editor with asciiMath as input, which generates rendered formulas with MathJax process.</p>
+        <p>During the development period, with my Co-supervisor we defined another need, related to the document accessibility (issue widely described inside the ), a math formulas editor with asciiMath as input, which generates rendered formulas with MathJax process.</p>
         <p>The second pro that I will present is integration with Github, in particular I will talk about how I tought to managethe interconnetion beetwen more authors of same documents.</p>
         <section id="section33">
           <h1>Mathjax and Mathml</h1>
@@ -608,6 +629,7 @@ var code = (raw_code &amp;&amp; raw_code.length &gt; 1) ? raw_code[1] : null</co
           <p>In the Main process is pretty similar as the asynchronous behaviour, the only difference is when it need to sendback the result to let know, at the sender process, that it finished its job.</p>
           <pre><code>ipcMain.on('writeFigureSync', (event, image) =&gt; {storage.getRecentArticles((err, recentArticles) =&gt; {fsUtils.writeFigureSync(recentArticles[recentArticles.length - 1], image, (err) =&gt; {if (err) throw errevent.returnValue = true})})
 })<br /></code></pre>
+
 In this case I send only a boolean in return, it notify to the renderer ​​that it can stop the blocking behavior,and resume from the last util instruction. In this case the last one is the one that creates the img element.        </section>
       </section>
       <section id="section24">
@@ -710,7 +732,7 @@ In this case I send only a boolean in return, it notify to the renderer ​​th
       <section id="section67">
         <h1>The deploy phase</h1>
         <p>When RAJE was ready for the first release, and I looked up for some tutorials to deploy the application. </p>
-        <p>First of all I changed the entire structure of the application in<a href="#figure_12"> </a>​. The business core is moved inside the new app folder, with his own <em>package.json</em> with all modulesneeded by the software itself. There is another <em>package.json</em>. It is used to create the distributions forthe differents Operating Systems.</p>
+        <p>First of all I changed the entire structure of the application in<a href="#figure_12"> </a>​. The business core is moved inside the new app folder, with his own <em>package.json</em> with all modulesneeded by the software itself. There is another <em>package.json</em>. It is used to create the distributions forthe differents Operating Systems.</p>
         <p>In<a href="#figure_12"> </a>​ we can find build and dist folders. Dist is where the distributions will be stored, build instead containsfew relevant build assets like icons (in every needed format).</p>
         <figure id="figure_12">
           <p><img src="img/structure.png" alt="structure.png" /></p>
@@ -724,6 +746,8 @@ In this case I send only a boolean in return, it notify to the renderer ​​th
     </section>
     <section id="section43">
       <h1>Evaluation</h1>
+      <p>Now, after the description of what RAJE is and how it is implemented, the next step is about testing the software to highlight critical issues. First I created a survey on <a href="https://esurv.org/">eSurve.org</a>, findable here [link]. </p>
+      <p><br /></p>
       <p>Descrizione del tipo di test di cui andò a parlare (task based), e dell'obiettivo che è cogliere l'usabilità</p>
       <p>Informazioni sul test:</p>
       <p>task based test, do a qualcuno dei task da fare descritti, usando l'editor li fa. sono svariati task test. </p>
@@ -801,9 +825,6 @@ In this case I send only a boolean in return, it notify to the renderer ​​th
         <li id="bib2" role="doc-biblioentry">
           <p>Peroni S. (2017). RASH: Research Articles in Simplified HTML<a href="https://rawgit.com/essepuntato/rash/master/documentation/index.html">https://rawgit.com/essepuntato/rash/master/documentation/index.html</a></p>
         </li>
-        <li id="bib3" role="doc-biblioentry">
-          <p><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span>Garrish M., Siegman T., Gylling M., McCarron S. (2016). Digital Publishing WAI-ARIA Module 1.0. W3C Working Draft,17 March2016. World Wide Web Consortium. <a href="https://www.w3.org/TR/dpub-aria-1.0/">https://www.w3.org/TR/dpub-aria-1.0/</a></p>
-        </li>
         <li id="bib5" role="doc-biblioentry">
           <p>PDF history. <a href="https://it.wikipedia.org/wiki/Portable_Document_Format">https://it.wikipedia.org/wiki/Portable_Document_Format</a><br /></p>
         </li>
@@ -820,25 +841,22 @@ In this case I send only a boolean in return, it notify to the renderer ​​th
           <p>Ferrara D. EPUB versus PDF -The Pros and Cons for E-Publishing. <a href="http://webdesign.about.com/od/epub/a/epub-versus-pdf.htm">http://webdesign.about.com/od/epub/a/epub-versus-pdf.htm</a><br /></p>
         </li>
         <li id="bib10" role="doc-biblioentry">
-          <p><a href="https://www.aspedia.net/faq/what-wysiwyg-and-how-does-it-work">https://www.aspedia.net/faq/what-wysiwyg-and-how-does-it-work</a><br /></p>
+          <p>What is WYSIWYG and How does it work? <a href="https://www.aspedia.net/faq/what-wysiwyg-and-how-does-it-work">https://www.aspedia.net/faq/what-wysiwyg-and-how-does-it-work</a><br /></p>
         </li>
         <li id="bib11" role="doc-biblioentry">
-          <p><a href="http://www.astrobetter.com/blog/2015/07/13/why-should-i-use-authorea-to-write-my-papers/">http://www.astrobetter.com/blog/2015/07/13/why-should-i-use-authorea-to-write-my-papers/</a><br /></p>
+          <p>Why should I use Authorea to write my papers? <a href="http://www.astrobetter.com/blog/2015/07/13/why-should-i-use-authorea-to-write-my-papers/">http://www.astrobetter.com/blog/2015/07/13/why-should-i-use-authorea-to-write-my-papers/</a><br /></p>
         </li>
         <li id="bib12" role="doc-biblioentry">
-          <p><a href="https://pando.com/2013/04/24/fidus-writer-is-a-collaborative-writing-tool-custom-built-for-academia/">https://pando.com/2013/04/24/fidus-writer-is-a-collaborative-writing-tool-custom-built-for-academia/</a><br /></p>
+          <p>Mott N. Fidus Writer is a collaborative writing tool custom-built for academia. <a href="https://pando.com/2013/04/24/fidus-writer-is-a-collaborative-writing-tool-custom-built-for-academia/">https://pando.com/2013/04/24/fidus-writer-is-a-collaborative-writing-tool-custom-built-for-academia/</a><br /></p>
         </li>
         <li id="bib13" role="doc-biblioentry">
-          <p><a href="https://www.fiduswriter.org/how-it-works/">https://www.fiduswriter.org/how-it-works/</a><br /></p>
+          <p>Fidus Writer, how it works. <a href="https://www.fiduswriter.org/how-it-works/">https://www.fiduswriter.org/how-it-works/</a><br /></p>
         </li>
         <li id="bib14" role="doc-biblioentry">
           <p>Aalbersberg I. PDF versus HTML — which do researchers prefer? <a href="https://www.elsevier.com/connect/pdf-versus-html-which-do-researchers-prefer">https://www.elsevier.com/connect/pdf-versus-html-which-do-researchers-prefer</a><br /></p>
         </li>
         <li id="bib15" role="doc-biblioentry">
           <p>Peroni S., Osborne F., Di Iorio A., Nuzzolese A., Poggi F., Vitali F. Research Articles in Simplified HTML: a Web-firstformat for HTML-based scholarly articles <a href="https://essepuntato.github.io/papers/rash-peerj2016.html">https://essepuntato.github.io/papers/rash-peerj2016.html</a></p>
-        </li>
-        <li id="bib16" role="doc-biblioentry">
-          <p><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span><span class="cgen notcited" data-rash-original-content="" title="This reference is not cited in the document.">[X] </span>http://amslaurea.unibo.it/12298/<br /></p>
         </li>
       </ol>
     </section>
@@ -847,7 +865,7 @@ In this case I send only a boolean in return, it notify to the renderer ​​th
         <p>In real-time, without any compilation or interpretation.</p>
       </section>
       <section id="fn2" role="doc-endnote">
-        <p>LaTeX Math Symbols <a href="http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html">http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html</a>.<br /></p>
+        <p>LaTeX Math Symbols <a href="http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html">http://web.ift.uib.no/Teori/KURS/WRK/TeX/symALL.html</a>.</p>
       </section>
       <section id="fn3" role="doc-endnote">
         <p>All kind of files with <em>.epub</em> extension.</p>
