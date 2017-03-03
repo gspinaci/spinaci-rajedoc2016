@@ -27,7 +27,7 @@
 <body>
     <section role="doc-abstract">
       <h1>Abstract</h1>
-      <p><br /></p>
+      <p>TODO</p>
     </section>
     <section id="section71">
       <h1>Introduction</h1>
@@ -35,9 +35,9 @@
       <p>Currently the most used format in publications is PDF, which has strenghts that make it the <em>De Facto standard</em> in document sharing. Among them we can find the hard formatting style, to ensure that every device is able to visualise the file in the way it was created, as is. But PDF has also important problems, which are: the lack of interactivity, its unuptitude of to be shared via web, and the complicated readability by screen readers, to help authors with disabilities.</p>
       <p>In order to create a PDF file, users need to create a document that will be exported as PDF after. These documents are written with an editor or word processor. Microsoft Word and OpenOffice are the most popular word processors. They produce DOC(X) and ODT files, and authors are allowed to export the document in PDF. Another way is using LaTeX i.e. a typesetting format that can be compiled to create the corrispondant PDF file. This method is different because users have to use a markup editor instead of a word-processor like one (there are also WYSIWYG LaTeX editors).</p>
       <p>Recently, expecially inside Semantic Web community, reasearchers started to talk about HTML publication. Publication modes have not changed everywhere, they still accept PDF, but few entities such as PeerJ, EKAW and Springer now accept also HTML articles. The biggest part of HTML articles shared now are generated with online editors. Among them we can find Authorea, Fidus Writer, Dokieli and TinyMCE, that are the most populars.</p>
-      <p>RAJE is placed inside the last group, with the difference that it is developed on a format i.e. RASH, and all its framework can comes in aid for handling conversions. Having only a univocal subset of HTML can help a lot with problems such as an unimplemented structural restriction, where same result can be reached with different structures (e.g. <code>&lt;b&gt;lorem&lt;/b&gt;</code> element is different of <code>&lt;span style="font-wight:bold"&gt;lorem&lt;/span&gt;</code>, but they are displayed equal). RAJE will be placed inside the RASH framework. It will come in aid of those authors which do not use other editors but need a tool that help write RASH with an interface, not as raw markup, especially for long documents. The whole project is created using web technologies as HTML, CSS and JavaScript, which is the RAJE's beating heart.</p>
+      <p>RAJE is placed inside the last group, with the difference that it is developed on a format i.e. RASH, and all its framework can comes in aid for handling conversions. Having only a univocal subset of HTML can help a lot with problems such as an unimplemented structural restriction, where same result can be reached with different structures (e.g. <code>&lt;b&gt;lorem&lt;/b&gt;</code> element is different of <code>&lt;span style="font-wight:bold"&gt;lorem&lt;/span&gt;</code>, but they are displayed equal). RAJE will be placed inside the RASH framework. It will come in aid of those authors which do not use other editors but need a tool that help write RASH with an interface, not as raw markup, especially for long documents. The whole project is created using web technologies as HTML, CSS and JavaScript, which is the RAJE's beating heart.</p>
       <p>This thesis is written using RAJE itself, and this is a good testing, but other tests are made. In particular a <em>Task Driven Test</em> was organized with 3 researchers of the deparment of computer science and engineering at Bologna University. This test aims to discover the RAJE usability and inprove test question to do the same a wider population next. The results show difficulties on: editing metadata, find the button to add references (such as reference to images, tables and formulas, bibliographic links and footnotes). The feedbacks given by testers show also that some interface settings are better to be moved in other places, because they are a bit hard to find. The "add a footnote" reference must be moved in a single button in the editor's toolbar. In addition testers have found very useful the mathematical formula editor, maybe with a link to its syntax. All issues are currently under fix.</p>
-      <p>The rest of the thesis is organised as follows. In <a href="#section1"> </a>​ i describe the specific context where RAJE operates, and it is useful to grant an outline of how publications work, pros and cons about PDF and EPUB and description of the most popular format and HTML editors. In <a href="#section15"> </a>​ I give few high-level information about what RAJE allows author to do, how interface is arranged and its strenghts such as Github integration and the formulas editor. In <a href="#section22"> </a>​ are wrapped all the low-level descriptions of RAJE. About the technologies and external libraries to develop it, and how I have deployed the whole software for MacOSX, Windows and Linux. In <a href="#section43"> </a>​ I describe the evaluation process: the population background, tasks implementation, development of results and conclusion.</p>
+      <p>The rest of the thesis is organised as follows. In <a href="#section1"> </a>​ i describe the specific context where RAJE operates, and it is useful to grant an outline of how publications work, pros and cons about PDF and EPUB and description of the most popular format and HTML editors. In <a href="#section15"> </a>​ I give few high-level information about what RAJE allows author to do, how interface is arranged and its strenghts such as Github integration and the formulas editor. In <a href="#section22"> </a>​ are wrapped all the low-level descriptions of RAJE. About the technologies and external libraries to develop it, and how I have deployed the whole software for MacOSX, Windows and Linux. In <a href="#section43"> </a>​ I describe the evaluation process: the population background, tasks implementation, development of results and conclusion.</p>
     </section>
     <section id="section1">
       <h1>Literature review</h1>
@@ -101,7 +101,7 @@
             <p>EPUB is the most widely supported vendor-independent XML-based (as opposed to PDF) e-book format; that is, it issupported by the largest number of hardware readers.<br /></p>
           </blockquote>
           <p>In October 2007 was realeased, with an expansion in 2010, EPUB 2. The version 3.0 became effective in October 2011(it was also re-updated in June 2014 to the version 3.0.1). EPUB 3.0.1 granted specialized formatting (for documentslike graphic novels and comic books), support for <a href="https://www.w3.org/Math/">MathML</a>, and enhanced accessibility features. From Junuary 5 2017, the current version is <a href="http://idpf.org/epub/31">EPUB 3.1</a><a href="#fn4"> </a> and its purpose is to simplify digital books specifications and align itself to the <a href="https://www.w3.org/wiki/Open_Web_Platform">Open Web Platform</a> (also because the <a href="https://www.w3.org/2017/01/pressrelease-idpf-w3c-combination.html.en">alliance beetwen IDPF and W3C</a> dated 2017). Right now, IDPF is developing a new common specifications for allowing users to open publications online,with the help of a simple browser without lose any features. </p>
-          <p>An EPUB file is ZIP archive containing HTML5 files (with the last release), CSS and other needed assets. As said before, an EPUB is delivered as a single file to facilitate sharing, but it can be unzipped to see his internal structure (<a href="#figure_15"> </a>​). Inside the root folder there are two directories and a mimetype that must be included in. The mimetype is only needed to reveal what kind of ZIP is, in this case it only contains <code>application/epub+zip</code>​. The <strong style="font-size: 12pt;">META-INF</strong> directory must contains the <a href="https://www.w3.org/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-files">reserved files</a> suchas <em style="font-size: 12pt;">encryption.xml</em>,<em style="font-size: 12pt;"> signatures.xml</em> and <em style="font-size: 12pt;">container.xml</em> whichis the main one. It has a <em style="font-size: 12pt;">rootfile</em> element for each one asset inside the EPUB (<a href="#figure_16"> </a>​ show its contents).</p>
+          <p>An EPUB file is ZIP archive containing HTML5 files (with the last release), CSS and other needed assets. As said before, an EPUB is delivered as a single file to facilitate sharing, but it can be unzipped to see his internal structure (<a href="#figure_15"> </a>​). Inside the root folder there are two directories and a mimetype that must be included in. The mimetype is only needed to reveal what kind of ZIP is, in this case it only contains <code>application/epub+zip</code>​. The <strong style="font-size: 12pt;">META-INF</strong> directory must contains the <a href="https://www.w3.org/Submission/2017/SUBM-epub-ocf-20170125/#sec-container-metainf-files">reserved files</a> suchas <em style="font-size: 12pt;">encryption.xml</em>,<em style="font-size: 12pt;"> signatures.xml</em> and <em style="font-size: 12pt;">container.xml</em> whichis the main one. It has a <em style="font-size: 12pt;">rootfile</em> element for each one asset inside the EPUB (<a href="#figure_16"> </a>​ show its contents).</p>
           <figure id="figure_16">
             <p><img src="img/container.xml.png" alt="container.xml.png" /></p>
             <figcaption>​Example of a container.xml file.</figcaption>
@@ -121,7 +121,7 @@
           </blockquote>
           <p>EPUB and PDF formats can be used for the same purposes. But right now PDF still the one most used​ format (also required by publishers). in the <a href="#table_1"> </a>​ below, I listed pros and cons about the two formats.</p>
           <figure id="table_1">
-            <table>
+<button id="dLabel" type="button" class="btn btn-default" aria-haspopup="true" aria-expanded="false"><em></em></button>            <table>
               <tbody>
                 <tr>
                   <th>-</th>
@@ -254,12 +254,12 @@
       </section>
       <section id="section61">
         <h1>RASH</h1>
-        <p>RASH is a Web-first format for writing HTML-based scholarly papers. RASH is acronym for <em>Research Articles in Simplified HTML</em>,and it consists in a subset of 32 HTML elements in<a href="#table_2"> </a>. This format is placed inside the <strong>RASH framework</strong>, i.e. a set of specifications and tools for RASH documents.</p>
+        <p>RASH is a Web-first format for writing HTML-based scholarly papers. RASH is acronym for <em>Research Articles in Simplified HTML</em>,and it consists in a subset of 32 HTML elements in <a href="#table_2"> </a>. This format is placed inside the <strong>RASH framework</strong>, i.e. a set of specifications and tools for RASH documents.</p>
         <p>RASH, because is HTML, has been designed to be easy to learn and use<a href="#fn6"> </a>​, and it works well with sharing scholarly documents (and embedding semantic annotations) through the web.For the same reason more articles can be semantically linked each other, with interactive behaviours granted by JavaScriptand web browsers.</p>
         <p>RASH is strictly focused on content writing, every other needed actions like validation, visualization and conversion are all leaved to its framework.</p>
         <p>RASH is based on WAI-ARIA Module 1.0, which grants complete accesibility for commonly used screen readers like JAWS,NVDA and VoiceOver</p>
         <figure id="table_2">
-          <table>
+<button id="dLabel" type="button" class="btn btn-default" aria-haspopup="true" aria-expanded="false"><em></em></button>          <table>
             <tbody>
               <tr>
                 <th>Pattern</th>
@@ -352,9 +352,8 @@
           <p>Users can upload four different files, ODT, DOCX, RASH or a RASH archive (which has also related asset files). The output is a ZIP containing the original document plus the LaTeX-converted file, because is useful, if authors uploaded ODT or DOCX article, to have both RASH and LaTeX.</p>
           <figure id="figure_23">
             <p><img src="img/rocs.png" alt="rocs.png" /></p>
-            <figcaption>​<em>ROCS</em> abstract architecture.</figcaption>
+            <figcaption>​<em>ROCS</em> abstract architecture.​</figcaption>
           </figure>
-          <p>​<br /></p>
         </section>
       </section>
     </section>
@@ -496,8 +495,7 @@
           <p>When a user wants to save online the content of a document, to do it, he needs to be logged in with its personalGithub profile. These types of requeste are not allowed without authentication, which certifies the user identity.</p>
           <p>Omitting the authentication mode, o better the development of the predisposed module for handling authentication,the user has the option to save the document online, on Github servers. The action can be executed with the shortcut<code>mod+shit+s</code>​ or the appropriate button in software menu.​ Will be viewed a simple modal that permitsthe user to label up the entire sets of changes under an unique comment. When the upload is done will be showna success message, noninvasively, on the screen. Now the push has been executed with success.</p>
           <p>The mangement of sharing documents needs that all repository contributors are always updated to the latest articleversion, to avoid merge conflicts. In the RAJE current version this functionality has not been introduced yet,but is a crucial fact of distributed system management, will be implemented soon.</p>
-          <p>These, listed above, are the reasons of the perfect union beetwen Github and RAJE, that precisely is one of the reasonswhich it was born. </p>
-          <p><br /></p>
+          <p>These, listed above, are the reasons of the perfect union beetwen Github and RAJE, that precisely is one of the reasonswhich it was born.</p>
         </section>
       </section>
     </section>
@@ -612,6 +610,7 @@ var code = (raw_code &amp;&amp; raw_code.length &gt; 1) ? raw_code[1] : null</co
           <p>In the Main process is pretty similar as the asynchronous behaviour, the only difference is when it need to sendback the result to let know, at the sender process, that it finished its job.</p>
           <pre><code>ipcMain.on('writeFigureSync', (event, image) =&gt; {storage.getRecentArticles((err, recentArticles) =&gt; {fsUtils.writeFigureSync(recentArticles[recentArticles.length - 1], image, (err) =&gt; {if (err) throw errevent.returnValue = true})})
 })<br /></code></pre>
+
 In this case I send only a boolean in return, it notify to the renderer ​​that it can stop the blocking behavior,and resume from the last util instruction. In this case the last one is the one that creates the img element.        </section>
       </section>
       <section id="section24">
@@ -720,86 +719,87 @@ In this case I send only a boolean in return, it notify to the renderer ​​th
         </figure>
         <p>Inside the node_modules folder in the root, which is the development one, there are <em>electron-packager</em> and<em>electron-prebuilt</em> packages. Inside the development <em>package.json</em> we can find out the deploy scripts <code>"dist": "electron-packager ./app --all --out=./dist --overwrite"</code>​.</p>
         <p>According with this <a href="http://electron.rocks/electron-builder-explained/">article</a>, wrote on Electron ROCKS,<em>electron-packager</em> is a module that allows developers to package a software in more distributions for theOSs. For Unix systems is very simply. In particular way for MacOSx, which is the one that I used to develop, andLinux (this one needs the author written in the following schema: <code>Name Surname &lt;email&gt;</code>​ else willnot be executed). Windows is another thing, it need <a href="https://www.winehq.org/">Wine</a> and <a href="http://www.mono-project.com/">Mono libraries</a> (i.e.the open source counterpart of <a href="https://msdn.microsoft.com/en-us/library/ms973806.aspx#commnetlibs_topic1">.NET libraries</a>) installedinside the developer machine​.</p>
-        <p>Now is allowed package executables only by typing the line <code>npm run dist</code>​.</p>
-        <p> ​</p>
+        <p>Now is allowed package executables only by typing the line <code>npm run dist</code>​.​</p>
       </section>
     </section>
     <section id="section43">
       <h1>Evaluation</h1>
-      <p>Now, after the description of what RAJE is and how it is implemented, the last step is about testing the software to highlight critical issues and usability. The test survey is made with <a href="https://esurv.org/">eSurv.org</a>, findable <a href="https://eSurv.org?s=MJOLJJ_362fcb37">here</a>. </p>
+      <p>Now, after the description of what RAJE is and how it is implemented, the last step is about testing the software to highlight critical issues and usability. The test survey is made with <a href="https://esurv.org/">eSurv.org</a>, findable <a href="https://eSurv.org?s=MJOLJJ_362fcb37">here</a>. This test is a DUT, i.e. Discount Usability Test. These kind of tests are made involving only few people, because with 3 to 5 people up to 80% of bugs (the main ones) can be easily found <a href="#bib16"> </a>. The test is built online withe free tool eSurv.org. It is very useful to build up complex survey and it helps to recover and export results in xcell format. The test is a task driven test, i.e. a list of tasks are submitted to testers in order to fill a questionnaire with feedbacks. Feedbacks and form results are elaborated to reach the SUS index. In results I show the results and the list of feedbacks received. The last question is about ask to testers advices and suggestions to expand the expand and fix the test for next usages.</p>
+      <section id="section77">
+        <p>Before start with the text, there are two prerequisites to be satisfied:</p>
+        <ol>
+          <li>
+            <p>The RAJE executable must be downloaded and unzipped.</p>
+          </li>
+          <li>
+            <p>The tester needs a Github account.</p>
+          </li>
+        </ol>
+
+        <p>Once the requirements are satisfied, testers are redirected to the background form.</p>
+      </section>
+      <section id="section78">
+        <h1>Profiling<br /></h1>
+        <p>The test is organized with 3 researchers of the deparment of computer science and engineering at Bologna University, in line with the DUT principles. To each are submitted the same assertion categorised as expertise with: </p>
+        <ol>
+          <li>
+            <p>Formats (e.g. DOC(X), ODT...)</p>
+          </li>
+          <li>
+            <p>Word processors and HTML-based editors</p>
+          </li>
+          <li>
+            <p>Research articles publication</p>
+          </li>
+          <li>
+            <p>Control version systems</p>
+          </li>
+        </ol>
+
+        <p>In total are 17 assertion, with the following format: "I have strong experience with DOC(X) files", needs to be answered with: Strongly Agree, Agree, Neutral, Disagree and Strongly Disagree. With this answers is possible to create profiles of the testers' background, which are used before to generate the results with the SUS answers. In order to complete the testers' background, one of them has Linux and two of them have MacOSX.</p>
+      </section>
       <section id="section76">
-        <h1>Task </h1>
+        <h1>Tasks</h1>
+        <p>In order to capture the usability the first task is to create <a href="http://gianmarco.spinaci.web.cs.unibo.it/rajetest_01_03_17.pdf">this PDF document</a> using RAJE. To obtain this document I followed the normal RASH workflow. I created the test document using RAJE, and with ROCS I converted the output document in TeX with the Springer LNCS style. The TeX document is then compiled in PDF. The second task aims to evaluate the integration beetwen RAJE and Github, with commit and push of the repository.</p>
+        <p>Inside the document of the first task there is the whole set of elements and actions that a user can execute. In the abstract section there are some few text elements and a list. In the next sections there are tables, figures and formulas. The file also contains a footnote and a bibliography.</p>
+        <p>The last task need testers to be logged in with Github. Then they have to push the created document, with the comment. When the article is saved online as a repository, testers have to navigate to the RawGit link and save it inside the document. After that the output folder must be compressed into a archive and send to my email, in order to evaluate the HTML given in output.</p>
       </section>
-      <p><br /></p>
-      <p>The In particular a Task Driven Test was organized with 3 researchers of the deparment of computer science and engineering at Bologna University. This test is a kind of Discount Usability Test (DUT) that aim to discover the RAJE usability and inprove test question to do the same a wider population succesively.</p>
-      <p><br /></p>
-      <p>Descrizione del tipo di test di cui andò a parlare (task based), e dell'obiettivo che è cogliere l'usabilità</p>
-      <p>Informazioni sul test:</p>
-      <p>task based test, do a qualcuno dei task da fare descritti, usando l'editor li fa. sono svariati task test. </p>
-      <p>si può prendere nota dei task che sono stati fatti, permette di estrapolare misure qualitative, cioè usabilità, più annotazioninell'utilizzo dell'interfaccia.</p>
-      <p><strong>DUT discount usability test</strong> (sarà di questo tipo) perchè si dice che nell'80% dei bug vengono coltisemplicemente coinvolgendo pochi utenti (3-4). cercare l'immagine da aggiungere Norman NIelsen group. statisticamenterilevante.</p>
-      <p>task semplici e chiari: indagare su due cose: editor e integrazione con github.</p>
-      <p><strong>esurve.org</strong> servizio gratis che userò che mette a disposione interfaccie per creare task. </p>
-      <p><br /></p>
-      <p>Backgroud </p>
-      <p><br /></p>
-      <p>paginazione dei task</p>
-      <p>p1 landing page descrizione + requisiti (utente github e progetto)</p>
-      <p>p2 backgrund knlowledgement </p>
-      <p>p3 lista task</p>
-      <p>p4 sus</p>
-      <p>p5 gounded analys+ suggerimenti</p>
-      <p><br /></p>
-      <p>formato e livello editor.</p>
-      <p>(ognuno e negli editor, stesura negli articoli scientifici e sistemi di controll di versione) ognuno di queste cose èun'affermazione<br /></p>
-      <p>Definisco 3 mascro categorie di domande diverse <strong>background knowledgement</strong></p>
-      <p>esperienza nei forrmati utilizzati (ODT, DOC(X) (Office format e Microsoft office format), HTML, LaTeX, XML. </p>
-      <p>word, open office/ libreoffice, authorea, dokieli e fidus writer, latex wysiwyg editor, other text editors.</p>
-      <p>esperienza nello scrivere articoli scientifici per conferenze scientifici, sistemi di controllo di versione svn, gitcvs, github.</p>
-      <p><br /></p>
-      <p><strong>task</strong> relativi uso editor per crare documento</p>
-      <p>documento di due paginette pdf da scaricare da preparare springer, task: riscrivilo. deve esserci di tutto all'interno.</p>
-      <p>1 pagina editor con paper, seconda pagina github</p>
-      <p><br /></p>
-      <p>si svolge in 3 grandi momenti: </p>
-      <ol>
-        <li>
-          <p>raccolta background knowledge esperienza<br /></p>
-        </li>
-        <li>
-          <p>svolgimento di task da parte dei tester</p>
-        </li>
-        <li>
-          <p><em>A </em>SUS (system usability scale) (10 affermazioni secche e definite, con cui rispondere storngly agree, agree,neutral ecc) soglia di 68 di Sauro. si inizia a parlare di usabilità del sistema quando il valore medio è superiorea 68. <br /><em>B</em> [usano sempre lo stesso format vedi Skype] ground analysis (4 domande: 2 positive e duenegative) poi si fa uno studio particolare partendo dai testi classificandoli in due fasi. e.g. l'interfaccia miè piaciuta molto ma l'editor delle formule mi è sembrato straodinario, ma non mi piaceva l'inseirmento dell'intgrale).<strong>si crea poi una tabella con due colonne con tantissime castegorie, poi vengono clusterizzarle per arrivare meno categorie<em>.</em></strong></p>
-        </li>
-      </ol>
-      <section id="section45">
-        <h1>Tests</h1>
-        <p>Descrizione di come sono stati formati i test, 3 blocchi, quali erano i task </p>
-      </section>
-      <section id="section46">
-        <h1>Profiling</h1>
-        <p>Ogni tipo di informazione raccolta riguardo agli utenti che hanno effettuato il test (sia quelli che scrivono sia quellicheposso acquisire come informazioni sulle macchine utilizzate) importantissimo sistema operativo!</p>
-      </section>
-      <section id="section47">
+      <section id="section79">
         <h1>Results</h1>
-        <p>Discussione dei risultati che sono stato ottenuti, sus (system usability scale) rapportato ad altri risultati</p>
-        <section id="section48">
-          <h1>Suggestions</h1>
-          <p>Sotto sezione basata sulle risposte ricevute dall'ultimo blocco del test, in particolare per quanto riguarda le informazionichepossono servire per redigere i test successivi su larga scala</p>
+        <p>The last two pages of the survey are the final questionnaire and for feedback given by the users. A task-based test is very useful to extrapolate quantitative measures about usability of the tool. Usability is described usingthe final questionnaire which is the SUS (System Usability Scale), i.e. a reliable and valid measure of perceived usability. The SUS is a 10 item questionnaire with 5 response options <a href="#bib17"> </a>​. It give a final number (the SUS index) which can be higher or lower than 68, and it is not percentage points, but an absolute number. A SUS score above a 68 would be considered above average and anything below 68 is below average. </p>
+        <p>Instead, user feedback are four open answers to create the ground analysis. It consist of a syntactical analysis of the answers in order to create a table with the number of times a users spoke in favor or against a tool feature. For this thesis I choose not to act the ground analysis, but only report the most important answers.</p>
+        <section id="section80">
+          <h1>System Usability Scale</h1>
+          <p>Before describe the mode I used to find out the SUS score, I must remind that the figure on which the test is made is made up of 3 people, all kind of statistics on this population are not completely trustworthy.</p>
+          <p>In order to extract the SUS score, I used a script written in R which calculates the score and give in output a plot about the usability. The final scores are in <a href="#figure_23"> </a>​. The figure shows that usability is 64.58, and learnability is 87.5. Usability is little lower than the average value, it means that RAJE usability is little bad. Instead learnability is pretty high. RAJE is very easy to use when user know how it works, it indicates that RAJE has high entry barriers.</p>
+          <p>Crossing the values with users background a trend can be find out. In <a href="#figure_24"> </a>​ the SUS answers are crossed with experience of users with different formats, and show a positive trend. Is visible in <a href="#figure_25"> </a>​ that the p-value is very high, because it is higher that 0.1 points. If the p-value is under the threshold of 0.1, the plot has a statistic importance. With only 3 people is not possible have statistic relevance.</p>
+          <figure id="figure_23">
+            <p><img src="img/sus.png" alt="img/sus.png" /></p>
+            <figcaption>​SUS statistics.</figcaption>
+          </figure>
+          <figure id="figure_24">
+            <p><img src="img/susplot.png" alt="img/susplot.png" /></p>
+            <figcaption>​SUS, learnability and usability of users experience with formats.</figcaption>
+          </figure>
+          <figure id="figure_25">
+            <p><img src="img/susresults.png" alt="img/susresults.png" /></p>
+            <figcaption>Correlation and p-value of users' format experience and SUS answers.</figcaption>
+          </figure>
+        </section>
+        <section id="section81">
+          <h1>Feedback</h1>
         </section>
       </section>
-      <section id="section69">
-        <h1>Personal beta testing</h1>
-        <p>In questa sezione scrivo riguardo alle issues che ho trovato e ho modificato durante la stesura della tesi, poichèhoscritto il tutto con questo editor.</p>
-        <p><br /></p>
-      </section>
+      <p>The users noticed few problems about usability and interface arrangement. All of the are agree upon the difficulty for finding the cross-reference button, and the tooltip shown on click is not much intuitive, it show "cross-ref". Also the button to log in with Github is hard to find. The edit of metadata is difficult, and sometimes the caret disappear, and the focus can be lost. They found out that user can break well-formed structure, maybe inserting tables directly inside heading elements. Another needed feature is the possibility of convert an element into another, e.g. a text line can be converted into a list or a heading. This feature must be implemented soon. They noticed also some minor interface issues such as some similar toolbar icons or buttons without behaviour not disabled.</p>
+      <p>There is one more question after the fourth. It asks suggestions about extending or change in any way the test. Among them there are few interesting ideas. One is to plan the test also with other editors in order to perform a comparison, and use a real reasearch paper as test. Moreover also a hint about background questions came out: ask the expertice that the tester has with the RASH format.</p>
+      <p>Personally I tested the project with a substantial document, i.e. this thesis. This test is very useful, and it helped me to find other hidden bugs, and increment the todo list. The whole set of bugs found in currently in "fix phase".</p>
     </section>
     <section id="section44">
       <h1>Conclusion and future developments</h1>
-      <p>Conclusioni, aggiungere lo sviluppo dell'articolo scientifico successivamente</p>
-      <p>Descrizioni sugli sviluppi futuri: Annotazioni, visualizzazione del TOC, possibilità di gestire peer review e conferenze<br /></p>
-      <p><br /></p>
+      <p>In this thesis I talked about how the Semantic Web community and few publishers, are starting to talk about HTML submissions. It is thought as solution for the problems of the PDF format described above. The advantages that HTML bring with it are easiness to be understanded by machines and the interactiveness granted by browsers. PDF files and HTML documents are easily created with visual editors and word processors. Most of them are WYSIWYG, that allow authors to editate directly the output. </p>
+      <p>HTML wraps a huge amount of elements which can have ambiguity. Two elements can be different, but visualised as same. RASH fix this problem. It is a subset of 32 HTML elements, which grants that every element is univocal. Another streght of RASH is its framework. Validation, visualization and conversion are all actions that RASH framework can do. But it needs a tool to semplify the creation of a RASH file, hiding all the technical facts about the markup structure. RAJE will be placed inside the RASH framework, in order to cover this need. RAJE is a HTML-based WYSIWYG editor, with generates RASH well-formed documents.</p>
+      <p>I described the most popular and used HTML-based editors and word processors, and then I discussed the functionalities and the development process in order to create RAJE, with JavaScript libraries, CSS styles and HTML files, and deploy the software packages.</p>
+      <p>In addition of fixing bugs, some new features are needed to be added. The most interesting feature are the annotations, that will be integrated using <a href="https://hypothes.is/">hypothesis</a>. I also noticed the necessity of a table of content, to navigate in a better way long documents. I also thought to expand RAJE to allow chairs to create conferences and manage peer reviewing directly with RAJE, or its hypotetical web site. These are just few way in how we can next expand RAJE.</p>
     </section>
     <section role="doc-bibliography" id="bibreflist">
       <h1>References</h1>
@@ -842,6 +842,12 @@ In this case I send only a boolean in return, it notify to the renderer ​​th
         </li>
         <li id="bib15" role="doc-biblioentry">
           <p>Peroni S., Osborne F., Di Iorio A., Nuzzolese A., Poggi F., Vitali F. Research Articles in Simplified HTML: a Web-firstformat for HTML-based scholarly articles <a href="https://essepuntato.github.io/papers/rash-peerj2016.html">https://essepuntato.github.io/papers/rash-peerj2016.html</a></p>
+        </li>
+        <li id="bib16" role="doc-biblioentry">
+          <p>Nielsen J. Discount Usability: 20 Years (2009) <a href="https://www.nngroup.com/articles/discount-usability-20-years/">https://www.nngroup.com/articles/discount-usability-20-years/</a><br /></p>
+        </li>
+        <li id="bib17" role="doc-biblioentry">
+          <p>Sauro J. Measuring Usability with the System Usability Scale (SUS) (2011) <a href="https://measuringu.com/sus/">https://measuringu.com/sus/</a></p>
         </li>
       </ol>
     </section>
